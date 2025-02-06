@@ -12,7 +12,7 @@ I’m currently focused on:
 - Project A: Quick summary of what it is, why it’s cool, and your role in it.
 - Project B: Another interesting project or area of research.
 
----
+
 
 ## Things I Worked on in the Past
 
@@ -21,7 +21,7 @@ Here are a few highlights from my past work:
 - **Project/Initiative**: Brief overview of your contribution and impact.
 - **Achievement**: Another bullet, maybe an award, milestone, or unique experience.
 
----
+
 
 ## Publications
 
@@ -35,7 +35,7 @@ Here are a few highlights from my past work:
 
 *(Add more as needed.)*
 
----
+
 
 ## Patents
 
@@ -47,7 +47,7 @@ Here are a few highlights from my past work:
 
 *(Add more as needed.)*
 
----
+
 
 ## Press Mentions
 

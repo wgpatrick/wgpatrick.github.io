@@ -1,1 +1,3 @@
-theme: alshedivat/al-folio
+remote_theme: chibicode/duo
+plugins:
+  - jekyll-remote-theme # Enables using themes from GitHub

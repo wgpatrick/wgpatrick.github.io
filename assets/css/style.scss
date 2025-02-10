@@ -1,0 +1,32 @@
+@import "{{ site.theme }}";
+
+.intro-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-image {
+  flex: 0 0 45%;
+}
+
+.profile-pic {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Make it stack on mobile */
+@media (max-width: 600px) {
+  .intro-container {
+    flex-direction: column;
+  }
+  
+  .intro-image {
+    flex: 0 0 100%;
+  }
+}

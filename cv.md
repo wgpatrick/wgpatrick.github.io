@@ -6,22 +6,44 @@ permalink: /cv/
 
 ## Education
 
-- Degree, University, Year
+- M.S., MIT Media Lab, 20XX
+  - Major/Concentration
+- B.S., University Name, 20XX
+  - Major/Concentration
 
 ## Experience
 
-- Position, Company, Date Range
-  - Key accomplishments
-  - Responsibilities
+### Company Name (Role Name, 20XX - 20XX)
+Description of role and key accomplishments. This can be 2-3 sentences that highlight the most important aspects of your work and impact in this position.
 
-## Skills
+### Company Name (Role Name, 20XX - 20XX)
+Description of role and key accomplishments. This can be 2-3 sentences that highlight the most important aspects of your work and impact in this position.
 
-- Skill Category 1
-  - Specific skills
-- Skill Category 2
-  - Specific skills
+### Company Name (Role Name, 20XX - 20XX)
+Description of role and key accomplishments. This can be 2-3 sentences that highlight the most important aspects of your work and impact in this position.
 
 ## Publications
 
-- Publication 1
-- Publication 2 
+- [Publication Title](link-to-publication)  
+  Brief description of the research and its significance.
+
+- [Piezoelectric wind energy harvesting](link-to-publication)  
+  My undergraduate thesis about wind energy harvesting using the galloping phenomenon.
+
+- [Publication Title](link-to-publication)  
+  Brief description of the research and its significance.
+
+## Patents
+
+- [Patent Title](link-to-patent)  
+  Brief description of the innovation and its application.
+
+- [Patent Title](link-to-patent)  
+  Brief description of the innovation and its application.
+
+## Press Mentions
+
+- [Article Title](link-to-article) - Publication Name
+- [Article Title](link-to-article) - Publication Name
+- [Article Title](link-to-article) - Publication Name
+- [Article Title](link-to-article) - Publication Name 

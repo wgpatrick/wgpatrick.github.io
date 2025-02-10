@@ -1,10 +1,14 @@
 <header class="site-header">
-
     <div class="wrapper">
       {%- assign default_paths = site.pages | map: "path" -%}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-      <a class="site-title" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+      
+      {% raw %}{% if page.url == "/" %}
+        <span class="site-title">Will Patrick</span>
+      {% else %}
+        <a class="site-title" rel="author" href="{{ '/' | relative_url }}">Will Patrick</a>
+      {% endif %}{% endraw %}
   
       {%- if titles_size > 0 -%}
         <nav class="site-nav">
@@ -28,4 +32,4 @@
         </nav>
       {%- endif -%}
     </div>
-  </header>
+</header>

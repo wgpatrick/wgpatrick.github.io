@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    <header class="site-header">
+      <div class="wrapper">
+        {% raw %}{% if page.url == "/" %}
+          <span class="site-title">Will Patrick</span>
+        {% else %}
+          <a class="site-title" href="/">Will Patrick</a>
+        {% endif %}{% endraw %}
+      </div>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: ""  # Let's put CV back as the title temporarily for debugging
+title: "Curriculum Vitae"
 permalink: /cv/
-nav_title: "Curriculum Vitae"  # This will show in navigation while keeping page title empty
+nav_title: "Curriculum Vitae"
 ---
 
 ## Education

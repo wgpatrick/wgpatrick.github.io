@@ -13,13 +13,13 @@ permalink: /cv/
 
 ## Experience
 
-### Company Name (Role Name, 20XX - 20XX)
+**Company Name** (Role Name, 20XX - 20XX)  
 Description of role and key accomplishments. This can be 2-3 sentences that highlight the most important aspects of your work and impact in this position.
 
-### Company Name (Role Name, 20XX - 20XX)
+**Company Name** (Role Name, 20XX - 20XX)  
 Description of role and key accomplishments. This can be 2-3 sentences that highlight the most important aspects of your work and impact in this position.
 
-### Company Name (Role Name, 20XX - 20XX)
+**Company Name** (Role Name, 20XX - 20XX)  
 Description of role and key accomplishments. This can be 2-3 sentences that highlight the most important aspects of your work and impact in this position.
 
 ## Publications

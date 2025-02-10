@@ -1,0 +1,45 @@
+@import "minima";
+
+/* Test style */
+body {
+    background-color: #f0f0f0 !important; /* Light grey background */
+}
+
+/* Custom styles */
+.intro-container {
+    display: flex !important;
+    gap: 30px !important;
+    margin: 20px 0 !important;
+    align-items: flex-start !important;
+    border: 2px solid red !important; /* Debug border */
+}
+
+.intro-text {
+    flex: 1 1 60% !important;
+    min-width: 0 !important;
+    border: 2px solid blue !important; /* Debug border */
+}
+
+.intro-image {
+    flex: 0 0 35% !important;
+    max-width: 35% !important;
+    border: 2px solid green !important; /* Debug border */
+}
+
+.intro-image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 4px !important;
+}
+
+@media (max-width: 600px) {
+    .intro-container {
+        flex-direction: column !important;
+    }
+    
+    .intro-image {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}

@@ -1,16 +1,22 @@
 ---
 layout: home
 title: ""
---- 
+---
 
-![Will Patrick](/assets/images/profile.jpg){: .profile-pic}
+<div class="intro-container">
+  <div class="intro-text">
+    I'm Will Patrick, a founder, engineer, and researcher interested in biology, robotics, fabrication, music, and more. I co-founded Culture Biosciences, where I served as CEO for 8 years, building cloud-based bioprocessing technology. 
 
-I'm **Will Patrick**, a founder, engineer, and researcher interested in biology, robotics, fabrication, music, and more. I co-founded Culture Biosciences, where I served as CEO for 8 years, building cloud-based bioprocessing technology. 
-
-- [LinkedIn](https://www.linkedin.com/in/wgpatrick)
-- [Google Scholar](https://scholar.google.com/citations?user=pE91wmIAAAAJ&hl=en)
-- [Email](mailto:wgpatrick@gmail.com)
-
+    <p>
+      <a href="https://www.linkedin.com/in/wgpatrick">LinkedIn</a> •
+      <a href="https://scholar.google.com/citations?user=pE91wmIAAAAJ&hl=en">Google Scholar</a> •
+      <a href="mailto:wgpatrick@gmail.com">Email</a>
+    </p>
+  </div>
+  <div class="intro-image">
+    <img src="/assets/images/profile.jpg" alt="Will Patrick" class="profile-pic">
+  </div>
+</div>
 
 **What I'm Up To Now**
 

@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Projects
+title: "Projects"
 permalink: /projects/
+
 ---
 
 **Culture Biosciences** (2016-2024)  

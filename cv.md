@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Curriculum Vitae"
+title: "CV"
 permalink: /cv/
 nav_title: "Curriculum Vitae"
 ---

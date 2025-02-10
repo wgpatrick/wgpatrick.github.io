@@ -2,6 +2,7 @@
 layout: page
 title: ""
 permalink: /cv/
+nav_title: "Curriculum Vitae"  # This will show in navigation while keeping page title empty
 ---
 
 ## Education

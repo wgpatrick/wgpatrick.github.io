@@ -4,11 +4,11 @@
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
       
-      {% raw %}{% if page.url == "/" %}
+      {%- if page.url == "/" -%}
         <span class="site-title">Will Patrick</span>
-      {% else %}
+      {%- else -%}
         <a class="site-title" rel="author" href="{{ '/' | relative_url }}">Will Patrick</a>
-      {% endif %}{% endraw %}
+      {%- endif -%}
   
       {%- if titles_size > 0 -%}
         <nav class="site-nav">

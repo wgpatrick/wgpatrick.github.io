@@ -6,8 +6,8 @@ title: ""
 <div class="intro-container">
   <div class="intro-text">
     I'm Will Patrick, a founder, engineer, and researcher interested in biology, robotics, fabrication, music, and more. I co-founded Culture Biosciences, where I served as CEO for 8 years, building cloud-based bioprocessing technology. 
-
-    <p>
+    
+    <p style="margin-top: 20px;">
       <a href="https://www.linkedin.com/in/wgpatrick">LinkedIn</a> •
       <a href="https://scholar.google.com/citations?user=pE91wmIAAAAJ&hl=en">Google Scholar</a> •
       <a href="mailto:wgpatrick@gmail.com">Email</a>
@@ -26,4 +26,4 @@ title: ""
 - **Music** – I'm making music using Ableton Live and Push 3. 
 - **Dadding** - I live in Bernal Heights with my wife, two kids, and dog. 
 
----
+

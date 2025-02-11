@@ -1,4 +1,17 @@
-_site
+# Jekyll build directory
+_site/
+_site/*
+
+# Mac system files
 .DS_Store
-assets/.DS_Store
 **/.DS_Store
+
+# Jekyll metadata
+.jekyll-metadata
+.jekyll-cache/
+
+# Ruby environment
+.bundle/
+vendor/
+
+assets/.DS_Store

@@ -92,7 +92,7 @@ Will Patrick is an entrepreneur and technologist with expertise spanning biotech
 ## <span id="experience">Experience</span>
 
 **Culture Biosciences** (Co-Founder and CEO, 2016 - 2024)  
-Led company for 8 years with the mission to make upstream bioprocess development and scale-up as fast and easy as scaling software. Built a cloud platform enabling biopharma, biotechnology, and synthetic biology companies to run their bioprocessing R&D remotely through Culture's Console web application.
+Led company for 8 years with the mission to make upstream bioprocess development and scale-up as fast and easy as scaling software. Built a cloud platform enabling biopharma, biotechnology, and synthetic biology companies to run their bioprocessing R&D remotely through Culture's Console web application. Raised over $100M in venture capital funding to support the company's growth and development of innovative bioprocessing technologies. Collaborated with over 75 biotech companies worldwide to support their bioprocess development and established a strategic technology partnership with Cytiva, a global leader in bioprocessing.
 
 **MIT Media Lab** (Research Assistant, 2013 - 2015)  
 Researcher in the Mediated Matter group focusing on digital fabrication and synthetic biology. Projects included 3D printed microfluidics and wearables with embedded genetically modified organisms. Collaborated with Silver Lab at Harvard Medical School, MIT Lincoln Lab, and MIT Voigt Lab. Research received FastCompany Innovation by Design award and was exhibited at Cooper Hewitt, Smithsonian Design Museum.

@@ -27,21 +27,21 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>A next-generation bioreactor system designed for advanced bioprocess development. The Stratyx 250 combines sophisticated process control with innovative design to enable scalable, automated fermentation processes. This system represents a significant advancement in biomanufacturing technology, offering unprecedented control and monitoring capabilities.</p>
+        <p>The Stratyx 250 was developed in response to consistent customer requests to purchase the bioreactor technology we had built for Culture's cloud bioreactor service. Development began in late 2023, with customer launch planned for 2025. The system's key innovation is its cloud connectivity, enabling remote control of bioprocesses and data access from any device—a significant departure from traditional systems that require on-site operation. Each unit ships with access to Console, our comprehensive bioprocess data management and analysis platform. Designed with rapid deployment in mind, the skid-mounted system helps fast-growing biotech companies quickly scale their operations without the lengthy installation times typical of traditional bioreactor systems.</p>
         
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/stratyx/stratyx-01.jpg" alt="Stratyx 250 System" class="carousel-image">
-              <figcaption>The Stratyx 250 bioreactor system in operation</figcaption>
+              <img src="/assets/images/projects/stratyx/stratyx-01.jpg" alt="Stratyx 250 System" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/stratyx/stratyx-02.jpg" alt="Stratyx Interface" class="carousel-image">
-              <figcaption>Advanced touchscreen interface for process control</figcaption>
+              <img src="/assets/images/projects/stratyx/stratyx-02.jpg" alt="Stratyx Interface" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/stratyx/stratyx-03.jpg" alt="Stratyx Manufacturing" class="carousel-image">
-              <figcaption>Manufacturing and assembly of Stratyx units</figcaption>
+              <img src="/assets/images/projects/stratyx/stratyx-03.jpg" alt="Stratyx Detail" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/stratyx/stratyx-04.jpg" alt="Stratyx Installation" class="carousel-image" />
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -62,21 +62,24 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>Pioneered a revolutionary cloud-based biomanufacturing platform that enables remote operation and monitoring of bioreactors. This service transformed bioprocess development by providing scalable, flexible access to advanced fermentation capabilities through a cloud interface.</p>
+        <p>Pioneered a "cloud biomanufacturing" platform that enables biotech companies to run their bioprocess experiments remotely, similar to how cloud computing allows companies to deploy code without building their own data centers. Since launching with four prototype bioreactors in late 2017, the service has grown to include over 200 small-scale 250mL bioreactors and custom-built 5L systems for larger-scale processes. The platform has supported over 75 companies, ranging from synthetic biology startups to large pharmaceutical firms, and successfully cultured hundreds of different organisms, including CHO cells, HEK cells producing AAVs, filamentous fungi, E. coli, and soil bacteria. Over time, we developed Console, a comprehensive software platform providing real-time access to experimental data and advanced analysis tools, making bioprocess development more accessible and efficient than ever before.</p>
         
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-01.jpg" alt="Cloud Bioreactor Facility" class="carousel-image">
-              <figcaption>Our state-of-the-art bioreactor facility in South San Francisco</figcaption>
+              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-01.jpg" alt="Cloud Bioreactor Facility" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-02.jpg" alt="Cloud Interface" class="carousel-image">
-              <figcaption>Cloud-based monitoring and control interface</figcaption>
+              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-02.jpg" alt="Cloud Interface" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-03.jpg" alt="Automation Systems" class="carousel-image">
-              <figcaption>Automated sampling and analysis systems</figcaption>
+              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-03.jpg" alt="Automation Systems" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-04.jpg" alt="Bioreactor Detail" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-05.jpg" alt="Laboratory Setup" class="carousel-image" />
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -97,21 +100,18 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>Contributed to early-stage development of autonomous delivery drone technology at X (formerly Google[x]). Focused on mechanical systems design and prototype development for novel aircraft configurations.</p>
+        <p>As a Rapid Evaluator at Google[x], I explored the potential of autonomous aerial vehicles for ultra-rapid package delivery, with a focus on emergency medical applications such as delivering automated external defibrillators (AEDs) during cardiac emergencies. Through iterative prototyping and testing, I developed a winching system for ground delivery that was subsequently implemented in the aircraft design. This work contributed to the early development of what would become Wing, Alphabet's autonomous delivery drone service.</p>
         
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
               <img src="/assets/images/projects/wing/wing-01.jpg" alt="Wing Prototype" class="carousel-image">
-              <figcaption>Early prototype development and testing</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/wing/wing-02.jpg" alt="Design Process" class="carousel-image">
-              <figcaption>Mechanical system design iterations</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/wing/wing-03.jpg" alt="Testing" class="carousel-image">
-              <figcaption>Field testing and validation</figcaption>
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -137,21 +137,15 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>An interactive art installation exploring the intersection of wearable technology and social interaction. Bad Hatter combines LED matrices, motion sensors, and real-time visualization to create dynamic, responsive headwear that reacts to wearer behavior and environmental conditions.</p>
+        <p>The Bad Hatter is an interactive art installation created for Burning Man 2024 led by artists Winslow Porter and Neil Mendoza. The piece features a giant illuminated hat with over 3,000 LEDs, interactive shock sensors, and an integrated drum machine. When participants touch the electrified (and safe) brim of the hat, their reactions become part of a dynamic musical composition. I led the structural design and engineering of the installation, which needed to withstand harsh desert conditions while housing complex electronics, ventilation systems, and mechanical components. The project received an official Burning Man Art Honorarium and was installed on the playa in August 2024.</p>
         
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/bad-hatter/bad-hatter-01.jpg" alt="Bad Hatter Installation" class="carousel-image">
-              <figcaption>Interactive LED hat display during night installation</figcaption>
+              <img src="/assets/images/projects/bad-hatter/bad-hatter-01.jpg" alt="Bad Hatter Installation" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/bad-hatter/bad-hatter-02.jpg" alt="Bad Hatter Construction" class="carousel-image">
-              <figcaption>Internal electronics and sensor array construction</figcaption>
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/bad-hatter/bad-hatter-03.jpg" alt="Bad Hatter Interface" class="carousel-image">
-              <figcaption>Custom control interface for pattern programming</figcaption>
+              <img src="/assets/images/projects/bad-hatter/bad-hatter-02.jpg" alt="Bad Hatter Construction" class="carousel-image" />
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -178,31 +172,24 @@ permalink: /projects/
           <div class="carousel-container">
             <figure class="carousel-slide">
               <img src="/assets/images/projects/farma/farma-01.jpg" alt="Farma Device Overview" class="carousel-image">
-              <figcaption>The complete Farma device</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/farma/farma-02.jpg" alt="Farma Interface" class="carousel-image">
-              <figcaption>User interface and control panel</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/farma/farma-03.jpg" alt="Farma Components" class="carousel-image">
-              <figcaption>Internal components and mechanisms</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/farma/farma-04.jpg" alt="Farma Process" class="carousel-image">
-              <figcaption>Production process demonstration</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/farma/farma-05.jpg" alt="Farma Detail" class="carousel-image">
-              <figcaption>Detailed view of key features</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/farma/farma-06.jpg" alt="Farma Installation" class="carousel-image">
-              <figcaption>Installation at Autodesk Gallery</figcaption>
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/farma/farma-07.jpg" alt="Farma Context" class="carousel-image">
-              <figcaption>Farma in context</figcaption>
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -223,56 +210,35 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>A groundbreaking project in 3D-printed wearable technology that explores the integration of synthetic biology and digital fabrication. Mushtari features complex internal channels designed to host living organisms, pushing the boundaries of what's possible in biodesign.</p>
+        <p>A project exploring the intersection of wearable technology and synthetic biology, Mushtari features 58 meters of internal fluid channels designed to host living organisms. The wearable functions as a microbial factory, using synthetic biology to convert sunlight into useful products through a symbiotic relationship between photosynthetic microbes and compatible heterotrophs. Created using generative growth algorithms that mimic biological processes, the design was brought to life through innovative 3D printing techniques developed in collaboration with Stratasys. The project was directed by Neri Oxman and completed by the Mediated Matter Group at MIT, with Will Patrick as lead researcher.</p>
         
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/mushtari/mushtari-01.jpg" alt="Mushtari Full View" class="carousel-image">
-              <figcaption>Complete view of the Mushtari wearable</figcaption>
+              <div class="video-wrapper">
+                <iframe src="https://player.vimeo.com/video/131786000" 
+                        width="100%" 
+                        height="450" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/mushtari/mushtari-02.jpg" alt="Internal Channels" class="carousel-image">
-              <figcaption>Detail of the internal channel system</figcaption>
+              <img src="/assets/images/projects/mushtari/mushtari-01.jpg" alt="Mushtari Full View" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/mushtari/mushtari-03.jpg" alt="Fabrication Process" class="carousel-image">
-              <figcaption>3D printing process and assembly</figcaption>
-            </figure>
-          </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
-          <div class="carousel-dots"></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Aquahoja -->
-    <article class="project-entry">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="header-content">
-          <h3>Aquahoja</h3>
-          <div class="project-meta">MIT Media Lab • 2013-2015</div>
-        </div>
-        <span class="expand-button">+</span>
-      </div>
-      
-      <div class="project-content">
-        <p>An innovative material exploration project developing water-based fabrication techniques for biodegradable structures. Aquahoja combines natural polymers with advanced digital manufacturing to create sustainable, programmable materials.</p>
-        
-        <div class="carousel">
-          <div class="carousel-container">
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/aquahoja/aquahoja-01.jpg" alt="Aquahoja Structure" class="carousel-image">
-              <figcaption>Completed Aquahoja structure</figcaption>
+              <img src="/assets/images/projects/mushtari/mushtari-02.jpg" alt="Mushtari Detail" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/aquahoja/aquahoja-02.jpg" alt="Material Development" class="carousel-image">
-              <figcaption>Material development and testing</figcaption>
+              <img src="/assets/images/projects/mushtari/mushtari-03.jpg" alt="Design Process" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/aquahoja/aquahoja-03.jpg" alt="Fabrication" class="carousel-image">
-              <figcaption>Digital fabrication process</figcaption>
+              <img src="/assets/images/projects/mushtari/mushtari-04.jpg" alt="Construction Detail" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/mushtari/mushtari-05.jpg" alt="Final Installation" class="carousel-image" />
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -298,21 +264,33 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>A collaborative architectural project creating a 1,200 sq-ft communal space in the Santa Cruz Mountains. This structure combines sustainable building practices with modern design principles, emphasizing community engagement and environmental integration.</p>
+        <p>Together with eight friends, I co-own a 30-acre property nestled in the redwoods. We're building a 1,200-square-foot communal structure that will serve as a shared kitchen and gathering space. The project embodies our vision of creating a place where we can spend quality time together, work on creative projects, and enjoy the spectacular natural setting. Since 2022, we've been designing, engineering, and constructing the building ourselves, recently completing the exterior work. This space represents our commitment to collaborative building and maintaining a connection to California's remarkable landscape.</p>
         
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Structure Overview" class="carousel-image">
-              <figcaption>Aerial view of the completed structure</figcaption>
+              <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Structure Overview" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-02.jpg" alt="Construction Process" class="carousel-image">
-              <figcaption>Construction progress and techniques</figcaption>
+              <img src="/assets/images/projects/communal-structure/communal-structure-02.jpg" alt="Construction Process" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-03.jpg" alt="Interior Design" class="carousel-image">
-              <figcaption>Interior spaces and natural light integration</figcaption>
+              <img src="/assets/images/projects/communal-structure/communal-structure-03.jpg" alt="Site Location" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-04.jpg" alt="Building Progress" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-05.jpg" alt="Structural Details" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-06.jpg" alt="Interior Work" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-07.jpg" alt="Construction Team" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-08.jpg" alt="Site Context" class="carousel-image" />
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -338,21 +316,53 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>Pioneered new techniques for fabricating microfluidic devices using multi-material 3D printing. This research explored novel approaches to creating complex fluid handling systems, enabling new possibilities in biological experimentation and medical diagnostics.</p>
+        <p>Demonstrated new techniques for manufacturing microfluidic consumables using commercial 3D-printers. We achieved reactions in volumes as small as 490 nL with channel widths of 220 micrometers, while keeping per-unit microfluidic consumable costs between $0.61 and $5.71. This approach demonstrated how commodity digital fabrication tools could democratize production of microfluidic hardware. Read the full <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143636">publication</a>.</p>
         
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/microfluidics/microfluidics-01.jpg" alt="Microfluidic Device" class="carousel-image">
-              <figcaption>3D printed microfluidic device prototype</figcaption>
+              <img src="/assets/images/projects/microfluidics/microfluidics-01.jpg" alt="Microfluidic Device" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/microfluidics/microfluidics-02.jpg" alt="Printing Process" class="carousel-image">
-              <figcaption>Multi-material printing process</figcaption>
+              <img src="/assets/images/projects/microfluidics/microfluidics-02.jpg" alt="Printing Process" class="carousel-image" />
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/microfluidics/microfluidics-03.jpg" alt="Testing Setup" class="carousel-image">
-              <figcaption>Experimental testing and validation setup</figcaption>
+              <img src="/assets/images/projects/microfluidics/microfluidics-03.jpg" alt="Testing Setup" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/microfluidics/microfluidics-04.jpg" alt="Device Detail" class="carousel-image" />
+            </figure>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3D Printed Multimaterial Valve -->
+    <article class="project-entry">
+      <div class="project-header" onclick="toggleProject(this)">
+        <div class="header-content">
+          <h3>3D Printed Multimaterial Valve</h3>
+          <div class="project-meta">MIT Media Lab • 2013-2015</div>
+        </div>
+        <span class="expand-button">+</span>
+      </div>
+      
+      <div class="project-content">
+        <p>Led by Steven Keating, this project pioneered the development of multimaterial 3D printed microfluidic valves that combine rigid and flexible materials in a single print. We demonstrated a novel valve design where a flexible membrane, sandwiched between stiff flow and control channels, could be deformed under pressure to regulate fluid flow. This work enabled programmable fluid routing within 3D printed microfluidic devices, advancing beyond single-material limitations of previous approaches. The research was conducted in collaboration with Isabella Gariboldi, Will Patrick, Prof. Neri Oxman, and David Kong of MIT Lincoln Laboratory. Read the full <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0160624">publication</a>.</p>
+        
+        <div class="carousel">
+          <div class="carousel-container">
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/multimaterial-valve/valve-01.jpg" alt="Multimaterial Valve Overview" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/multimaterial-valve/valve-02.jpg" alt="Valve Construction" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/multimaterial-valve/valve-03.jpg" alt="Valve Testing" class="carousel-image" />
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
@@ -488,8 +498,8 @@ permalink: /projects/
 
 .carousel-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 20px;
+  transform: none;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -497,6 +507,7 @@ permalink: /projects/
   cursor: pointer;
   border-radius: 4px;
   font-size: 18px;
+  z-index: 2;
 }
 
 .carousel-button:hover {
@@ -538,14 +549,6 @@ permalink: /projects/
   position: relative;
 }
 
-figcaption {
-  text-align: center;
-  padding: 10px;
-  color: #666;
-  font-style: italic;
-  font-size: 0.9em;
-}
-
 .project-meta {
   font-size: 0.9em;
   color: #666;
@@ -579,6 +582,23 @@ h1.page-title {
 /* Add scroll margin to section headings */
 [id] {
   scroll-margin-top: 70px;  /* Height of nav (including padding) + some extra space */
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
 }
 </style>
 

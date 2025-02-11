@@ -156,11 +156,11 @@ Developed charge and discharge controls for solar-powered LED home lighting syst
 
 ## Press Mentions
 
+- [How Culture Biosciences Is Meeting The Demand For Large-Scale Biomanufacturing](https://www.forbes.com/sites/johncumbers/2021/10/14/how-culture-biosciences-is-meeting-the-demand-for-large-scale-biomanufacturing/) - Forbes, October 2021
 - [With $15M Series A, Culture Biosciences Is Growing Cells In The Cloud](https://www.forbes.com/sites/johncumbers/2020/03/04/with-15m-series-a-culture-biosciences-is-growing-cells-in-the-cloud/) - Forbes, March 2020
 - [Two former members of Google's skunkworks division have launched a biomanufacturing company](https://techcrunch.com/2019/02/12/two-former-members-of-googles-skunkworks-division-have-launched-a-biomanufacturing-company/) - TechCrunch, February 2019
 - [A New Lab Is Brewing Microbes to Create Makeup and Medicines](https://www.wired.com/story/culture-biosciences-is-fermenting-microbes-for-meat-makeup-and-fuel/) - WIRED, March 2019
-- [From MIT's Neri Oxman, The Far-Flung Future Of Wearables](https://www.fastcompany.com/3047486/from-mits-neri-oxman-the-far-flung-future-of-wearables) - Fast Company, June 2015
+- [Beauty―Cooper Hewitt Design Triennial Exhibition](https://www.cooperhewitt.org/2015/09/15/cooper-hewitt-announces-2016-exhibition-beauty%E2%80%95cooper-hewitt-design-triennial/) - Cooper Hewitt, Smithsonian Design Museum, February - August 2016
 - [Will Patrick's Farma device lets users grow and harvest drugs at home](https://www.dezeen.com/2015/12/08/will-patrick-farma-bioreactor-prototype-pharmaceutical-drugs-production-at-home/) - Dezeen, December 2015
 - [Innovation by Design Awards Winner: Fashion](https://www.fastcompany.com/3049901/the-2015-innovation-by-design-awards-winners-fashion) - Fast Company, October 2015
-- Featured in Creative Applications, 2015
-- [Beauty―Cooper Hewitt Design Triennial Exhibition](https://www.cooperhewitt.org/2015/09/15/cooper-hewitt-announces-2016-exhibition-beauty%E2%80%95cooper-hewitt-design-triennial/) - Cooper Hewitt, Smithsonian Design Museum, February - August 2016 
+- [From MIT's Neri Oxman, The Far-Flung Future Of Wearables](https://www.fastcompany.com/3047486/from-mits-neri-oxman-the-far-flung-future-of-wearables) - Fast Company, June 2015

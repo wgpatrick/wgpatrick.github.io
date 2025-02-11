@@ -44,8 +44,8 @@ permalink: /projects/
               <figcaption>Manufacturing and assembly of Stratyx units</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -79,8 +79,8 @@ permalink: /projects/
               <figcaption>Automated sampling and analysis systems</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -114,8 +114,8 @@ permalink: /projects/
               <figcaption>Field testing and validation</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -154,8 +154,8 @@ permalink: /projects/
               <figcaption>Custom control interface for pattern programming</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -177,20 +177,36 @@ permalink: /projects/
         <div class="carousel">
           <div class="carousel-container">
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/farma/farma-01.jpg" alt="Farma Device" class="carousel-image">
-              <figcaption>The Farma device prototype</figcaption>
+              <img src="/assets/images/projects/farma/farma-01.jpg" alt="Farma Device Overview" class="carousel-image">
+              <figcaption>The complete Farma device</figcaption>
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/farma/farma-02.jpg" alt="Interface Design" class="carousel-image">
-              <figcaption>User interface and control system</figcaption>
+              <img src="/assets/images/projects/farma/farma-02.jpg" alt="Farma Interface" class="carousel-image">
+              <figcaption>User interface and control panel</figcaption>
             </figure>
             <figure class="carousel-slide">
-              <img src="/assets/images/projects/farma/farma-03.jpg" alt="Production Process" class="carousel-image">
-              <figcaption>Demonstration of the production process</figcaption>
+              <img src="/assets/images/projects/farma/farma-03.jpg" alt="Farma Components" class="carousel-image">
+              <figcaption>Internal components and mechanisms</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/farma/farma-04.jpg" alt="Farma Process" class="carousel-image">
+              <figcaption>Production process demonstration</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/farma/farma-05.jpg" alt="Farma Detail" class="carousel-image">
+              <figcaption>Detailed view of key features</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/farma/farma-06.jpg" alt="Farma Installation" class="carousel-image">
+              <figcaption>Installation at Autodesk Gallery</figcaption>
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/farma/farma-07.jpg" alt="Farma Context" class="carousel-image">
+              <figcaption>Farma in context</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -224,8 +240,8 @@ permalink: /projects/
               <figcaption>3D printing process and assembly</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -259,8 +275,8 @@ permalink: /projects/
               <figcaption>Digital fabrication process</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -299,8 +315,8 @@ permalink: /projects/
               <figcaption>Interior spaces and natural light integration</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -339,8 +355,8 @@ permalink: /projects/
               <figcaption>Experimental testing and validation setup</figcaption>
             </figure>
           </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -357,7 +373,7 @@ permalink: /projects/
 .projects-nav {
   position: sticky;
   top: 0;
-  background: white;
+  background: #f8f8f8;
   margin: 0;
   padding: 15px 0;
   border-bottom: 1px solid #ddd;
@@ -368,9 +384,10 @@ permalink: /projects/
   max-width: 800px;
   margin: 0 auto;
   padding-left: 20px;
+  margin-bottom: 30px;
 }
 
-.nav-link {
+.projects-nav .nav-link {
   text-decoration: none;
   color: #666;
   padding: 5px 0;
@@ -378,11 +395,11 @@ permalink: /projects/
   position: relative;
 }
 
-.nav-link:hover {
+.projects-nav .nav-link:hover {
   color: #333;
 }
 
-.nav-link::after {
+.projects-nav .nav-link::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -394,12 +411,12 @@ permalink: /projects/
   transition: transform 0.2s;
 }
 
-.nav-link:hover::after {
+.projects-nav .nav-link:hover::after {
   transform: scaleX(1);
 }
 
 .project-section:first-of-type {
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .project-section {
@@ -542,81 +559,89 @@ figcaption {
 .header-content h3 {
   margin: 0;
 }
+
+h1.page-title {
+  margin-top: 60px;  /* Add space above the title */
+}
+
+.home {
+  margin-top: 60px;
+}
+
+.post-header {
+  margin-top: 30px;
+}
+
+.post-title {
+  margin-top: 0;
+}
+
+/* Add scroll margin to section headings */
+[id] {
+  scroll-margin-top: 70px;  /* Height of nav (including padding) + some extra space */
+}
 </style>
 
 <script>
-let currentSlide = 0;
-let touchStartX = 0;
-let touchEndX = 0;
-const slides = document.querySelectorAll('.carousel-slide');
+let carousels = new Map();
 
-function initCarousel() {
-  const dotsContainer = document.querySelector('.carousel-dots');
-  dotsContainer.innerHTML = ''; // Clear existing dots
+function initCarousel(carouselElement) {
+  const slides = carouselElement.querySelectorAll('.carousel-slide');
+  const dotsContainer = carouselElement.querySelector('.carousel-dots');
+  const carouselId = `carousel-${Date.now()}-${Math.random()}`;
+  
+  carousels.set(carouselId, {
+    currentSlide: 0,
+    element: carouselElement,
+    slides: slides
+  });
+  
+  // Clear and create dots
+  dotsContainer.innerHTML = '';
   slides.forEach((_, i) => {
     const dot = document.createElement('span');
     dot.className = 'dot';
-    dot.onclick = () => goToSlide(i);
+    dot.onclick = () => goToSlide(carouselId, i);
     dotsContainer.appendChild(dot);
   });
-  updateDots();
   
-  // Add touch event listeners
-  const carousel = document.querySelector('.carousel');
-  carousel.addEventListener('touchstart', handleTouchStart, false);
-  carousel.addEventListener('touchmove', handleTouchMove, false);
-  carousel.addEventListener('touchend', handleTouchEnd, false);
+  carouselElement.dataset.carouselId = carouselId;
+  updateDots(carouselId);
 }
 
-function handleTouchStart(event) {
-  touchStartX = event.touches[0].clientX;
-}
-
-function handleTouchMove(event) {
-  touchEndX = event.touches[0].clientX;
-  // Prevent page scrolling while swiping carousel
-  event.preventDefault();
-}
-
-function handleTouchEnd() {
-  const touchDiff = touchStartX - touchEndX;
+function moveCarousel(direction, button) {
+  const carousel = button.closest('.carousel');
+  const carouselId = carousel.dataset.carouselId;
+  if (!carouselId || !carousels.has(carouselId)) return;
   
-  // Only register as swipe if moved more than 50 pixels
-  if (Math.abs(touchDiff) > 50) {
-    if (touchDiff > 0) {
-      // Swiped left - next slide
-      moveCarousel(1);
-    } else {
-      // Swiped right - previous slide
-      moveCarousel(-1);
-    }
-  }
+  const state = carousels.get(carouselId);
+  state.currentSlide = (state.currentSlide + direction + state.slides.length) % state.slides.length;
+  updateCarousel(carouselId);
+}
+
+function goToSlide(carouselId, slideIndex) {
+  if (!carousels.has(carouselId)) return;
+  const state = carousels.get(carouselId);
+  state.currentSlide = slideIndex;
+  updateCarousel(carouselId);
+}
+
+function updateCarousel(carouselId) {
+  const state = carousels.get(carouselId);
+  if (!state) return;
   
-  // Reset touch coordinates
-  touchStartX = 0;
-  touchEndX = 0;
+  const container = state.element.querySelector('.carousel-container');
+  container.style.transform = `translateX(-${state.currentSlide * 100}%)`;
+  updateDots(carouselId);
 }
 
-function moveCarousel(direction) {
-  currentSlide = (currentSlide + direction + slides.length) % slides.length;
-  updateCarousel();
-}
-
-function goToSlide(n) {
-  currentSlide = n;
-  updateCarousel();
-}
-
-function updateCarousel() {
-  const container = document.querySelector('.carousel-container');
-  container.style.transform = `translateX(-${currentSlide * 100}%)`;
-  updateDots();
-}
-
-function updateDots() {
-  const dots = document.querySelectorAll('.dot');
+function updateDots(carouselId) {
+  const state = carousels.get(carouselId);
+  if (!state) return;
+  
+  const dots = state.element.querySelectorAll('.dot');
   dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === currentSlide);
+    dot.classList.toggle('active', i === state.currentSlide);
   });
 }
 
@@ -631,13 +656,21 @@ function toggleProject(header) {
     content.classList.add('active');
     button.textContent = '−';
     // Initialize carousel when project is opened
-    setTimeout(initCarousel, 0);
+    const carousel = content.querySelector('.carousel');
+    if (carousel && !carousel.dataset.carouselId) {
+      setTimeout(() => initCarousel(carousel), 0);
+    }
   }
 }
 
-// Initialize carousels when page loads
+// Initialize all carousels in expanded projects on page load
 document.addEventListener('DOMContentLoaded', function() {
   const activeProjects = document.querySelectorAll('.project-content.active');
-  activeProjects.forEach(() => setTimeout(initCarousel, 0));
+  activeProjects.forEach(content => {
+    const carousel = content.querySelector('.carousel');
+    if (carousel && !carousel.dataset.carouselId) {
+      initCarousel(carousel);
+    }
+  });
 });
 </script>

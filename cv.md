@@ -1,22 +1,95 @@
 ---
 layout: page
-title: "CV"
+title: Curriculum Vitae
 permalink: /cv/
-nav_title: "Curriculum Vitae"
 ---
+
+<div class="cv-nav">
+  <a href="#experience" class="nav-link">Experience</a>
+  <a href="#education" class="nav-link">Education</a>
+  <a href="#publications" class="nav-link">Publications</a>
+  <a href="#press" class="nav-link">Press</a>
+  <a href="#patents" class="nav-link">Patents</a>
+</div>
+
+<style>
+.cv-nav {
+  position: sticky;
+  top: 0;
+  background: #f8f8f8;  /* Light gray background */
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.cv-nav .nav-link {
+  text-decoration: none;
+  color: #666;
+  padding: 5px 0;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.cv-nav .nav-link:hover {
+  color: #333;
+}
+
+.cv-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.cv-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Add some padding to the first section */
+#experience {
+  padding-top: 20px;
+}
+
+h1.page-title {
+  margin-top: 60px;  /* Add space above the title */
+}
+
+.home {
+  margin-top: 60px;
+}
+
+.post-header {
+  margin-top: 30px;
+}
+
+.post-title {
+  margin-top: 0;
+}
+
+/* Add scroll margin to section headings */
+[id] {
+  scroll-margin-top: 70px;  /* Height of nav (including padding) + some extra space */
+}
+</style>
 
 ## Biography
 
 Will Patrick is an entrepreneur and technologist with expertise spanning biotechnology, robotics, and digital fabrication. He is the founder of Culture Biosciences, where he served as CEO for 8 years (2016-2024), developing cloud-based bioprocess development platforms for the biotechnology industry. Previously, at Google[x], he worked as a Rapid Evaluator helping initiate Project Wing, Google's drone delivery effort. Will holds an M.S. from MIT Media Lab, where he researched 3D printed microfluidics and synthetic biology in the Mediated Matter group, resulting in multiple peer-reviewed publications and exhibitions at institutions including the Cooper Hewitt Smithsonian Design Museum. His work has led to over 20 patents in areas ranging from UAV systems to bioprocess control. Will received his B.S. in Mechanical Engineering from Duke University.
 
-## Education
-
-- M.S., MIT Media Lab, 2013 - 2015
-  - Research Group: Mediated Matter ([Neri Oxman](https://oxman.com/))
-- B.S., Duke University, 2010
-  - Mechanical Engineering
-
-## Experience
+## <span id="experience">Experience</span>
 
 **Culture Biosciences** (Co-Founder and CEO, 2016 - 2024)  
 Led company for 8 years with the mission to make upstream bioprocess development and scale-up as fast and easy as scaling software. Built a cloud platform enabling biopharma, biotechnology, and synthetic biology companies to run their bioprocessing R&D remotely through Culture's Console web application.
@@ -33,8 +106,14 @@ Developed low-cost infant incubators using innovative sleeping bag design with p
 **Duron Energy** (Engineering, 2009)  
 Developed charge and discharge controls for solar-powered LED home lighting systems.
 
+## <span id="education">Education</span>
 
-## Publications
+- M.S., MIT Media Lab, 2013 - 2015
+  - Research Group: Mediated Matter ([Neri Oxman](https://oxman.com/))
+- B.S., Duke University, 2010
+  - Mechanical Engineering
+
+## <span id="publications">Publications</span>
 
 **2016**
 
@@ -60,8 +139,45 @@ Developed charge and discharge controls for solar-powered LED home lighting syst
   L Mogas-Soldevila, J Duro-Royo, D Lizardo, M Kayser, W Patrick, S Sharma, S Keating, J Klein, C Inamura, N Oxman  
   Proceedings of IASS Annual Symposia, 2015
 
+## <span id="press">Press Mentions</span>
 
-## Patents
+- [How Culture Biosciences Is Meeting The Demand For Large-Scale Biomanufacturing](https://www.forbes.com/sites/johncumbers/2021/10/14/how-culture-biosciences-is-meeting-the-demand-for-large-scale-biomanufacturing/)  
+  *Forbes, October 2021*
+
+- [With $15M Series A, Culture Biosciences Is Growing Cells In The Cloud](https://www.forbes.com/sites/johncumbers/2020/03/04/with-15m-series-a-culture-biosciences-is-growing-cells-in-the-cloud/)  
+  *Forbes, March 2020*
+
+- [Two former members of Google's skunkworks division have launched a biomanufacturing company](https://techcrunch.com/2019/02/12/two-former-members-of-googles-skunkworks-division-have-launched-a-biomanufacturing-company/)  
+  *TechCrunch, February 2019*
+
+- [A New Lab Is Brewing Microbes to Create Makeup and Medicines](https://www.wired.com/story/culture-biosciences-is-fermenting-microbes-for-meat-makeup-and-fuel/)  
+  *WIRED, March 2019*
+
+- [Beauty―Cooper Hewitt Design Triennial Exhibition](https://www.cooperhewitt.org/2015/09/15/cooper-hewitt-announces-2016-exhibition-beauty%E2%80%95cooper-hewitt-design-triennial/)  
+  *Cooper Hewitt, Smithsonian Design Museum, February - August 2016*
+
+- [Will Patrick's Farma device lets users grow and harvest drugs at home](https://www.dezeen.com/2015/12/08/will-patrick-farma-bioreactor-prototype-pharmaceutical-drugs-production-at-home/)  
+  *Dezeen, December 2015*
+
+- [Fast Company: "This Gadget Lets You Brew Your Own Drugs In Your Kitchen"](https://www.fastcompany.com/3054562/this-gadget-lets-you-brew-your-own-drugs-in-your-kitchen)  
+  *Fast Company, December 2015*
+
+- [Innovation by Design Awards Winner: Fashion](https://www.fastcompany.com/3049901/the-2015-innovation-by-design-awards-winners-fashion)  
+  *Fast Company, October 2015*
+
+- [From MIT's Neri Oxman, The Far-Flung Future Of Wearables](https://www.fastcompany.com/3047486/from-mits-neri-oxman-the-far-flung-future-of-wearables)  
+  *Fast Company, June 2015*
+
+- [Dezeen: "Neri Oxman's 3D-printed Mushtari could host living organisms"](https://www.dezeen.com/2015/06/01/neri-oxman-3d-printing-photosynthetic-wearable-host-living-organisms-mit-mediated-matter/)  
+  *Dezeen, June 2015*
+
+- [Creative Applications: "Living Mushtari – 3D printed and generatively grown microbial factory"](https://www.creativeapplications.net/objects/living-mushtari-3d-printed-and-generatively-grown-microbial-factory/)  
+  *Creative Applications, June 2015*
+
+- [ArchDaily: "Neri Oxman's 'Mushtari' Is a 3D Printed Wearable That Makes Products from Sunlight"](https://www.archdaily.com/769818/neri-oxmans-mushtari-is-a-3d-printed-wearable-that-makes-products-from-sunlight)  
+  *ArchDaily, June 2015*
+
+## <span id="patents">Patents</span>
 
 **Culture Biosciences**
 
@@ -153,14 +269,3 @@ Developed charge and discharge controls for solar-powered LED home lighting syst
 - [Method, apparatus and system for adaptive light projection](https://patents.google.com/patent/US8836222B1/en)  
   W Patrick, E Teller, J Lee  
   US Patent 
-
-## Press Mentions
-
-- [How Culture Biosciences Is Meeting The Demand For Large-Scale Biomanufacturing](https://www.forbes.com/sites/johncumbers/2021/10/14/how-culture-biosciences-is-meeting-the-demand-for-large-scale-biomanufacturing/) - Forbes, October 2021
-- [With $15M Series A, Culture Biosciences Is Growing Cells In The Cloud](https://www.forbes.com/sites/johncumbers/2020/03/04/with-15m-series-a-culture-biosciences-is-growing-cells-in-the-cloud/) - Forbes, March 2020
-- [Two former members of Google's skunkworks division have launched a biomanufacturing company](https://techcrunch.com/2019/02/12/two-former-members-of-googles-skunkworks-division-have-launched-a-biomanufacturing-company/) - TechCrunch, February 2019
-- [A New Lab Is Brewing Microbes to Create Makeup and Medicines](https://www.wired.com/story/culture-biosciences-is-fermenting-microbes-for-meat-makeup-and-fuel/) - WIRED, March 2019
-- [Beauty―Cooper Hewitt Design Triennial Exhibition](https://www.cooperhewitt.org/2015/09/15/cooper-hewitt-announces-2016-exhibition-beauty%E2%80%95cooper-hewitt-design-triennial/) - Cooper Hewitt, Smithsonian Design Museum, February - August 2016
-- [Will Patrick's Farma device lets users grow and harvest drugs at home](https://www.dezeen.com/2015/12/08/will-patrick-farma-bioreactor-prototype-pharmaceutical-drugs-production-at-home/) - Dezeen, December 2015
-- [Innovation by Design Awards Winner: Fashion](https://www.fastcompany.com/3049901/the-2015-innovation-by-design-awards-winners-fashion) - Fast Company, October 2015
-- [From MIT's Neri Oxman, The Far-Flung Future Of Wearables](https://www.fastcompany.com/3047486/from-mits-neri-oxman-the-far-flung-future-of-wearables) - Fast Company, June 2015

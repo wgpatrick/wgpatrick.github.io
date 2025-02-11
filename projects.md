@@ -20,8 +20,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>Stratyx 250</h3>
-          <div class="project-meta">Culture Biosciences • 2023-2025</div>
+          <img src="/assets/images/projects/stratyx/stratyx-01.jpg" alt="Stratyx Preview" class="project-thumbnail">
+          <div>
+            <h3>Stratyx 250</h3>
+            <div class="project-meta">Culture Biosciences • 2023-2025</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -55,8 +58,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>Cloud Bioreactor Service</h3>
-          <div class="project-meta">Culture Biosciences • 2018-2024</div>
+          <img src="/assets/images/projects/cloud-bioreactor/cloud-bioreactor-01.jpg" alt="Cloud Bioreactor Preview" class="project-thumbnail">
+          <div>
+            <h3>Cloud Bioreactor Service</h3>
+            <div class="project-meta">Culture Biosciences • 2018-2024</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -93,8 +99,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>Wing</h3>
-          <div class="project-meta">X, Alphabet • 2012-2013</div>
+          <img src="/assets/images/projects/wing/wing-01.jpg" alt="Wing Preview" class="project-thumbnail">
+          <div>
+            <h3>Wing</h3>
+            <div class="project-meta">X, Alphabet • 2012-2013</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -130,8 +139,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>Bad Hatter</h3>
-          <div class="project-meta">Burning Man • 2024</div>
+          <img src="/assets/images/projects/bad-hatter/bad-hatter-01.jpg" alt="Bad Hatter Preview" class="project-thumbnail">
+          <div>
+            <h3>Bad Hatter</h3>
+            <div class="project-meta">Burning Man • 2024</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -159,8 +171,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>Farma</h3>
-          <div class="project-meta">Autodesk Artist in Residence • 2015</div>
+          <img src="/assets/images/projects/farma/farma-01.jpg" alt="Farma Preview" class="project-thumbnail">
+          <div>
+            <h3>Farma</h3>
+            <div class="project-meta">Autodesk Artist in Residence • 2015</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -203,8 +218,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>Mushtari</h3>
-          <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          <img src="/assets/images/projects/mushtari/mushtari-01.jpg" alt="Mushtari Preview" class="project-thumbnail">
+          <div>
+            <h3>Mushtari</h3>
+            <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -257,8 +275,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>Communal Structure</h3>
-          <div class="project-meta">Santa Cruz Mountains • 2022-2025</div>
+          <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Communal Structure Preview" class="project-thumbnail">
+          <div>
+            <h3>Communal Structure</h3>
+            <div class="project-meta">Santa Cruz Mountains • 2022-2025</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -309,8 +330,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>3D Printed Microfluidics</h3>
-          <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          <img src="/assets/images/projects/microfluidics/microfluidics-01.jpg" alt="Microfluidics Preview" class="project-thumbnail">
+          <div>
+            <h3>3D Printed Microfluidics</h3>
+            <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -344,8 +368,11 @@ permalink: /projects/
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <h3>3D Printed Multimaterial Valve</h3>
-          <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          <img src="/assets/images/projects/multimaterial-valve/valve-01.jpg" alt="Multimaterial Valve Preview" class="project-thumbnail">
+          <div>
+            <h3>3D Printed Multimaterial Valve</h3>
+            <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          </div>
         </div>
         <span class="expand-button">+</span>
       </div>
@@ -440,16 +467,26 @@ permalink: /projects/
 }
 
 .project-header {
-  padding: 15px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  background: #f9f9f9;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
 }
 
-.project-header h3 {
-  margin: 0;
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;  /* Space between thumbnail and text */
+  flex: 1;
+}
+
+.project-thumbnail {
+  width: 100px;  /* Adjust size as needed */
+  height: 70px;  /* Adjust size as needed */
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .project-content {

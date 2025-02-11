@@ -104,7 +104,7 @@ Developed and prototyped new ideas for X. Helped initiate Wing, Google's drone d
 Developed low-cost infant incubators using innovative sleeping bag design with phase-change material and heating unit in Bangalore, India.
 
 **Duron Energy** (Engineering, 2009)  
-Developed charge and discharge controls for solar-powered LED home lighting systems.
+Developed charge and discharge controls for solar-powered LED home lighting systems in Ahmedabad, India.
 
 ## <span id="education">Education</span>
 

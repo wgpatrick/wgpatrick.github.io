@@ -87,13 +87,17 @@ h1.page-title {
   scroll-margin-top: 70px;  /* Height of nav (including padding) + some extra space */
 }
 
-/* Mobile adjustments */
+/* More aggressive mobile adjustments */
 @media (max-width: 768px) {
   .cv-nav {
     padding-left: 10px;
     padding-right: 10px;
-    gap: 20px;
-    font-size: 0.9em;
+    gap: 15px;  /* Reduced from 20px */
+    font-size: 0.85em;  /* Reduced from 0.9em */
+  }
+  
+  .cv-nav a {
+    white-space: nowrap;  /* Prevent text wrapping */
   }
 }
 </style>

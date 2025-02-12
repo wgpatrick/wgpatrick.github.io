@@ -22,7 +22,7 @@ title: ""
 
 - **Culture Biosciences** – I'm continuing to support the growth of Culture Biosciences, the company I founded, as a Board Member.
 - **Building a Cabin** - I'm building a 1,200 sq-ft communal cabin in the Santa Cruz Mountains with 8 friends. 
-- **Exploring LLMs** – I'm exploring the capabilities of LLMs. 
+- **Exploring LLMs** – I'm exploring how LLMs and AI models could transform biotech, healthcare, and robotics.
 - **Music** – I'm making music using Ableton Live and Push 3. 
 - **Dadding** - I live in Bernal Heights with my wife, two kids, and dog. 
 

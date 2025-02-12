@@ -422,6 +422,19 @@ permalink: /projects/
   margin: 0 auto;
   padding-left: 20px;
   margin-bottom: 30px;
+  width: 100%;
+  overflow-x: auto;  /* Allow horizontal scroll on mobile if needed */
+  -webkit-overflow-scrolling: touch;  /* Smooth scroll on iOS */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .projects-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 20px;
+    font-size: 0.9em;
+  }
 }
 
 .projects-nav .nav-link {

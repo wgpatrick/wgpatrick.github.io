@@ -28,6 +28,9 @@ permalink: /cv/
   margin: 0 auto;
   padding-left: 20px;
   margin-bottom: 30px;
+  width: 100%;
+  overflow-x: auto;  /* Allow horizontal scroll on mobile if needed */
+  -webkit-overflow-scrolling: touch;  /* Smooth scroll on iOS */
 }
 
 .cv-nav .nav-link {
@@ -82,6 +85,16 @@ h1.page-title {
 /* Add scroll margin to section headings */
 [id] {
   scroll-margin-top: 70px;  /* Height of nav (including padding) + some extra space */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .cv-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 20px;
+    font-size: 0.9em;
+  }
 }
 </style>
 

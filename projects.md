@@ -181,7 +181,7 @@ permalink: /projects/
       </div>
       
       <div class="project-content">
-        <p>A speculative design project exploring the future of personal pharmaceutical production. Farma reimagines drug manufacturing through the lens of domestic appliances, questioning the boundaries between industrial and personal production.</p>
+        <p>Farma is a speculative design project exploring the future of distributed pharmaceutical production, created during my residency at the Autodesk Artist in Residence program. The piece features a home bioreactor that cultivates genetically modified Spirulina (a type of blue-green algae) to produce pharmaceutical compounds. The system automates the growing, monitoring, filtering, and drying processes needed to transform the Spirulina into consumable medication. Through this project, I aimed to provoke discussion about synthetic biology's role in our future, the democratization of drug production, and the implications of bringing engineered organisms into our homes.</p>
         
         <div class="carousel">
           <div class="carousel-container">

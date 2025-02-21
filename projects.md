@@ -131,9 +131,142 @@ permalink: /projects/
     </article>
   </section>
 
+  <!-- Research Section -->
+  <section id="research" class="project-section">
+    <h2>Research</h2>
+
+    <!-- 3D Printed Microfluidics -->
+    <article class="project-entry">
+      <div class="project-header" onclick="toggleProject(this)">
+        <div class="header-content">
+          <img src="/assets/images/projects/microfluidics/microfluidics-01.jpg" alt="Microfluidics Preview" class="project-thumbnail">
+          <div>
+            <h3>3D Printed Microfluidics</h3>
+            <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          </div>
+        </div>
+        <span class="expand-button">+</span>
+      </div>
+      
+      <div class="project-content">
+        <p>Demonstrated new techniques for manufacturing microfluidic consumables using commercial 3D-printers. We achieved reactions in volumes as small as 490 nL with channel widths of 220 micrometers, while keeping per-unit microfluidic consumable costs between $0.61 and $5.71. This approach demonstrated how commodity digital fabrication tools could democratize production of microfluidic hardware. Read the full <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143636">publication</a>.</p>
+        
+        <div class="carousel">
+          <div class="carousel-container">
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/microfluidics/microfluidics-01.jpg" alt="Microfluidic Device" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/microfluidics/microfluidics-02.jpg" alt="Printing Process" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/microfluidics/microfluidics-03.jpg" alt="Testing Setup" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/microfluidics/microfluidics-04.jpg" alt="Device Detail" class="carousel-image" />
+            </figure>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3D Printed Multimaterial Valve -->
+    <article class="project-entry">
+      <div class="project-header" onclick="toggleProject(this)">
+        <div class="header-content">
+          <img src="/assets/images/projects/multimaterial-valve/valve-01.jpg" alt="Multimaterial Valve Preview" class="project-thumbnail">
+          <div>
+            <h3>3D Printed Multimaterial Valve</h3>
+            <div class="project-meta">MIT Media Lab • 2013-2015</div>
+          </div>
+        </div>
+        <span class="expand-button">+</span>
+      </div>
+      
+      <div class="project-content">
+        <p>Led by Steven Keating, this project pioneered the development of multimaterial 3D printed microfluidic valves that combine rigid and flexible materials in a single print. We demonstrated a novel valve design where a flexible membrane, sandwiched between stiff flow and control channels, could be deformed under pressure to regulate fluid flow. This work enabled programmable fluid routing within 3D printed microfluidic devices, advancing beyond single-material limitations of previous approaches. The research was conducted in collaboration with Isabella Gariboldi, Will Patrick, Prof. Neri Oxman, and David Kong of MIT Lincoln Laboratory. Read the full <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0160624">publication</a>.</p>
+        
+        <div class="carousel">
+          <div class="carousel-container">
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/multimaterial-valve/valve-01.jpg" alt="Multimaterial Valve Overview" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/multimaterial-valve/valve-02.jpg" alt="Valve Construction" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/multimaterial-valve/valve-03.jpg" alt="Valve Testing" class="carousel-image" />
+            </figure>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Structural Section -->
+  <section id="structural" class="project-section">
+    <h2>Structural</h2>
+
+    <!-- Santa Cruz Mountains Communal Structure -->
+    <article class="project-entry">
+      <div class="project-header" onclick="toggleProject(this)">
+        <div class="header-content">
+          <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Communal Structure Preview" class="project-thumbnail">
+          <div>
+            <h3>Communal Structure</h3>
+            <div class="project-meta">Santa Cruz Mountains • 2022-2025</div>
+          </div>
+        </div>
+        <span class="expand-button">+</span>
+      </div>
+      
+      <div class="project-content">
+        <p>Together with eight friends, I co-own a 30-acre property nestled in the redwoods. We're building a 1,200-square-foot communal structure that will serve as a shared kitchen and gathering space. The project embodies our vision of creating a place where we can spend quality time together, work on creative projects, and enjoy the spectacular natural setting. Since 2022, we've been designing, engineering, and constructing the building ourselves, recently completing the exterior work. This space represents our commitment to collaborative building and maintaining a connection to California's remarkable landscape.</p>
+        
+        <div class="carousel">
+          <div class="carousel-container">
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Structure Overview" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-02.jpg" alt="Construction Process" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-03.jpg" alt="Site Location" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-04.jpg" alt="Building Progress" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-05.jpg" alt="Structural Details" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-06.jpg" alt="Interior Work" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-07.jpg" alt="Construction Team" class="carousel-image" />
+            </figure>
+            <figure class="carousel-slide">
+              <img src="/assets/images/projects/communal-structure/communal-structure-08.jpg" alt="Site Context" class="carousel-image" />
+            </figure>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
+          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
   <!-- Art & Design Section -->
   <section id="art-design" class="project-section">
-    <h2>Art & Design</h2>
+    <h2>Design</h2>
 
     <!-- Bad Hatter -->
     <article class="project-entry">
@@ -257,139 +390,6 @@ permalink: /projects/
             </figure>
             <figure class="carousel-slide">
               <img src="/assets/images/projects/mushtari/mushtari-05.jpg" alt="Final Installation" class="carousel-image" />
-            </figure>
-          </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
-          <div class="carousel-dots"></div>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- Structural Section -->
-  <section id="structural" class="project-section">
-    <h2>Structural</h2>
-
-    <!-- Santa Cruz Mountains Communal Structure -->
-    <article class="project-entry">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="header-content">
-          <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Communal Structure Preview" class="project-thumbnail">
-          <div>
-            <h3>Communal Structure</h3>
-            <div class="project-meta">Santa Cruz Mountains • 2022-2025</div>
-          </div>
-        </div>
-        <span class="expand-button">+</span>
-      </div>
-      
-      <div class="project-content">
-        <p>Together with eight friends, I co-own a 30-acre property nestled in the redwoods. We're building a 1,200-square-foot communal structure that will serve as a shared kitchen and gathering space. The project embodies our vision of creating a place where we can spend quality time together, work on creative projects, and enjoy the spectacular natural setting. Since 2022, we've been designing, engineering, and constructing the building ourselves, recently completing the exterior work. This space represents our commitment to collaborative building and maintaining a connection to California's remarkable landscape.</p>
-        
-        <div class="carousel">
-          <div class="carousel-container">
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Structure Overview" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-02.jpg" alt="Construction Process" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-03.jpg" alt="Site Location" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-04.jpg" alt="Building Progress" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-05.jpg" alt="Structural Details" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-06.jpg" alt="Interior Work" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-07.jpg" alt="Construction Team" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/communal-structure/communal-structure-08.jpg" alt="Site Context" class="carousel-image" />
-            </figure>
-          </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
-          <div class="carousel-dots"></div>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- Research Section -->
-  <section id="research" class="project-section">
-    <h2>Research</h2>
-
-    <!-- 3D Printed Microfluidics -->
-    <article class="project-entry">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="header-content">
-          <img src="/assets/images/projects/microfluidics/microfluidics-01.jpg" alt="Microfluidics Preview" class="project-thumbnail">
-          <div>
-            <h3>3D Printed Microfluidics</h3>
-            <div class="project-meta">MIT Media Lab • 2013-2015</div>
-          </div>
-        </div>
-        <span class="expand-button">+</span>
-      </div>
-      
-      <div class="project-content">
-        <p>Demonstrated new techniques for manufacturing microfluidic consumables using commercial 3D-printers. We achieved reactions in volumes as small as 490 nL with channel widths of 220 micrometers, while keeping per-unit microfluidic consumable costs between $0.61 and $5.71. This approach demonstrated how commodity digital fabrication tools could democratize production of microfluidic hardware. Read the full <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143636">publication</a>.</p>
-        
-        <div class="carousel">
-          <div class="carousel-container">
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/microfluidics/microfluidics-01.jpg" alt="Microfluidic Device" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/microfluidics/microfluidics-02.jpg" alt="Printing Process" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/microfluidics/microfluidics-03.jpg" alt="Testing Setup" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/microfluidics/microfluidics-04.jpg" alt="Device Detail" class="carousel-image" />
-            </figure>
-          </div>
-          <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>
-          <button class="carousel-button next" onclick="moveCarousel(1, this)">❯</button>
-          <div class="carousel-dots"></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- 3D Printed Multimaterial Valve -->
-    <article class="project-entry">
-      <div class="project-header" onclick="toggleProject(this)">
-        <div class="header-content">
-          <img src="/assets/images/projects/multimaterial-valve/valve-01.jpg" alt="Multimaterial Valve Preview" class="project-thumbnail">
-          <div>
-            <h3>3D Printed Multimaterial Valve</h3>
-            <div class="project-meta">MIT Media Lab • 2013-2015</div>
-          </div>
-        </div>
-        <span class="expand-button">+</span>
-      </div>
-      
-      <div class="project-content">
-        <p>Led by Steven Keating, this project pioneered the development of multimaterial 3D printed microfluidic valves that combine rigid and flexible materials in a single print. We demonstrated a novel valve design where a flexible membrane, sandwiched between stiff flow and control channels, could be deformed under pressure to regulate fluid flow. This work enabled programmable fluid routing within 3D printed microfluidic devices, advancing beyond single-material limitations of previous approaches. The research was conducted in collaboration with Isabella Gariboldi, Will Patrick, Prof. Neri Oxman, and David Kong of MIT Lincoln Laboratory. Read the full <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0160624">publication</a>.</p>
-        
-        <div class="carousel">
-          <div class="carousel-container">
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/multimaterial-valve/valve-01.jpg" alt="Multimaterial Valve Overview" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/multimaterial-valve/valve-02.jpg" alt="Valve Construction" class="carousel-image" />
-            </figure>
-            <figure class="carousel-slide">
-              <img src="/assets/images/projects/multimaterial-valve/valve-03.jpg" alt="Valve Testing" class="carousel-image" />
             </figure>
           </div>
           <button class="carousel-button prev" onclick="moveCarousel(-1, this)">❮</button>

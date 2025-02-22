@@ -7,9 +7,9 @@ permalink: /projects/
 <div class="projects-container">
   <div class="projects-nav">
     <a href="#product" class="nav-link">Product</a>
-    <a href="#art-design" class="nav-link">Art & Design</a>
-    <a href="#structural" class="nav-link">Structural</a>
     <a href="#research" class="nav-link">Research</a>
+    <a href="#structural" class="nav-link">Structural</a>
+    <a href="#design" class="nav-link">Design</a>
   </div>
 
   <!-- Product Section -->
@@ -264,8 +264,8 @@ permalink: /projects/
     </article>
   </section>
 
-  <!-- Art & Design Section -->
-  <section id="art-design" class="project-section">
+  <!-- Design Section -->
+  <section id="design" class="project-section">
     <h2>Design</h2>
 
     <!-- Bad Hatter -->

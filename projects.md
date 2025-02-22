@@ -213,13 +213,13 @@ permalink: /projects/
   <section id="structural" class="project-section">
     <h2>Structural</h2>
 
-    <!-- Santa Cruz Mountains Communal Structure -->
+    <!-- Santa Cruz Mountains Cabin -->
     <article class="project-entry">
       <div class="project-header" onclick="toggleProject(this)">
         <div class="header-content">
-          <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Communal Structure Preview" class="project-thumbnail">
+          <img src="/assets/images/projects/communal-structure/communal-structure-01.jpg" alt="Santa Cruz Mountains Cabin Preview" class="project-thumbnail">
           <div>
-            <h3>Communal Structure</h3>
+            <h3>Santa Cruz Mountains Cabin</h3>
             <div class="project-meta">Santa Cruz Mountains • 2022-2025</div>
           </div>
         </div>

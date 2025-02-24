@@ -55,4 +55,48 @@ body.home-page .home {
     flex: 1;
     overflow-y: auto;
     margin-bottom: var(--footer-height);  /* Use CSS variable */
+}
+
+/* Add a mobile height CSS variable */
+:root {
+  --footer-height-mobile: 45px;  /* 30% of 150px */
+}
+
+/* Adjust footer height for mobile */
+@media (max-width: 768px) {
+  body.home-page .footer-growth {
+    height: var(--footer-height-mobile);
+  }
+  
+  body.home-page .home {
+    margin-bottom: var(--footer-height-mobile);
+  }
+
+  .intro-image {
+    max-width: 50% !important;  /* Make image smaller on mobile */
+    margin: 0 auto !important;  /* Center the image */
+  }
+}
+
+/* Default (desktop) styles */
+.intro-container {
+    flex-direction: row !important;  /* Side by side on desktop */
+}
+
+.intro-image {
+    flex: 0 0 35% !important;  /* Original desktop size */
+    max-width: 35% !important;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .intro-container {
+        flex-direction: column !important;
+    }
+    
+    .intro-image {
+        flex: 0 0 100% !important;
+        max-width: 50% !important;
+        margin: 0 auto !important;
+    }
 } 

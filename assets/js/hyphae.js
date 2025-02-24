@@ -313,6 +313,24 @@ class FooterGrowth extends HyphaeGrowth {
   constructor(svg) {
     super(svg);
     
+    // Adjust parameters for mobile
+    if (window.innerWidth <= 768) {
+        this.branchLength = 3.0;          // Shorter branches
+        this.minDistance = 2.0;           // Less dense
+        this.maxBranches = 1500;          // Fewer branches
+        this.NUM_SEEDS = 50;              // Fewer seeds
+        this.maxThickness = 2.0;          // Thinner lines
+        this.minThickness = 0.2;          // Minimum thickness
+        this.DIRECTION_VARIANCE = 0.15;    // More variation in direction
+    } else {
+        // Desktop parameters
+        this.branchLength = FooterGrowth.BRANCH_LENGTH;
+        this.minDistance = FooterGrowth.MIN_DISTANCE;
+        this.maxBranches = FooterGrowth.MAX_BRANCHES;
+        this.maxThickness = FooterGrowth.MAX_THICKNESS;
+        this.minThickness = FooterGrowth.MIN_THICKNESS;
+    }
+    
     // Set CSS variable for footer height
     document.documentElement.style.setProperty('--footer-height', `${FooterGrowth.FOOTER_HEIGHT}px`);
     
@@ -327,11 +345,9 @@ class FooterGrowth extends HyphaeGrowth {
     this.viewBoxHeight = containerHeight;
     
     // Use static configuration
-    this.branchLength = FooterGrowth.BRANCH_LENGTH;
     this.maxBranches = FooterGrowth.MAX_BRANCHES;
     this.maxThickness = FooterGrowth.MAX_THICKNESS;
     this.minThickness = FooterGrowth.MIN_THICKNESS;
-    this.minDistance = FooterGrowth.MIN_DISTANCE;
     
     this.points = [];
     

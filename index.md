@@ -49,10 +49,68 @@ title: ""
 .clickable {
   cursor: pointer;
 }
+
+.restart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1s;
+}
 </style>
+
+<button id="restartGrowth" class="restart-button">Restart Growth</button>
 
 <script>
 class HyphaeGrowth {
+  // Growth Pattern Configuration
+  static BRANCH_LENGTH = 2.4;
+  static MAX_THICKNESS = 2.0;
+  static MIN_THICKNESS = 0.1;
+  static MIN_DISTANCE = 1.2;
+  static THICKNESS_SCALE_FACTOR = 250;
+  
+  // Growth Behavior
+  static MIN_SEEDS = 2;
+  static MAX_SEEDS = 4;
+  static BRANCHING_PROBABILITY = 0.15;
+  static BRANCH_ANGLE = Math.PI / 3;
+  static MAX_ATTEMPTS = 8;
+  static DIRECTION_RANDOMNESS = 0.1;
+  static BLOCKED_DIRECTION_CHANGE = Math.PI / 4;
+  static BLOCKED_DIRECTION_RANDOMNESS = 0.2;
+  
+  // Visual Elements
+  static CIRCLE_RADIUS = 15;
+  static EDGE_PADDING = 10;
+  static FONT_SIZE = 1.6;
+  static MAX_BRANCHES = 5000;
+  
+  // Color Palette
+  static COLORS = [
+    '#264653', // Dark blue
+    '#2a9d8f', // Teal
+    '#e76f51', // Coral
+    '#219ebc', // Light blue
+    '#f4a261', // Orange
+    '#023047', // Navy
+    '#8ecae6', // Sky blue
+    '#fb8500', // Bright orange
+    '#06d6a0', // Mint
+    '#118ab2'  // Azure
+  ];
+
+  // Add more static constants that we want to control
+  static CIRCLE_SIZE = 15;
+  static GROWTH_SPEED = 10;
+  static MAX_BRANCH_COUNT = 5000;
+  static DIRECTION_CHANGE = 0.1;
+
   constructor(svg) {
     this.svg = svg;
     
@@ -78,32 +136,23 @@ class HyphaeGrowth {
     // Initialize other properties
     this.points = [];
     this.branches = [];
-    this.branchLength = 2;
-    this.maxThickness = 2.0;
-    this.minThickness = 0.1;
+    this.branchLength = HyphaeGrowth.BRANCH_LENGTH;
+    this.maxThickness = HyphaeGrowth.MAX_THICKNESS;
+    this.minThickness = HyphaeGrowth.MIN_THICKNESS;
     this.childCounts = new Map();
+    this.colors = HyphaeGrowth.COLORS;
     
-    // Define colors for 10 seeds
-    this.colors = [
-      '#264653', // Dark blue
-      '#2a9d8f', // Teal
-      '#e76f51', // Coral
-      '#219ebc', // Light blue
-      '#f4a261', // Orange
-      '#023047', // Navy
-      '#8ecae6', // Sky blue
-      '#fb8500', // Bright orange
-      '#06d6a0', // Mint
-      '#118ab2'  // Azure
-    ];
-    
-    // Create random number of seeds (between 4 and 10)
-    const numSeeds = Math.floor(Math.random() * 7) + 4; // Random integer from 4 to 10
+    // Create random number of seeds
+    const numSeeds = Math.floor(Math.random() * 
+      (HyphaeGrowth.MAX_SEEDS - HyphaeGrowth.MIN_SEEDS + 1)) + 
+      HyphaeGrowth.MIN_SEEDS;
     
     // Create the random seed points
     for (let seed = 0; seed < numSeeds; seed++) {
-      const x = 10 + Math.random() * 80;
-      const y = 10 + Math.random() * 80;
+      const x = HyphaeGrowth.EDGE_PADDING + 
+        Math.random() * (100 - 2 * HyphaeGrowth.EDGE_PADDING);
+      const y = HyphaeGrowth.EDGE_PADDING + 
+        Math.random() * (100 - 2 * HyphaeGrowth.EDGE_PADDING);
       
       const randomDirection = Math.random() * Math.PI * 2;
       // Add three directions, 120 degrees apart
@@ -177,7 +226,7 @@ class HyphaeGrowth {
   calculateThickness(branchId) {
     const childCount = this.childCounts.get(branchId) || 0;
     // Scale factor increased to target ~250 descendants for max thickness
-    const scaleFactor = 250; // Changed from 50 to 250
+    const scaleFactor = HyphaeGrowth.THICKNESS_SCALE_FACTOR;
     
     // More gradual thickness increase
     return this.minThickness + 
@@ -219,7 +268,7 @@ class HyphaeGrowth {
       return true;
     }
     
-    const minDistance = 1.0;
+    const minDistance = 1.2;  // Increased from 1.0 to 1.2 for more spacing
     return this.branches.some(branch => {
       // Check endpoints as before
       const d1 = Math.hypot(x - branch.x1, y - branch.y1);
@@ -355,23 +404,42 @@ class HyphaeGrowth {
     
     this.points = newPoints;
   }
+
+  static updateConstants(params) {
+    this.BRANCH_LENGTH = params.branchLength ?? this.BRANCH_LENGTH;
+    this.CIRCLE_RADIUS = params.circleSize ?? this.CIRCLE_RADIUS;
+    this.MAX_BRANCHES = params.maxBranches ?? this.MAX_BRANCHES;
+    this.DIRECTION_RANDOMNESS = params.directionChange ?? this.DIRECTION_RANDOMNESS;
+    this.MIN_SEEDS = params.seedCount ?? this.MIN_SEEDS;
+    this.MAX_SEEDS = params.seedCount ?? this.MAX_SEEDS;  // Set both min and max to same value
+  }
 }
 
-// Start the animation when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   const svg = document.getElementById('growth-animation');
-  const pattern = new HyphaeGrowth(svg);
-  
-  const growthInterval = setInterval(() => {
-    pattern.grow();
-    if (pattern.points.length === 0 || pattern.branches.length > 5000) {
-      clearInterval(growthInterval);
-      // Fade in the "Enter" text
-      const enterText = pattern.enterText;
-      enterText.style.transition = 'opacity 1s';
-      enterText.style.opacity = '1';
-    }
-  }, 60);
+  const restartButton = document.getElementById('restartGrowth');
+  let pattern = null;
+  let growthInterval = null;
+
+  function startGrowth() {
+    if (growthInterval) clearInterval(growthInterval);
+    svg.innerHTML = '';  // Clear existing pattern
+    restartButton.style.opacity = '0';  // Hide button
+    pattern = new HyphaeGrowth(svg);
+    
+    growthInterval = setInterval(() => {
+      pattern.grow();
+      if (pattern.points.length === 0 || pattern.branches.length > HyphaeGrowth.MAX_BRANCHES) {
+        clearInterval(growthInterval);
+        pattern.enterText.style.transition = 'opacity 1s';
+        pattern.enterText.style.opacity = '1';
+        restartButton.style.opacity = '1';  // Show button
+      }
+    }, 10);
+  }
+
+  restartButton.addEventListener('click', startGrowth);
+  startGrowth();  // Initial growth
 });
 </script>
 

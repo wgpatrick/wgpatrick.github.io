@@ -1,13 +1,13 @@
-/* Add base footer styles */
+/* Base footer styles */
 .site-footer {
-    position: fixed;  /* Changed from relative to fixed */
-    bottom: 0;        /* Stick to bottom */
+    position: fixed;  /* Fixed by default for desktop */
+    bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 100;    /* Ensure it's above other content */
-    background: #fff; /* Match page background */
-    margin: 0;        /* Remove default margin */
-    padding: 0;       /* Remove default padding */
+    z-index: 10;  /* Lower z-index than nav */
+    background: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 /* Only apply these styles when on the home page */
@@ -59,23 +59,56 @@ body.home-page .home {
 
 /* Add a mobile height CSS variable */
 :root {
-  --footer-height-mobile: 45px;  /* 30% of 150px */
+    --footer-height: 150px;
+    --footer-height-mobile: 60px;  /* Adjusted from 45px */
 }
 
 /* Adjust footer height for mobile */
 @media (max-width: 768px) {
-  body.home-page .footer-growth {
-    height: var(--footer-height-mobile);
-  }
-  
-  body.home-page .home {
-    margin-bottom: var(--footer-height-mobile);
-  }
+    .site-footer {
+        position: fixed;  /* Changed from static back to fixed */
+        height: var(--footer-height-mobile);
+    }
+    
+    .footer-growth {
+        height: var(--footer-height-mobile);
+    }
+    
+    /* Adjust content to prevent footer overlap */
+    .page-content {
+        padding-bottom: var(--footer-height-mobile);
+    }
+    
+    /* Remove height constraints but keep padding for footer */
+    .intro-container,
+    .home {
+        max-height: none !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        margin-bottom: var(--footer-height-mobile) !important;
+    }
+    
+    /* Remove the margin-bottom since footer is in normal flow */
+    body.home-page .home {
+        margin-bottom: 0;
+    }
+    
+    /* Remove height constraints on mobile */
+    .intro-container,
+    .home {
+        max-height: none !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
 
-  .intro-image {
-    max-width: 50% !important;  /* Make image smaller on mobile */
-    margin: 0 auto !important;  /* Center the image */
-  }
+    body.home-page .home {
+        margin-bottom: var(--footer-height-mobile);
+    }
+
+    .intro-image {
+        max-width: 50% !important;  /* Make image smaller on mobile */
+        margin: 0 auto !important;  /* Center the image */
+    }
 }
 
 /* Default (desktop) styles */
@@ -99,4 +132,27 @@ body.home-page .home {
         max-width: 50% !important;
         margin: 0 auto !important;
     }
+}
+
+.footer-growth {
+    position: relative;
+    width: 100%;
+    height: var(--footer-height);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.page-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: var(--footer-height);
+}
+
+/* Add to projects.md */
+.projects-nav {
+    z-index: 20;  /* Higher z-index than footer */
 } 

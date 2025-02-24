@@ -5,11 +5,13 @@ permalink: /projects/
 ---
 
 <div class="projects-container">
-  <div class="projects-nav">
-    <a href="#product" class="nav-link">Product</a>
-    <a href="#research" class="nav-link">Research</a>
-    <a href="#structural" class="nav-link">Structural</a>
-    <a href="#design" class="nav-link">Design</a>
+  <div class="projects-nav-wrapper">
+    <div class="projects-nav">
+      <a href="#product" class="nav-link">Product</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#structural" class="nav-link">Structural</a>
+      <a href="#design" class="nav-link">Design</a>
+    </div>
   </div>
 
   <!-- Product Section -->
@@ -402,39 +404,33 @@ permalink: /projects/
 </div>
 
 <style>
+/* Main container */
 .projects-container {
   max-width: 800px;
   margin: 0 auto;
+  padding-bottom: calc(var(--footer-height) + 20px);
 }
 
-.projects-nav {
+/* Full-width nav background */
+.projects-nav-wrapper {
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
   background: #f8f8f8;
-  margin: 0;
-  padding: 15px 0;
   border-bottom: 1px solid #ddd;
   z-index: 1000;
+}
+
+/* Nav content */
+.projects-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px 20px;
   display: flex;
   justify-content: flex-start;
   gap: 30px;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-left: 20px;
-  margin-bottom: 30px;
-  width: 100%;
-  overflow-x: auto;  /* Allow horizontal scroll on mobile if needed */
-  -webkit-overflow-scrolling: touch;  /* Smooth scroll on iOS */
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .projects-nav {
-    padding-left: 10px;
-    padding-right: 10px;
-    gap: 20px;
-    font-size: 0.9em;
-  }
+  box-sizing: border-box;
 }
 
 .projects-nav .nav-link {
@@ -467,10 +463,6 @@ permalink: /projects/
 
 .project-section:first-of-type {
   padding-top: 0;
-}
-
-.project-section {
-  margin: 40px 0;
 }
 
 .project-entry {
@@ -741,6 +733,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (carousel && !carousel.dataset.carouselId) {
       initCarousel(carousel);
     }
+  });
+});
+
+// Add scroll position debugging
+document.addEventListener('scroll', () => {
+  const nav = document.querySelector('.projects-nav-wrapper');
+  const rect = nav.getBoundingClientRect();
+  console.log('Nav position:', {
+    top: rect.top,
+    scrollY: window.scrollY,
+    position: getComputedStyle(nav).position,
+    zIndex: getComputedStyle(nav).zIndex,
+    parentOverflow: getComputedStyle(nav.parentElement).overflow
   });
 });
 </script>

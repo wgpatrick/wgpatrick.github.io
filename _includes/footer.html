@@ -1,9 +1,9 @@
 <footer class="site-footer">
-  {% if page.layout == 'home' %}
+  {% unless page.url == "/" or page.url == "/index.html" %}
   <div class="footer-growth">
     <svg id="footer-animation" viewBox="0 0 400 60" preserveAspectRatio="xMidYMid meet">
       <!-- Changed height from 30 to 60 -->
     </svg>
   </div>
-  {% endif %}
+  {% endunless %}
 </footer> 

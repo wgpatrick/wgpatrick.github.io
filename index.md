@@ -4,7 +4,7 @@ title: ""
 ---
 
 <div class="growth-container">
-  <svg id="growth-animation" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+  <svg id="growth-animation" preserveAspectRatio="xMidYMid meet">
     <!-- The generative pattern will be drawn here -->
   </svg>
 </div>
@@ -28,7 +28,7 @@ title: ""
 .growth-path {
   fill: none;
   stroke: #333;
-  stroke-width: 0.2;
+  stroke-width: 1.5;
   opacity: 0;
   animation: fadeIn 0.5s forwards;
 }

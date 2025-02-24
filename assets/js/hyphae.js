@@ -308,7 +308,7 @@ class FooterGrowth extends HyphaeGrowth {
   static BRANCH_ANGLE = Math.PI / 6;
   static BOTTOM_MARGIN = 0;
   static NUM_SEEDS = 100;
-  static FOOTER_HEIGHT = 90;  // Added footer height constant
+  static FOOTER_HEIGHT = 60;  // Added footer height constant
 
   constructor(svg) {
     super(svg);
@@ -407,11 +407,11 @@ class FooterGrowth extends HyphaeGrowth {
   }
 }
 
-// Initialize footer growth only on the home page
+// Initialize footer growth only on non-index pages
 function initializeFooterGrowth() {
-  // Check if we're on the home page
-  if (!window.location.pathname.includes('/home')) {
-    console.log('Not on home page, skipping footer growth');
+  // Skip on index page
+  if (window.location.pathname === '/' || window.location.pathname === '/index') {
+    console.log('On index page, skipping footer growth');
     return;
   }
 

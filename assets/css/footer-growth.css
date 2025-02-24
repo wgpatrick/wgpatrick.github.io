@@ -1,0 +1,58 @@
+/* Add base footer styles */
+.site-footer {
+    position: fixed;  /* Changed from relative to fixed */
+    bottom: 0;        /* Stick to bottom */
+    left: 0;
+    width: 100%;
+    z-index: 100;    /* Ensure it's above other content */
+    background: #fff; /* Match page background */
+    margin: 0;        /* Remove default margin */
+    padding: 0;       /* Remove default padding */
+}
+
+/* Only apply these styles when on the home page */
+body.home-page .footer-growth {
+    position: relative;  /* Changed from absolute since parent is now fixed */
+    width: 100%;
+    height: var(--footer-height);  /* Use CSS variable */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;        /* Remove any margin */
+    padding: 0;       /* Remove any padding */
+}
+
+body.home-page .footer-growth svg {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
+
+body.home-page .footer-growth .growth-path {
+    fill: none;
+    stroke: #333;
+    stroke-width: 1.5;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Remove the body padding */
+body.home-page {
+    /* Remove padding-bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make main content fill available space but not overflow */
+body.home-page .home {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: var(--footer-height);  /* Use CSS variable */
+} 

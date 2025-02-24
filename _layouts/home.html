@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+<script>
+document.body.classList.add('home-page');
+</script>
 
 <style>
 .intro-container {
@@ -8,6 +11,8 @@ layout: default
     gap: 30px !important;
     margin: 20px 0 !important;
     align-items: flex-start !important;
+    max-height: calc(100vh - 250px) !important;  /* Leave room for footer */
+    overflow-y: auto !important;  /* Allow scrolling if content is too tall */
 }
 
 .intro-text {
@@ -24,6 +29,13 @@ layout: default
     height: auto !important;
     display: block !important;
     border-radius: 4px !important;
+}
+
+/* Ensure home content doesn't push footer out of view */
+.home {
+    min-height: calc(100vh - 250px);
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
 }
 </style>
 

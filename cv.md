@@ -7,103 +7,15 @@ permalink: /cv/
 document.body.classList.add('cv-page');
 </script>
 
-<div class="cv-nav">
-  <a href="#experience" class="nav-link">Experience</a>
-  <a href="#education" class="nav-link">Education</a>
-  <a href="#publications" class="nav-link">Publications</a>
-  <a href="#press" class="nav-link">Press</a>
-  <a href="#patents" class="nav-link">Patents</a>
+<div class="cv-nav-wrapper">
+  <div class="cv-nav">
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#publications" class="nav-link">Publications</a>
+    <a href="#press" class="nav-link">Press</a>
+    <a href="#patents" class="nav-link">Patents</a>
+  </div>
 </div>
-
-<style>
-.cv-nav {
-  position: sticky;
-  top: 0;
-  background: #f8f8f8;  /* Light gray background */
-  margin: 0;
-  padding: 15px 0;
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
-  display: flex;
-  justify-content: flex-start;
-  gap: 30px;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-left: 20px;
-  margin-bottom: 30px;
-  width: 100%;
-  overflow-x: auto;  /* Allow horizontal scroll on mobile if needed */
-  -webkit-overflow-scrolling: touch;  /* Smooth scroll on iOS */
-}
-
-.cv-nav .nav-link {
-  text-decoration: none;
-  color: #666;
-  padding: 5px 0;
-  transition: color 0.2s;
-  position: relative;
-}
-
-.cv-nav .nav-link:hover {
-  color: #333;
-}
-
-.cv-nav .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #333;
-  transform: scaleX(0);
-  transition: transform 0.2s;
-}
-
-.cv-nav .nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-/* Add some padding to the first section */
-#experience {
-  padding-top: 20px;
-}
-
-h1.page-title {
-  margin-top: 60px;  /* Add space above the title */
-}
-
-.home {
-  margin-top: 60px;
-}
-
-.post-header {
-  margin-top: 30px;
-}
-
-.post-title {
-  margin-top: 0;
-}
-
-/* Add scroll margin to section headings */
-[id] {
-  scroll-margin-top: 70px;  /* Height of nav (including padding) + some extra space */
-}
-
-/* More aggressive mobile adjustments */
-@media (max-width: 768px) {
-  .cv-nav {
-    padding-left: 10px;
-    padding-right: 10px;
-    gap: 15px;  /* Reduced from 20px */
-    font-size: 0.85em;  /* Reduced from 0.9em */
-  }
-  
-  .cv-nav a {
-    white-space: nowrap;  /* Prevent text wrapping */
-  }
-}
-</style>
 
 ## Biography
 
@@ -289,3 +201,134 @@ Developed charge and discharge controls for solar-powered LED home lighting syst
 - [Method, apparatus and system for adaptive light projection](https://patents.google.com/patent/US8836222B1/en)  
   W Patrick, E Teller, J Lee  
   US Patent 
+</div>
+
+<style>
+/* Remove old cv-nav styling */
+.cv-nav-wrapper {
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  z-index: 1000;
+  margin-bottom: 30px; /* Add space between nav and content */
+}
+
+.cv-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Add this to prevent content jump when nav becomes fixed */
+.sticky-active + #biography {
+  padding-top: 70px; /* Increased padding for more space */
+}
+
+.cv-nav .nav-link {
+  text-decoration: none;
+  color: #666;
+  padding: 5px 0;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.cv-nav .nav-link:hover {
+  color: #333;
+}
+
+.cv-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.cv-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Add some padding to the first section */
+#experience {
+  padding-top: 20px;
+}
+
+h1.page-title {
+  margin-top: 60px;  /* Add space above the title */
+}
+
+.home {
+  margin-top: 60px;
+}
+
+.post-header {
+  margin-top: 30px;
+}
+
+.post-title {
+  margin-top: 0;
+}
+
+/* Add scroll margin to section headings */
+[id] {
+  scroll-margin-top: 70px;  /* Height of nav (including padding) + some extra space */
+}
+
+/* More aggressive mobile adjustments */
+@media (max-width: 768px) {
+  .cv-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 15px;  /* Reduced from 20px */
+    font-size: 0.85em;  /* Reduced from 0.9em */
+  }
+  
+  .cv-nav a {
+    white-space: nowrap;  /* Prevent text wrapping */
+  }
+}
+
+/* Fix the fixed positioning class to match projects page */
+.sticky-active {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add this to match the projects page styling */
+.sticky-active .cv-nav {
+  margin: 0 auto;
+}
+</style>
+
+<!-- Add this right before the closing </body> tag -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('.cv-nav-wrapper');
+  const navTop = nav.offsetTop;
+  
+  function makeSticky() {
+    if (window.scrollY >= navTop) {
+      nav.classList.add('sticky-active');
+    } else {
+      nav.classList.remove('sticky-active');
+    }
+  }
+  
+  window.addEventListener('scroll', makeSticky);
+  makeSticky(); // Initial check
+});
+</script>

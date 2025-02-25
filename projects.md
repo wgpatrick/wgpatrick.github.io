@@ -417,13 +417,26 @@ document.body.classList.add('projects-page');
 
 /* Full-width nav background */
 .projects-nav-wrapper {
-  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   background: #f8f8f8;
   border-bottom: 1px solid #ddd;
+  width: 100%;
   z-index: 1000;
+  margin-bottom: 30px; /* Add space between nav and content */
+}
+
+/* Add this new class that will be applied via JavaScript */
+.sticky-active {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add this to prevent content jump when nav becomes fixed */
+.sticky-active + .project-section {
+  padding-top: 70px; /* Increased padding for more space */
 }
 
 /* Nav content */
@@ -751,5 +764,22 @@ document.addEventListener('scroll', () => {
     zIndex: getComputedStyle(nav).zIndex,
     parentOverflow: getComputedStyle(nav.parentElement).overflow
   });
+});
+
+// Fix for sticky nav
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('.projects-nav-wrapper');
+  const navTop = nav.offsetTop;
+  
+  function makeSticky() {
+    if (window.scrollY >= navTop) {
+      nav.classList.add('sticky-active');
+    } else {
+      nav.classList.remove('sticky-active');
+    }
+  }
+  
+  window.addEventListener('scroll', makeSticky);
+  makeSticky(); // Initial check
 });
 </script>

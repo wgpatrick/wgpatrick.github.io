@@ -4,11 +4,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 10;  /* Lower z-index than nav */
+    z-index: 9;  /* Lower than nav */
     background: #fff;
     margin: 0;
     padding: 0;
     display: none;  /* Hide by default */
+    /* Add a transform to create a new stacking context */
+    transform: translateZ(0);
 }
 
 /* Show footer only on specific pages */

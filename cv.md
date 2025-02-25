@@ -3,6 +3,9 @@ layout: page
 title: Curriculum Vitae
 permalink: /cv/
 ---
+<script>
+document.body.classList.add('cv-page');
+</script>
 
 <div class="cv-nav">
   <a href="#experience" class="nav-link">Experience</a>

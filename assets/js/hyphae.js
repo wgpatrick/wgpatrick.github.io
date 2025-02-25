@@ -103,7 +103,9 @@ class HyphaeGrowth {
     this.enterText.setAttribute("y", this.viewBoxHeight / 2);
     this.enterText.setAttribute("text-anchor", "middle");
     this.enterText.setAttribute("dominant-baseline", "middle");
-    this.enterText.setAttribute("font-size", HyphaeGrowth.FONT_SIZE);
+    // Adjust font size based on screen width
+    const fontSize = window.innerWidth <= 768 ? 4 : 1.6
+    this.enterText.setAttribute("font-size", fontSize);
     this.enterText.setAttribute("fill", "#333");
     this.enterText.setAttribute("opacity", "0");
     this.enterText.textContent = "ENTER";

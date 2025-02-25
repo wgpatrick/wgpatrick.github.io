@@ -4,6 +4,10 @@ title: Projects
 permalink: /projects/
 ---
 
+<script>
+document.body.classList.add('projects-page');
+</script>
+
 <div class="projects-container">
   <div class="projects-nav-wrapper">
     <div class="projects-nav">

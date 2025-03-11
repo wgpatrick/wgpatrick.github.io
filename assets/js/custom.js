@@ -47,7 +47,7 @@ function initializeIndexPage() {
     // Performance tracking variables
     let lastFrameTime = performance.now();
     let frameCount = 0;
-    let growthsPerFrame = 3; // Start with 3 growth steps per frame
+    let growthsPerFrame = 1; // Start with 1 growth step per frame (more conservative)
     const targetFrameTime = 16.67; // Target ~60fps (16.67ms per frame)
     
     // Animation loop using requestAnimationFrame
@@ -75,12 +75,12 @@ function initializeIndexPage() {
         const frameTime = (currentTime - lastFrameTime) / 10;
         lastFrameTime = currentTime;
         
-        // Adjust growths per frame based on performance
-        if (frameTime > targetFrameTime * 1.2) {
-          // Too slow, reduce work per frame
+        // Adjust growths per frame based on performance - more conservative
+        if (frameTime > targetFrameTime * 1.1) {
+          // Too slow, reduce work per frame more aggressively
           growthsPerFrame = Math.max(1, growthsPerFrame - 1);
-        } else if (frameTime < targetFrameTime * 0.8 && growthsPerFrame < 8) {
-          // Fast enough, can do more work per frame
+        } else if (frameTime < targetFrameTime * 0.7 && growthsPerFrame < 4) {
+          // Only increase if we have significant headroom and cap at 4 branches per frame
           growthsPerFrame++;
         }
       }

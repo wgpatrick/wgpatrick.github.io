@@ -105,7 +105,6 @@ class HyphaeGrowth {
     this.childCounts = new Map();
     this.colors = config.COLORS;
     this.pathElements = new Map();
-    this.gradientBuffer = []; // Initialize the gradient buffer
   }
 
   /**
@@ -230,43 +229,16 @@ class HyphaeGrowth {
       ((this.maxThickness - this.minThickness) * (1 - Math.exp(-childCount / scaleFactor)));
   }
 
-  /**
-   * Initialize SVG elements for batch rendering
-   * @private
-   */
-  initSvgBatching() {
-    // Create gradient defs element if it doesn't exist
-    this.defs = this.svg.querySelector('defs');
-    if (!this.defs) {
-      this.defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-      this.svg.appendChild(this.defs);
-    }
-  }
+  // SVG batching methods removed for optimization
   
   /**
-   * Legacy method for flushing the path buffer
-   * @private
-   * @deprecated No longer needed as we're using direct DOM manipulation
-   */
-  flushPathBuffer() {
-    // This is intentionally empty as we now add elements directly to the DOM
-  }
-  
-  /**
-   * Draw a branch path to the SVG with smooth curves and gradient color
-   * Using batched rendering for improved performance
+   * Draw a branch path to the SVG with smooth curves 
+   * Optimized to use solid colors
    * @param {Object} branch - Branch object with coordinates
    * @param {number} branchId - ID of the branch
    * @param {number} seedIndex - Index of the seed point this branch belongs to
    */
   drawBranch(branch, branchId, seedIndex) {
-    // Initialize defs if not done already
-    if (!this.defs) {
-      this.initSvgBatching();
-    }
-    
-    // Create a unique ID for the gradient
-    const gradientId = `branch-gradient-${branchId}`;
     
     // Calculate the vectors for this branch
     const dx = branch.x2 - branch.x1;
@@ -325,13 +297,8 @@ class HyphaeGrowth {
     // Store curve data in the branch for reference by children
     branch.controlPoint = { x: cpX, y: cpY };
     
-    // Create gradient for the path
+    // Use solid colors instead of gradients (optimization)
     const baseColor = this.colors[seedIndex];
-    const lightColor = this.lightenColor(baseColor, 20);
-    const gradient = this.createBranchGradient(gradientId, baseColor, lightColor);
-    
-    // Add gradient directly to SVG defs
-    this.defs.appendChild(gradient);
     
     // Create the path with a quadratic bezier curve
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -349,8 +316,8 @@ class HyphaeGrowth {
     
     path.setAttribute("data-branch-id", branchId);
     
-    // Apply gradient and other styles
-    path.style.stroke = `url(#${gradientId})`;
+    // Apply solid color and other styles
+    path.style.stroke = baseColor;
     path.style.strokeWidth = this.minThickness;
     
     // Add path to SVG and track it for thickness updates
@@ -358,72 +325,7 @@ class HyphaeGrowth {
     this.pathElements.set(branchId, path);
   }
   
-  /**
-   * Create a gradient for a branch
-   * @param {string} id - Unique ID for the gradient
-   * @param {string} startColor - Starting color (hex)
-   * @param {string} endColor - Ending color (hex)
-   * @returns {SVGLinearGradientElement} The created gradient element
-   */
-  createBranchGradient(id, startColor, endColor) {
-    const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
-    gradient.setAttribute("id", id);
-    gradient.setAttribute("gradientUnits", "userSpaceOnUse");
-    
-    // Random direction for gradient
-    if (Math.random() > 0.5) {
-      gradient.setAttribute("x1", "0%");
-      gradient.setAttribute("y1", "0%");
-      gradient.setAttribute("x2", "100%");
-      gradient.setAttribute("y2", "100%");
-    } else {
-      gradient.setAttribute("x1", "100%");
-      gradient.setAttribute("y1", "0%");
-      gradient.setAttribute("x2", "0%");
-      gradient.setAttribute("y2", "100%");
-    }
-    
-    // Create gradient stops
-    const stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
-    stop1.setAttribute("offset", "0%");
-    stop1.setAttribute("stop-color", startColor);
-    
-    const stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
-    stop2.setAttribute("offset", "100%");
-    stop2.setAttribute("stop-color", endColor);
-    
-    gradient.appendChild(stop1);
-    gradient.appendChild(stop2);
-    
-    return gradient;
-  }
-  
-  /**
-   * Lighten a color by a percentage
-   * @param {string} hex - Hex color code
-   * @param {number} percent - Percentage to lighten (0-100)
-   * @returns {string} Lightened hex color
-   */
-  lightenColor(hex, percent) {
-    // Remove the # if present
-    hex = hex.replace('#', '');
-    
-    // Convert to RGB
-    const r = parseInt(hex.substr(0, 2), 16);
-    const g = parseInt(hex.substr(2, 2), 16);
-    const b = parseInt(hex.substr(4, 2), 16);
-    
-    // Lighten each component
-    const factor = 1 + (percent / 100);
-    const rNew = Math.min(255, Math.round(r * factor));
-    const gNew = Math.min(255, Math.round(g * factor));
-    const bNew = Math.min(255, Math.round(b * factor));
-    
-    // Convert back to hex
-    return `#${(rNew).toString(16).padStart(2, '0')}${
-      (gNew).toString(16).padStart(2, '0')}${
-      (bNew).toString(16).padStart(2, '0')}`;
-  }
+  // Gradient methods removed for optimization
 
   /**
    * Update branch thickness based on recalculated value
@@ -933,9 +835,6 @@ class FooterGrowth extends HyphaeGrowth {
    * @param {number} seedIndex - Index of the seed point this branch belongs to
    */
   drawBranch(branch, branchId, seedIndex) {
-    // Create a unique ID for the gradient
-    const gradientId = `footer-gradient-${branchId}`;
-    
     // Calculate the vectors for this branch
     const dx = branch.x2 - branch.x1;
     const dy = branch.y2 - branch.y1;
@@ -1020,14 +919,11 @@ class FooterGrowth extends HyphaeGrowth {
     path.dataset.cpX = cpX.toString();
     path.dataset.cpY = cpY.toString();
     
-    // Create gradient for the path - footer has more subtle gradients
+    // Use solid color instead of gradient (optimization)
     const baseColor = this.colors[seedIndex];
-    const lightColor = this.lightenColor(baseColor, 15);
-    const gradient = this.createBranchGradient(gradientId, baseColor, lightColor);
-    this.svg.appendChild(gradient);
     
-    // Apply gradient and other styles
-    path.style.stroke = `url(#${gradientId})`;
+    // Apply solid color styles
+    path.style.stroke = baseColor;
     path.style.strokeWidth = this.minThickness;
     
     // Add the path to the SVG

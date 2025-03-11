@@ -1,168 +1,138 @@
+/**
+ * Footer Growth Animation Styles
+ * Controls the footer animation and related layout adjustments
+ */
+
+/* CSS Variables for consistent sizing */
+:root {
+  --footer-height: 150px;
+  --footer-height-mobile: 60px;
+}
+
 /* Base footer styles */
 .site-footer {
-    position: fixed;  /* Fixed by default for desktop */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9;  /* Lower than nav */
-    background: #fff;
-    margin: 0;
-    padding: 0;
-    display: none;  /* Hide by default */
-    /* Add a transform to create a new stacking context */
-    transform: translateZ(0);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  display: none; /* Hide by default */
+  transform: translateZ(0); /* Create stacking context */
 }
 
 /* Show footer only on specific pages */
 body.home-page .site-footer,
 body.projects-page .site-footer,
 body.cv-page .site-footer {
-    display: block;
+  display: block;
 }
 
-/* Only apply these styles when on the home page */
-body.home-page .footer-growth {
-    position: relative;  /* Changed from absolute since parent is now fixed */
-    width: 100%;
-    height: var(--footer-height);  /* Use CSS variable */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;        /* Remove any margin */
-    padding: 0;       /* Remove any padding */
+/* Footer growth container */
+.footer-growth {
+  position: relative;
+  width: 100%;
+  height: var(--footer-height);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-body.home-page .footer-growth svg {
-    width: auto;
-    height: 100%;
-    max-width: 100%;
+/* SVG container */
+.footer-growth svg {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
 }
 
-body.home-page .footer-growth .growth-path {
-    fill: none;
-    stroke: #333;
-    stroke-width: 1.5;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+/* Growth paths in footer */
+.footer-growth .growth-path {
+  fill: none;
+  stroke: #333;
+  stroke-width: 1.5;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Page layout adjustments for footer */
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: var(--footer-height);
 }
 
-/* Remove the body padding */
+/* Layout for home page */
 body.home-page {
-    /* Remove padding-bottom */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Make main content fill available space but not overflow */
 body.home-page .home {
-    flex: 1;
-    overflow-y: auto;
-    margin-bottom: var(--footer-height);  /* Use CSS variable */
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: var(--footer-height);
 }
 
-/* Add a mobile height CSS variable */
-:root {
-    --footer-height: 150px;
-    --footer-height-mobile: 60px;  /* Adjusted from 45px */
+/* Make navigation higher than footer */
+.projects-nav {
+  z-index: 20;
 }
 
-/* Adjust footer height for mobile */
-@media (max-width: 768px) {
-    .site-footer {
-        position: fixed;  /* Changed from static back to fixed */
-        height: var(--footer-height-mobile);
-    }
-    
-    .footer-growth {
-        height: var(--footer-height-mobile);
-    }
-    
-    /* Adjust content to prevent footer overlap */
-    .page-content {
-        padding-bottom: var(--footer-height-mobile);
-    }
-    
-    /* Remove height constraints but keep padding for footer */
-    .intro-container,
-    .home {
-        max-height: none !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-        margin-bottom: var(--footer-height-mobile) !important;
-    }
-    
-    /* Remove the margin-bottom since footer is in normal flow */
-    body.home-page .home {
-        margin-bottom: 0;
-    }
-    
-    /* Remove height constraints on mobile */
-    .intro-container,
-    .home {
-        max-height: none !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-    }
-
-    body.home-page .home {
-        margin-bottom: var(--footer-height-mobile);
-    }
-
-    .intro-image {
-        max-width: 50% !important;  /* Make image smaller on mobile */
-        margin: 0 auto !important;  /* Center the image */
-    }
-}
-
-/* Default (desktop) styles */
+/* Introduction container layout */
 .intro-container {
-    flex-direction: row !important;  /* Side by side on desktop */
+  flex-direction: row !important;
 }
 
 .intro-image {
-    flex: 0 0 35% !important;  /* Original desktop size */
-    max-width: 35% !important;
+  flex: 0 0 35% !important;
+  max-width: 35% !important;
 }
 
-/* Mobile styles */
+/**
+ * Mobile Adjustments
+ */
 @media (max-width: 768px) {
-    .intro-container {
-        flex-direction: column !important;
-    }
-    
-    .intro-image {
-        flex: 0 0 100% !important;
-        max-width: 50% !important;
-        margin: 0 auto !important;
-    }
+  /* Footer adjustments */
+  .site-footer {
+    position: fixed;
+    height: var(--footer-height-mobile);
+  }
+  
+  .footer-growth {
+    height: var(--footer-height-mobile);
+  }
+  
+  /* Content adjustments */
+  .page-content {
+    padding-bottom: var(--footer-height-mobile);
+  }
+  
+  .intro-container,
+  .home {
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    margin-bottom: var(--footer-height-mobile) !important;
+  }
+  
+  body.home-page .home {
+    margin-bottom: var(--footer-height-mobile);
+  }
+  
+  /* Layout adjustments */
+  .intro-container {
+    flex-direction: column !important;
+  }
+  
+  .intro-image {
+    flex: 0 0 100% !important;
+    max-width: 50% !important;
+    margin: 0 auto !important;
+  }
 }
-
-.footer-growth {
-    position: relative;
-    width: 100%;
-    height: var(--footer-height);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.page-content {
-    flex: 1;
-    overflow-y: auto;
-    margin-bottom: var(--footer-height);
-}
-
-/* Add to projects.md */
-.projects-nav {
-    z-index: 20;  /* Higher z-index than footer */
-} 

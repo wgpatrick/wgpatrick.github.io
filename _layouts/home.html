@@ -5,58 +5,6 @@ layout: default
 document.body.classList.add('home-page');
 </script>
 
-<style>
-.intro-container {
-    display: flex !important;
-    gap: 30px !important;
-    margin: 20px 0 !important;
-    align-items: flex-start !important;
-    max-height: calc(100vh - 150px) !important;
-    overflow-y: auto !important;
-}
-
-.intro-text {
-    flex: 1 1 60% !important;
-}
-
-.intro-image {
-    flex: 0 0 35% !important;
-    max-width: 35% !important;
-}
-
-.intro-image img {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    border-radius: 4px !important;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .intro-container {
-        flex-direction: column !important;
-        padding: 0 20px !important;
-    }
-    
-    .intro-image {
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
-        margin: 20px 0 !important;
-    }
-
-    .intro-text {
-        width: 100% !important;
-    }
-}
-
-/* Ensure home content doesn't push footer out of view */
-.home {
-    min-height: calc(100vh - 150px);
-    max-height: calc(100vh - 150px);
-    overflow-y: auto;
-}
-</style>
-
 <div class="home">
   {{ content }}
-</div> 
+</div>

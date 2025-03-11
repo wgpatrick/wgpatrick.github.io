@@ -1,0 +1,106 @@
+/**
+ * Styles for the organic growth animations
+ * Used on both the index page (full screen) and in the footer
+ */
+
+/* Index page container */
+.growth-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+/* SVG canvases */
+#growth-animation,
+#footer-animation {
+  width: 100%;
+  height: 100%;
+}
+
+/* Growth pattern paths */
+.growth-path {
+  fill: none;
+  stroke: #333;
+  stroke-width: 1.5;
+  opacity: 0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: pathGrow 1.2s forwards;
+  transform-origin: 0 0;
+}
+
+/* Animation speed variations based on branch length */
+.growth-path.short {
+  animation-duration: 0.8s;
+}
+
+.growth-path.medium {
+  animation-duration: 1.2s;
+}
+
+.growth-path.long {
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pathGrow {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Pattern letter styling */
+.wp-letter {
+  fill: none;
+  stroke: #333;
+  stroke-width: 3;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Interactive elements */
+.clickable {
+  cursor: pointer;
+}
+
+.restart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* Footer growth container */
+.footer-growth {
+  width: 100%;
+  height: var(--footer-height, 60px);
+  overflow: hidden;
+  position: relative;
+}

@@ -7,6 +7,13 @@ permalink: /cv/
 document.body.classList.add('cv-page');
 </script>
 
+<link rel="stylesheet" href="/assets/css/print.css">
+
+<!-- Print-only header that MUST appear when printing -->
+<div class="print-header" style="display:none !important;">
+  <h1>Will Patrick</h1>
+</div>
+
 <div class="cv-nav-wrapper">
   <div class="cv-nav">
     <a href="#experience" class="nav-link">Experience</a>
@@ -19,7 +26,7 @@ document.body.classList.add('cv-page');
 
 ## <span id="biography">Biography</span>
 
-Will Patrick is an entrepreneur and technologist with expertise spanning biotechnology, robotics, and <span class="annotated-term" data-id="digital-fabrication">digital fabrication</span>. He is the founder of <span class="annotated-term" data-id="culture-biosciences">Culture Biosciences</span>, where he served as CEO for 8 years (2016-2024), developing <span class="annotated-term" data-id="cloud-bioreactor">cloud-based bioprocess</span> development platforms for the biotechnology industry. Previously, at <span class="annotated-term" data-id="x-lab">X, Alphabet</span>, he worked as a <span class="annotated-term" data-id="rapid-evaluator">Rapid Evaluator</span> helping initiate <span class="annotated-term" data-id="wing">Wing</span>, Google's drone delivery effort. Will holds an M.S. from <span class="annotated-term" data-id="mit-media-lab">MIT Media Lab</span>, where he researched 3D printed microfluidics and synthetic biology in the <span class="annotated-term" data-id="mediated-matter">Mediated Matter</span> group, resulting in multiple peer-reviewed publications and exhibitions. His work has led to over 20 patents in areas ranging from UAV systems to bioprocess control. Will received his B.S. in Mechanical Engineering from Duke University.
+<span class="print-name">Will Patrick</span> is an entrepreneur and technologist with expertise spanning biotechnology, robotics, and <span class="annotated-term" data-id="digital-fabrication">digital fabrication</span>. He is the founder of <span class="annotated-term" data-id="culture-biosciences">Culture Biosciences</span>, where he served as CEO for 8 years (2016-2024), developing <span class="annotated-term" data-id="cloud-bioreactor">cloud-based bioprocess</span> development platforms for the biotechnology industry. Previously, at <span class="annotated-term" data-id="x-lab">X, Alphabet</span>, he worked as a <span class="annotated-term" data-id="rapid-evaluator">Rapid Evaluator</span> helping initiate <span class="annotated-term" data-id="wing">Wing</span>, Google's drone delivery effort. Will holds an M.S. from <span class="annotated-term" data-id="mit-media-lab">MIT Media Lab</span>, where he researched 3D printed microfluidics and synthetic biology in the <span class="annotated-term" data-id="mediated-matter">Mediated Matter</span> group, resulting in multiple peer-reviewed publications and exhibitions. His work has led to over 20 patents in areas ranging from UAV systems to bioprocess control. Will received his B.S. in Mechanical Engineering from Duke University.
 
 ## <span id="experience">Experience</span>
 

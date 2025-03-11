@@ -28,6 +28,11 @@
               <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
               {%- endif -%}
             {%- endfor -%}
+            
+            <!-- Add PDF button only on the CV page -->
+            {% if page.title == "CV" %}
+            <li><a href="#" onclick="window.print(); return false;" class="pdf-button">Download PDF</a></li>
+            {% endif %}
           </div>
         </nav>
       {%- endif -%}

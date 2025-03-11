@@ -1,0 +1,149 @@
+/* Print-specific styles */
+@media print {
+  /* Basic page setup */
+  @page {
+    size: letter portrait;
+    margin: 0.5in;
+  }
+  
+  /* Hide elements not needed for print */
+  nav, header, footer, .site-header, .site-nav, .cv-nav-wrapper,
+  .home-link, .pdf-button, .print-button, .modal,
+  .close-btn, #infoModal, .info-button, .site-footer,
+  .annotation-button, .page-heading, .post-title {
+    display: none !important;
+  }
+  
+  /* Hide the Biography heading specifically */
+  span#biography, h2:has(> span#biography) {
+    display: none !important;
+  }
+  
+  /* Remove padding above the first paragraph in biography section */
+  h2:has(> span#biography) + p {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Make the name bold in print only */
+  .print-name {
+    font-weight: bold !important;
+  }
+  
+  /* Basic styling */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* IMPORTANT: Force print header to display at top */
+  .print-header {
+    display: block !important;
+    margin-bottom: 30px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .print-header h1 {
+    display: block !important;
+    font-size: 24pt !important;
+    margin-bottom: 20px !important;
+    font-weight: bold !important;
+    color: #000 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Content area */
+  .post-content {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Links */
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  /* Remove annotation styling */
+  .annotated-term {
+    border-bottom: none !important;
+    color: inherit !important;
+    cursor: text !important;
+    text-decoration: none !important;
+  }
+  
+  /* Spacing */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  p, ul, ol, table {
+    page-break-inside: avoid;
+  }
+  
+  /* Override any overflow issues */
+  html, body, div {
+    overflow: visible !important;
+  }
+}
+
+/* Hide print header by default (when not printing) */
+.print-header {
+  display: none !important;
+}
+
+/* Non-print styles for the CV nav button */
+.cv-nav .pdf-button {
+  color: #666;
+  padding: 5px 0;
+  transition: color 0.2s;
+  position: relative;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.cv-nav .pdf-button:hover {
+  color: #333;
+}
+
+.cv-nav .pdf-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.cv-nav .pdf-button:hover::after {
+  transform: scaleX(1);
+}
+
+/* Hide old print button */
+.print-button {
+  display: none;
+}
+
+/* Make sure the name is not bold in screen view */
+.print-name {
+  font-weight: normal;
+}

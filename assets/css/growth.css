@@ -29,21 +29,21 @@
   opacity: 0;
   stroke-linecap: round;
   stroke-linejoin: round;
-  animation: pathGrow 1.2s forwards;
+  animation: pathGrow 0.8s forwards; /* Faster base animation */
   transform-origin: 0 0;
 }
 
 /* Animation speed variations based on branch length */
 .growth-path.short {
-  animation-duration: 0.8s;
+  animation-duration: 0.5s; /* Faster by ~40% */
 }
 
 .growth-path.medium {
-  animation-duration: 1.2s;
+  animation-duration: 0.8s; /* Faster by ~33% */
 }
 
 .growth-path.long {
-  animation-duration: 1.5s;
+  animation-duration: 1.0s; /* Faster by ~33% */
 }
 
 @keyframes fadeIn {

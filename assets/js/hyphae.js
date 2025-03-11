@@ -6,7 +6,7 @@ class HyphaeGrowth {
   // Growth Pattern Configuration
   static CONFIG = {
     // Structure
-    BRANCH_LENGTH: 2.4,
+    BRANCH_LENGTH: 2.4, // Restored to original value
     MAX_THICKNESS: 2.0,
     MIN_THICKNESS: 0.1,
     MIN_DISTANCE: 1.2,
@@ -697,7 +697,7 @@ class FooterGrowth extends HyphaeGrowth {
   // Footer-specific configuration that overrides parent defaults
   static FOOTER_CONFIG = {
     // Structural parameters
-    BRANCH_LENGTH: 5.0,
+    BRANCH_LENGTH: 5.0, // Restored to original value
     MAX_BRANCHES: 3000,
     MAX_THICKNESS: 3.0,
     MIN_THICKNESS: 0.4,
@@ -715,7 +715,7 @@ class FooterGrowth extends HyphaeGrowth {
     
     // Mobile-specific configuration
     MOBILE: {
-      BRANCH_LENGTH: 3.0,
+      BRANCH_LENGTH: 3.0, // Restored to original value
       MIN_DISTANCE: 2.0,
       MAX_BRANCHES: 1500,
       NUM_SEEDS: 50,
@@ -1003,7 +1003,7 @@ function initializeFooterGrowth() {
         // Stop on error
         clearInterval(footerInterval);
       }
-    }, 50);
+    }, 20); // Even faster interval (from 50ms to 20ms)
   } catch (e) {
     // Failed to initialize
   }

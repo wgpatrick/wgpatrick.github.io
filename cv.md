@@ -11,6 +11,13 @@ document.body.classList.add('cv-page');
 <link rel="stylesheet" href="/assets/css/cv-styles.css">
 <link rel="stylesheet" href="/assets/css/annotations.css">
 
+<!-- Hide the default post header -->
+<style>
+  .post-header {
+    display: none;
+  }
+</style>
+
 <!-- Load external JavaScript files for annotations and interactions -->
 <script src="/assets/js/annotations-data.js"></script>
 <script src="/assets/js/annotations.js"></script>
@@ -22,6 +29,7 @@ document.body.classList.add('cv-page');
 
 <div class="cv-nav-wrapper">
 <div class="cv-nav">
+  <h2 class="nav-title">Curriculum Vitae</h2>
   <a href="#experience" class="nav-link">Experience</a>
   <a href="#education" class="nav-link">Education</a>
   <a href="#publications" class="nav-link">Publications</a>

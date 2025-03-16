@@ -56,6 +56,15 @@ body.projects-page .post-content {
   box-sizing: border-box;
 }
 
+/* Title styling in the navigation */
+.projects-nav .nav-title {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-weight: 600;
+}
+
 .projects-nav .nav-link {
   text-decoration: none;
   color: #666;
@@ -279,6 +288,14 @@ body.projects-page .post-content {
     padding: 15px;
     gap: 20px;
     -webkit-overflow-scrolling: touch;
+    align-items: center;
+  }
+  
+  .projects-nav .nav-title {
+    margin: 0 15px 0 0;
+    padding: 0;
+    font-size: 1rem;
+    white-space: nowrap;
   }
   
   .projects-nav a {
@@ -294,4 +311,10 @@ body.projects-page .post-content {
     width: 80px;
     height: 60px;
   }
+}
+
+/* Content heading styles */
+.post-content h2 {
+  font-size: 24px;
+  font-weight: 600;
 }

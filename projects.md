@@ -506,15 +506,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const nav = document.querySelector('.projects-nav-wrapper');
   const navTop = nav.offsetTop;
   
-  function makeSticky() {
-    if (window.scrollY >= navTop) {
-      nav.classList.add('sticky-active');
+  // Mobile-only sticky behavior
+  function handleMobileNav() {
+    // Only apply sticky logic on mobile screens
+    if (window.innerWidth <= 768) {
+      if (window.scrollY >= navTop) {
+        nav.classList.add('sticky-active');
+      } else {
+        nav.classList.remove('sticky-active');
+      }
     } else {
+      // On desktop, always remove sticky class
       nav.classList.remove('sticky-active');
     }
   }
   
-  window.addEventListener('scroll', makeSticky);
-  makeSticky(); // Initial check
+  window.addEventListener('scroll', handleMobileNav);
+  window.addEventListener('resize', handleMobileNav);
+  
+  // Initial check
+  handleMobileNav();
 });
 </script>

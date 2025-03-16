@@ -1,0 +1,95 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9f8"/>
+  
+  <!-- Grid pattern (subtle) -->
+  <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,0,0,0.03)" stroke-width="0.5"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#smallGrid)"/>
+  
+  <!-- First seed point branches -->
+  <g>
+    <!-- Seed point 1 -->
+    <g transform="translate(200, 200)">
+      <!-- Main branches with varying thickness -->
+      <path d="M0,0 C0,-20 10,-40 20,-70 S35,-90 40,-110" 
+            stroke="#2a9d8f" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+      <path d="M0,0 C15,-15 30,-20 40,-30 S45,-45 50,-65 S65,-80 90,-85" 
+            stroke="#2a9d8f" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M0,0 C-10,-10 -25,-15 -40,-15 S-60,-20 -80,-15 S-100,-5 -120,15" 
+            stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.9"/>
+      
+      <!-- Secondary branches -->
+      <path d="M20,-70 C25,-65 35,-65 40,-70" 
+            stroke="#2a9d8f" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M40,-30 C35,-25 37,-15 45,-10" 
+            stroke="#2a9d8f" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M50,-65 C55,-60 65,-62 70,-57" 
+            stroke="#2a9d8f" stroke-width="0.7" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M-40,-15 C-45,-10 -50,0 -45,10" 
+            stroke="#2a9d8f" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M-80,-15 C-85,-5 -82,5 -90,15" 
+            stroke="#2a9d8f" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Second seed point branches -->
+  <g>
+    <!-- Seed point 2 -->
+    <g transform="translate(550, 250)">
+      <!-- Main branches with varying thickness -->
+      <path d="M0,0 C10,20 15,40 10,60 S0,80 -10,100" 
+            stroke="#e76f51" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.9"/>
+      <path d="M0,0 C20,10 40,15 60,10 S80,0 100,-15" 
+            stroke="#e76f51" stroke-width="1.9" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M0,0 C-5,15 -15,25 -35,30 S-60,25 -80,30" 
+            stroke="#e76f51" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.9"/>
+      
+      <!-- Secondary branches -->
+      <path d="M10,60 C20,65 25,75 20,85" 
+            stroke="#e76f51" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M60,10 C65,5 75,5 80,10" 
+            stroke="#e76f51" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M-35,30 C-30,40 -35,50 -40,60" 
+            stroke="#e76f51" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Third seed point branches -->
+  <g>
+    <!-- Seed point 3 -->
+    <g transform="translate(350, 100)">
+      <!-- Main branches with varying thickness -->
+      <path d="M0,0 C-15,10 -25,25 -30,45 S-25,70 -15,90" 
+            stroke="#219ebc" stroke-width="2.3" stroke-linecap="round" fill="none" opacity="0.9"/>
+      <path d="M0,0 C5,15 10,30 25,40 S45,45 65,40" 
+            stroke="#219ebc" stroke-width="1.7" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <path d="M0,0 C-5,-15 -10,-30 -5,-50 S10,-65 25,-75" 
+            stroke="#219ebc" stroke-width="2.1" stroke-linecap="round" fill="none" opacity="0.9"/>
+      
+      <!-- Secondary branches with golden angle (approximately 137.5°) -->
+      <path d="M-30,45 C-20,50 -15,60 -10,70" 
+            stroke="#219ebc" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M25,40 C30,50 40,55 50,50" 
+            stroke="#219ebc" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M-5,-50 C5,-55 15,-60 20,-70" 
+            stroke="#219ebc" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Small branches and tendrils -->
+  <g opacity="0.6">
+    <path d="M190,170 C185,165 180,165 175,170" stroke="#2a9d8f" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+    <path d="M220,140 C225,135 230,130 225,125" stroke="#2a9d8f" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+    <path d="M250,170 C255,175 260,180 265,175" stroke="#2a9d8f" stroke-width="0.4" stroke-linecap="round" fill="none"/>
+    
+    <path d="M560,300 C565,305 570,310 575,305" stroke="#e76f51" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+    <path d="M600,235 C605,230 610,225 615,230" stroke="#e76f51" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+    <path d="M520,270 C515,275 510,280 505,275" stroke="#e76f51" stroke-width="0.4" stroke-linecap="round" fill="none"/>
+    
+    <path d="M335,130 C330,125 325,120 320,125" stroke="#219ebc" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+    <path d="M365,130 C370,125 375,120 380,125" stroke="#219ebc" stroke-width="0.5" stroke-linecap="round" fill="none"/>
+    <path d="M345,60 C350,55 355,50 360,55" stroke="#219ebc" stroke-width="0.4" stroke-linecap="round" fill="none"/>
+  </g>
+</svg> 

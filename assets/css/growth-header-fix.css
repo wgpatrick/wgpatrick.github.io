@@ -1,0 +1,52 @@
+/**
+ * CSS fixes for the Growth page header
+ */
+
+/* Ensure the site header is visible and above other elements */
+.site-header {
+  position: relative !important;
+  z-index: 9999 !important;
+  background-color: #f8f8f8 !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+  margin-bottom: 10px !important;
+}
+
+/* Ensure header elements are visible */
+.site-title, .site-nav, .page-link {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+/* Fix positioning of growth container to show below header */
+.growth-container {
+  position: fixed !important;
+  top: 70px !important; /* Header height plus some margin */
+  left: 0 !important;
+  width: 100vw !important;
+  height: calc(100vh - 70px) !important; /* Viewport height minus header height */
+}
+
+/* Adjust controls panel position */
+.controls-panel {
+  top: 90px !important; /* Adjusted to account for header space */
+}
+
+/* Hide the central circle on the growth page */
+#growth-animation #growth-mask,
+#growth-animation circle[cx="50"][cy="50"],
+#growth-animation circle[r="15"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Also target any center circle by position */
+#growth-animation circle {
+  opacity: 0.8; /* Make all circles slightly transparent to blend in */
+}
+
+/* But keep the agent circles visible - those are smaller */
+#growth-animation circle[r="1"],
+#growth-animation circle[r="1.5"] {
+  opacity: 0.7 !important;
+} 

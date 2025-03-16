@@ -1,6 +1,8 @@
 ---
 layout: default
 title: ""
+hide_nav: true
+hide_header: true
 ---
 
 <div class="growth-container">

@@ -4,7 +4,9 @@ title: "Organic Growth Patterns"
 permalink: /growth/
 ---
 
-<div class="growth-container">
+<link rel="stylesheet" href="/assets/css/growth-header-fix.css">
+
+<div class="growth-container" style="cursor: default;">
   <svg id="growth-animation" preserveAspectRatio="xMidYMid meet">
     <!-- The generative pattern will be drawn here -->
   </svg>
@@ -37,6 +39,7 @@ permalink: /growth/
 
 <link rel="stylesheet" href="/assets/css/growth.css">
 <link rel="stylesheet" href="/assets/css/growth-lab.css">
+<script src="/assets/js/growth-page.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleGoldenAngle = document.getElementById('toggleGoldenAngle');
   const toggleGravity = document.getElementById('toggleGravity');
   
+  // Disable the center circle immediately by setting its radius to 0
+  // This needs to happen before any HyphaeGrowth instances are created
+  HyphaeGrowth.CONFIG.CIRCLE_RADIUS = 0;
+  
   // Update config with control values
   function updateConfig() {
     HyphaeGrowth.CONFIG.MIN_SEEDS = parseInt(seedCountSlider.value);
@@ -65,6 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle features
     HyphaeGrowth.CONFIG.USE_GOLDEN_ANGLE = toggleGoldenAngle.classList.contains('active');
     HyphaeGrowth.CONFIG.USE_GRAVITY = toggleGravity.classList.contains('active');
+    
+    // Ensure the center circle radius stays at 0
+    HyphaeGrowth.CONFIG.CIRCLE_RADIUS = 0;
     
     // Update display values
     seedCountValue.textContent = seedCountSlider.value;
@@ -88,6 +98,31 @@ document.addEventListener('DOMContentLoaded', () => {
         restartButton.style.opacity = '1';
       }
     }, 10);
+    
+    // Remove center circle after a short delay
+    setTimeout(() => {
+      removeGrowthMask();
+    }, 100);
+  }
+  
+  // Function to remove the center circle
+  function removeGrowthMask() {
+    // Target by ID
+    const mask = document.getElementById('growth-mask');
+    if (mask) mask.remove();
+    
+    // Target all circles and check their attributes
+    const circles = svg.querySelectorAll('circle');
+    circles.forEach(circle => {
+      const cx = circle.getAttribute('cx');
+      const cy = circle.getAttribute('cy');
+      const r = circle.getAttribute('r');
+      
+      // If it's a center circle with radius around 15
+      if (r && parseFloat(r) >= 10 && parseFloat(r) <= 20) {
+        circle.remove();
+      }
+    });
   }
   
   // Add event listeners
@@ -112,5 +147,42 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Start initial growth
   startGrowth();
+  
+  // Extra safety - remove any center circle after everything is loaded
+  window.addEventListener('load', removeGrowthMask);
 });
+</script>
+
+<!-- Final Circle Removal Script - runs after everything else -->
+<script>
+(function() {
+  // Run immediately and also after a delay to catch any late-rendered circles
+  function removeCircle() {
+    const svg = document.getElementById('growth-animation');
+    if (!svg) return;
+    
+    // Remove specific circle
+    const mask = document.getElementById('growth-mask');
+    if (mask) mask.remove();
+    
+    // Find all circles in the SVG
+    const circles = svg.querySelectorAll('circle');
+    circles.forEach(circle => {
+      // Target larger circles that might be in the center
+      const r = circle.getAttribute('r');
+      if (r && parseFloat(r) >= 10) {
+        circle.remove();
+      }
+    });
+  }
+  
+  // Run immediately
+  removeCircle();
+  
+  // Run again after short delay
+  setTimeout(removeCircle, 500);
+  
+  // Run again after longer delay
+  setTimeout(removeCircle, 1500);
+})();
 </script>

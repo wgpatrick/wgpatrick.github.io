@@ -27,6 +27,7 @@ function initializeIndexPage() {
   
   let pattern = null;
   let growthInterval = null;
+  let enterTextTimer = null; // Timer for showing "Enter" text
 
   /**
    * Start a new growth animation using requestAnimationFrame for better performance
@@ -37,6 +38,11 @@ function initializeIndexPage() {
       growthInterval = null;
     }
     
+    // Clear any existing timer
+    if (enterTextTimer) {
+      clearTimeout(enterTextTimer);
+    }
+    
     // Reset the SVG and button
     svg.innerHTML = '';
     restartButton.style.opacity = '0';
@@ -44,13 +50,24 @@ function initializeIndexPage() {
     // Create new growth pattern
     pattern = new HyphaeGrowth(svg);
     
+    // Set timer to show "Enter" text after 1 second regardless of animation state
+    enterTextTimer = setTimeout(() => {
+      if (pattern && pattern.enterText) {
+        pattern.enterText.style.transition = 'opacity 1s';
+        pattern.enterText.style.opacity = '1';
+        restartButton.style.opacity = '1';
+      }
+    }, 1000);
+    
     // Performance tracking variables
     let lastFrameTime = performance.now();
     let frameCount = 0;
     let growthsPerFrame = 3; // Start with 3 growth steps per frame (faster growth)
-    const targetFrameTime = 16.67; // Target ~60fps (16.67ms per frame)
+    const targetFrameTime = 16.667; // Target 60fps (1000ms / 60frames)
     
-    // Animation loop using requestAnimationFrame
+    /**
+     * Animation loop for growth pattern
+     */
     function animateGrowth(timestamp) {
       // Performance optimization: batch multiple growth steps per frame
       // This significantly reduces overhead of animation frame callbacks
@@ -60,10 +77,12 @@ function initializeIndexPage() {
         // Check if growth is complete - more lenient to avoid early termination
         if (pattern.points.length === 0 && 
             pattern.branches.length > HyphaeGrowth.CONFIG.MAX_BRANCHES / 2) {
-          // Show the enter text and restart button
-          pattern.enterText.style.transition = 'opacity 1s';
-          pattern.enterText.style.opacity = '1';
-          restartButton.style.opacity = '1';
+          if (pattern && pattern.enterText && pattern.enterText.style.opacity !== '1') {
+            // Show the enter text and restart button if not already shown by timer
+            pattern.enterText.style.transition = 'opacity 1s';
+            pattern.enterText.style.opacity = '1';
+            restartButton.style.opacity = '1';
+          }
           return; // Stop animation
         }
       }

@@ -1,0 +1,91 @@
+/* Annotations System Styles */
+
+/* Annotated terms styling */
+.annotated-term {
+  border-bottom: 1px dotted #999;
+  cursor: pointer;
+  position: relative;
+  color: inherit; /* Use the same color as normal text */
+}
+
+.annotated-term:hover {
+  background-color: #fffbe6; /* Light yellow highlight on hover */
+  border-bottom: 1px solid #999; /* Make the dotted line solid on hover */
+}
+
+/* Modal styling */
+.annotation-modal {
+  display: none;
+  position: absolute;
+  z-index: 10000;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: white;
+  border: 1px solid #ccc; /* Thin gray border */
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  padding: 20px;
+}
+
+.annotation-modal.active {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10000 !important;
+}
+
+/* Modal title */
+.modal-title {
+  margin-top: 0;
+  margin-right: 25px; /* Make room for close button */
+  font-size: 16px;
+  font-weight: 500; /* Make it slightly less bold */
+  color: #333;
+}
+
+/* Close button for modal */
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+  z-index: 10001;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.close-btn:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Modal content */
+.modal-summary {
+  margin-top: 15px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .annotation-modal {
+    width: 90%;
+    max-width: 320px;
+  }
+  
+  .close-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+} 

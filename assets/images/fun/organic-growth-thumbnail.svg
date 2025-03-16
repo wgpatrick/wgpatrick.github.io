@@ -1,0 +1,104 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  
+  <!-- Organic Growth Pattern - Based on the provided image -->
+  <!-- Green section (left) -->
+  <path d="M0,200 C50,150 100,120 150,100 S220,80 250,120 S280,150 300,180" 
+        stroke="#2a9d8f" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M0,220 C40,230 80,240 120,230 S180,200 210,220" 
+        stroke="#2a9d8f" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M100,100 C120,130 150,160 180,170 S220,180 250,190" 
+        stroke="#2a9d8f" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+  <!-- Secondary green paths -->
+  <path d="M120,150 C150,140 180,130 200,150" 
+        stroke="#2a9d8f" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M180,200 C200,210 220,220 240,210" 
+        stroke="#2a9d8f" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M50,180 C70,190 90,200 110,190" 
+        stroke="#2a9d8f" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+  <!-- Finer green details -->
+  <path d="M170,130 Q180,140 190,135 T210,140" 
+        stroke="#2a9d8f" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+  <path d="M70,200 Q80,210 90,205 T100,215" 
+        stroke="#2a9d8f" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+  <path d="M230,170 Q240,180 250,175 T270,180" 
+        stroke="#2a9d8f" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+        
+  <!-- Black/Dark section (middle) -->
+  <path d="M300,180 C330,200 360,220 390,240 S430,260 470,240" 
+        stroke="#262626" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M310,150 C340,170 370,190 400,180 S430,160 460,140" 
+        stroke="#262626" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M340,210 C370,230 400,250 430,270" 
+        stroke="#262626" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+  <!-- Secondary black paths -->
+  <path d="M350,170 C370,160 390,150 410,160" 
+        stroke="#262626" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M380,220 C400,230 420,240 440,230" 
+        stroke="#262626" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Finer black details -->
+  <path d="M320,190 Q330,200 340,195 T350,200" 
+        stroke="#262626" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M420,170 Q430,180 440,175 T450,180" 
+        stroke="#262626" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M400,210 Q410,220 420,215 T430,225" 
+        stroke="#262626" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+  
+  <!-- Red/Orange section (right) -->
+  <path d="M470,240 C510,230 550,220 590,230 S640,250 680,260 S740,270 800,280" 
+        stroke="#e76f51" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M460,140 C500,130 540,120 580,130 S630,150 670,150 S730,140 770,130" 
+        stroke="#e76f51" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M500,180 C530,170 560,160 590,170 S630,190 660,200" 
+        stroke="#e76f51" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+  <!-- Secondary red paths -->
+  <path d="M540,210 C560,220 580,230 600,220" 
+        stroke="#e76f51" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M570,160 C590,150 610,140 630,150" 
+        stroke="#e76f51" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M640,180 C660,190 680,200 700,190" 
+        stroke="#e76f51" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+        
+  <!-- Finer red details -->
+  <path d="M580,200 Q590,210 600,205 T620,210" 
+        stroke="#e76f51" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M630,170 Q640,180 650,175 T670,180" 
+        stroke="#e76f51" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M700,170 Q710,180 720,175 T740,180" 
+        stroke="#e76f51" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.5"/>
+  
+  <!-- Texture/connecting patterns -->
+  <!-- Left to Middle connections -->
+  <path d="M270,160 Q285,170 300,180" 
+        stroke="#444444" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <path d="M260,140 Q275,150 290,160" 
+        stroke="#2a9d8f" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <!-- Middle to Right connections -->
+  <path d="M450,170 Q460,175 470,180" 
+        stroke="#444444" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.3"/>
+  <path d="M460,200 Q470,210 480,220" 
+        stroke="#e76f51" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.3"/>
+        
+  <!-- Light background texture for depth -->
+  <!-- Green section texture -->
+  <path d="M50,150 Q70,160 90,155 T120,160" 
+        stroke="#2a9d8f" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+  <path d="M150,120 Q170,130 190,125 T210,130" 
+        stroke="#2a9d8f" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+  <!-- Black section texture -->
+  <path d="M350,200 Q370,210 390,205 T410,210" 
+        stroke="#262626" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+  <path d="M420,180 Q440,190 460,185 T480,190" 
+        stroke="#262626" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+  <!-- Red section texture -->
+  <path d="M550,190 Q570,200 590,195 T610,200" 
+        stroke="#e76f51" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+  <path d="M620,160 Q640,170 660,165 T680,170" 
+        stroke="#e76f51" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+</svg> 

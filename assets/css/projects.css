@@ -3,35 +3,56 @@
  * Controls layout and interaction for project listings and navigation
  */
 
+/* Main layout variables */
+body.projects-page {
+  /* Create space for the left navigation */
+  --nav-width: 200px; /* Width of the navigation panel */
+  --content-margin: 30px; /* Reduced margin to fix alignment issues */
+}
+
+/* Main content area that needs offset from the left nav */
+body.projects-page .page-content .wrapper {
+  max-width: 800px; /* Set a fixed max-width for the content */
+  padding-left: var(--content-margin); /* Add padding to make room for nav */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin: 0 auto;
+}
+
+/* Content alignment with header title */
+body.projects-page .site-title {
+  /* Remove the margin-left that was pushing the title to the right */
+}
+
+body.projects-page .post-content {
+  padding-left: 0; /* Remove any additional padding */
+}
+
 /* Main container - single column layout */
 .projects-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding-bottom: calc(var(--footer-height) + 20px);
   display: block; /* Reset any grid/flex layout */
+  padding-bottom: calc(var(--footer-height) + 20px);
 }
 
 /* Full-width nav background */
 .projects-nav-wrapper {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 0; /* Changed from 100px to 0 to extend all the way to the top */
   left: 0;
-  right: 0;
+  width: var(--nav-width);
   background: #f8f8f8;
-  border-bottom: 1px solid #ddd;
-  width: 100%;
+  border-right: 1px solid #ddd;
   z-index: 1000;
-  margin-bottom: 30px;
+  height: calc(100vh - var(--footer-height)); /* Removed 100px offset to extend fully */
+  overflow-y: auto; /* Allow scrolling if nav is taller than viewport */
+  padding-top: var(--header-height); /* Use the header height variable */
 }
 
 /* Nav content */
 .projects-nav {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 15px 20px;
   display: flex;
-  justify-content: flex-start;
-  gap: 30px;
+  flex-direction: column; /* Stack links vertically */
+  padding: 20px;
+  gap: 15px;
   box-sizing: border-box;
 }
 
@@ -41,6 +62,7 @@
   padding: 5px 0;
   transition: color 0.2s;
   position: relative;
+  display: block;
 }
 
 .projects-nav .nav-link:hover {
@@ -230,10 +252,38 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+  /* On mobile, move nav to the top instead of the side */
+  body.projects-page {
+    --nav-width: 100%; /* Full width on mobile */
+    --content-margin: 0; /* No side margin needed */
+  }
+  
+  body.projects-page .page-content .wrapper {
+    padding-left: 20px; /* Reset to normal padding */
+    max-width: 800px; /* Reset max-width */
+  }
+
+  .projects-nav-wrapper {
+    position: sticky; /* Use sticky on mobile for better UX */
+    top: 0;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+  }
+  
   .projects-nav {
-    padding: 10px;
-    gap: 15px;
-    justify-content: space-between;
+    flex-direction: row; /* Horizontal on mobile */
+    overflow-x: auto;
+    padding: 15px;
+    gap: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .projects-nav a {
+    white-space: nowrap;
+    font-size: 0.9em;
   }
   
   .header-content {

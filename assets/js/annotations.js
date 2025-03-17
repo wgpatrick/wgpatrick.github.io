@@ -129,7 +129,7 @@ function setupAnnotations() {
     
     // Check if we're on a blog post page
     if (document.body.classList.contains('blog-post-page')) {
-      // Calculate the modal width and height
+    // Calculate the modal width and height
       const panelWidth = annotationPanel.offsetWidth;
       const panelHeight = annotationPanel.offsetHeight;
       
@@ -137,10 +137,10 @@ function setupAnnotations() {
       const contentContainer = document.querySelector('.post') || document.querySelector('.wrapper');
       const contentWidth = contentContainer ? contentContainer.getBoundingClientRect().width : 800;
       const contentRight = contentContainer ? contentContainer.getBoundingClientRect().right : 800;
-      const viewportWidth = window.innerWidth;
-      
-      // Position in right margin (aligned with right edge of content container)
-      let top = rect.top + scrollTop - 20; // Slightly above the element
+    const viewportWidth = window.innerWidth;
+    
+    // Position in right margin (aligned with right edge of content container)
+    let top = rect.top + scrollTop - 20; // Slightly above the element
       let left = contentRight + 20; // 20px to the right of content area
       
       // Ensure the annotation doesn't go off the right side of the screen
@@ -152,16 +152,16 @@ function setupAnnotations() {
       if (top + panelHeight > scrollTop + window.innerHeight - 20) {
         // If it would go off the bottom of the screen, align bottom of panel with bottom of viewport
         top = scrollTop + window.innerHeight - panelHeight - 20;
-      }
-      
-      // Make sure it's not above the top of the viewport
-      if (top < scrollTop + 20) {
-        top = scrollTop + 20;
-      }
-      
+    }
+    
+    // Make sure it's not above the top of the viewport
+    if (top < scrollTop + 20) {
+      top = scrollTop + 20;
+    }
+    
       // For mobile (narrow screens), position below the element
       if (viewportWidth < 960) {
-        top = rect.bottom + scrollTop + 10;
+      top = rect.bottom + scrollTop + 10;
         left = Math.max(20, Math.min(rect.left, viewportWidth - panelWidth - 20));
       }
       

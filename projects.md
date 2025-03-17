@@ -19,11 +19,11 @@ document.body.classList.add('projects-page');
 
 <div class="projects-container">
   <div class="projects-nav-wrapper">
-    <div class="projects-nav">
+  <div class="projects-nav">
       <h2 class="nav-title">Projects</h2>
-      <a href="#product" class="nav-link">Product</a>
+    <a href="#product" class="nav-link">Product</a>
       <a href="#research" class="nav-link">Research</a>
-      <a href="#structural" class="nav-link">Structural</a>
+    <a href="#structural" class="nav-link">Structural</a>
       <a href="#design" class="nav-link">Design</a>
     </div>
   </div>

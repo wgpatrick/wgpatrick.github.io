@@ -6,6 +6,9 @@
  * - Modal positioning and behavior
  */
 
+// Initialize the itemData variable to avoid undefined errors
+window.itemData = window.itemData || {};
+
 // Citation fetching functions
 async function fetchCitationCount(doi) {
   // Check cache first
@@ -44,31 +47,38 @@ async function updateCitationCounts() {
   // Get all publication annotations
   document.querySelectorAll('.annotated-term[data-id^="pub"]').forEach(async (pub) => {
     const id = pub.dataset.id;
-    const data = itemData[id];
-    if (!data || !data.doi) return;
+    if (!window.itemData[id] || !window.itemData[id].doi) return;
     
-    const citations = await fetchCitationCount(data.doi);
+    const citations = await fetchCitationCount(window.itemData[id].doi);
     if (citations !== null) {
       // Get the modal summary div for this publication
-      const summaryText = data.summary;
+      const summaryText = window.itemData[id].summary;
       
       // Insert citation count after the download link
       const updatedSummary = summaryText.replace('</a><br><br>', `</a><br>Cited ${citations} times (from Crossref)<br><br>`);
       
       // Update the summary in itemData
-      itemData[id].summary = updatedSummary;
+      window.itemData[id].summary = updatedSummary;
     }
   });
 }
 
-// Setup annotation interactions
-document.addEventListener('DOMContentLoaded', function() {
+// Function to set up annotations (can be called from blog or CV pages)
+function setupAnnotations() {
+  console.log('Setting up annotations...');
+  console.log('Current itemData:', window.itemData);
+  
   // Elements
-  const modal = document.getElementById('annotation-modal');
-  const modalTitle = document.querySelector('.modal-title');
-  const modalSummary = document.querySelector('.modal-summary');
-  const closeBtn = document.querySelector('.close-btn');
+  const annotationPanel = document.querySelector('.annotation-panel');
+  const annotationTitle = document.querySelector('.annotation-title');
+  const annotationBody = document.querySelector('.annotation-body');
+  const closeButton = document.querySelector('.close-button');
   let currentOpenItem = null;
+  
+  if (!annotationPanel || !annotationTitle || !annotationBody) {
+    console.error('Annotation panel elements not found');
+    return;
+  }
   
   // Click event for annotated terms
   document.querySelectorAll('.annotated-term').forEach(function(item) {
@@ -79,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const id = this.dataset.id;
       
       // Check if we have data for this item
-      if (!itemData[id]) {
+      if (!window.itemData || !window.itemData[id]) {
         console.error(`No data found for item with ID: ${id}`);
         return;
       }
@@ -87,181 +97,151 @@ document.addEventListener('DOMContentLoaded', function() {
       // Set the current open item
       currentOpenItem = this;
       
-      // Update modal content
-      modalTitle.innerText = itemData[id].title || 'Details';
-      modalSummary.innerHTML = itemData[id].summary || 'No details available.';
+      // Update annotation content
+      annotationTitle.innerText = window.itemData[id].title || 'Details';
       
-      // Position and show modal
-      positionComment(this);
+      // Use body for blog posts or summary for CV items
+      if (window.itemData[id].body) {
+        annotationBody.innerHTML = window.itemData[id].body;
+      } else {
+        annotationBody.innerHTML = window.itemData[id].summary || 'No details available.';
+      }
       
-      // Add active class to modal (for CSS transitions)
-      modal.classList.add('active');
-      modal.style.display = 'block';
-      modal.style.opacity = '1';
+      // Position and show annotation panel
+      positionAnnotation(this);
+      
+      // Show the annotation panel
+      annotationPanel.style.display = 'block';
+      annotationPanel.classList.add('visible');
       
       // Prevent event from bubbling up
       e.stopPropagation();
     });
   });
   
-  // Position the comment modal relative to the clicked term
-  function positionComment(element) {
-    if (!modal) return;
+  // Position the annotation panel relative to the clicked term
+  function positionAnnotation(element) {
+    if (!annotationPanel) return;
     
     // Get the element's bounding rectangle
     const rect = element.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
     
-    // Calculate the modal width and height
-    const modalWidth = modal.offsetWidth;
-    const modalHeight = modal.offsetHeight;
+    // Check if we're on a blog post page
+    if (document.body.classList.contains('blog-post-page')) {
+      // Calculate the modal width and height
+      const panelWidth = annotationPanel.offsetWidth;
+      const panelHeight = annotationPanel.offsetHeight;
+      
+      // Get the width of the content container
+      const contentContainer = document.querySelector('.post') || document.querySelector('.wrapper');
+      const contentWidth = contentContainer ? contentContainer.getBoundingClientRect().width : 800;
+      const contentRight = contentContainer ? contentContainer.getBoundingClientRect().right : 800;
+      const viewportWidth = window.innerWidth;
+      
+      // Position in right margin (aligned with right edge of content container)
+      let top = rect.top + scrollTop - 20; // Slightly above the element
+      let left = contentRight + 20; // 20px to the right of content area
+      
+      // Ensure the annotation doesn't go off the right side of the screen
+      if (left + panelWidth > viewportWidth - 20) {
+        left = Math.max(viewportWidth - panelWidth - 20, contentRight - panelWidth);
+      }
+      
+      // Make sure panel is within viewport vertically
+      if (top + panelHeight > scrollTop + window.innerHeight - 20) {
+        // If it would go off the bottom of the screen, align bottom of panel with bottom of viewport
+        top = scrollTop + window.innerHeight - panelHeight - 20;
+      }
+      
+      // Make sure it's not above the top of the viewport
+      if (top < scrollTop + 20) {
+        top = scrollTop + 20;
+      }
+      
+      // For mobile (narrow screens), position below the element
+      if (viewportWidth < 960) {
+        top = rect.bottom + scrollTop + 10;
+        left = Math.max(20, Math.min(rect.left, viewportWidth - panelWidth - 20));
+      }
+      
+      // Apply position
+      annotationPanel.style.top = top + 'px';
+      annotationPanel.style.left = left + 'px';
+      console.log('Blog post annotation positioned at:', left, top);
+      return;
+    }
     
-    // Get the width of the container (assuming a max-width content container)
-    const contentContainer = document.querySelector('.wrapper') || document.querySelector('main');
-    const containerRect = contentContainer ? contentContainer.getBoundingClientRect() : {right: window.innerWidth};
+    // For CV and other pages, use the regular positioning logic
+    // Calculate panel position
+    const panelWidth = annotationPanel.offsetWidth;
     const viewportWidth = window.innerWidth;
     
-    // Position in right margin (aligned with right edge of content container)
-    let top = rect.top + scrollTop - 20; // Slightly above the element
-    let left = Math.min(containerRect.right + 20, viewportWidth - modalWidth - 20); // Right margin
+    // Default position to the right of the element
+    let top = rect.top + scrollTop - 10;
+    let left = rect.right + 20;
     
-    // Make sure modal is within viewport vertically
-    if (top + modalHeight > scrollTop + window.innerHeight - 20) {
-      // If it would go off the bottom of the screen, align bottom of modal with bottom of viewport
-      top = scrollTop + window.innerHeight - modalHeight - 20;
+    // If it would go off the right side of the screen, position it to the left
+    if (left + panelWidth > viewportWidth - 20) {
+      left = Math.max(20, rect.left - panelWidth - 20);
     }
     
-    // Make sure it's not above the top of the viewport
-    if (top < scrollTop + 20) {
-      top = scrollTop + 20;
-    }
-    
-    // For mobile (narrow screens), position below the element instead of in margin
-    if (viewportWidth < 768) {
+    // If it still doesn't fit, position it below
+    if (left + panelWidth > viewportWidth - 20 || left < 20) {
       top = rect.bottom + scrollTop + 10;
-      left = Math.max(scrollLeft + 10, Math.min(rect.left + scrollLeft, scrollLeft + viewportWidth - modalWidth - 10));
+      left = Math.max(20, Math.min(rect.left, viewportWidth - panelWidth - 20));
     }
     
-    // Apply the calculated position
-    modal.style.top = top + 'px';
-    modal.style.left = left + 'px';
-    
-    console.log('Positioned popup at:', modal.style.left, modal.style.top);
+    // Apply position
+    annotationPanel.style.top = top + 'px';
+    annotationPanel.style.left = left + 'px';
   }
   
-  // Close comment
-  function closeComment() {
-    console.log('Closing comment function called');
-    modal.classList.remove('active');
-    modal.style.display = 'none'; // Force hide
-    modal.style.opacity = '0';
-    currentOpenItem = null;
-    console.log('Modal should now be closed');
-  }
-  
-  // Close button event
-  if (closeBtn) {
-    console.log('Close button found and listener attached');
-    closeBtn.addEventListener('click', function(e) {
-      console.log('Close button clicked');
-      e.preventDefault();
-      e.stopPropagation();
-      // Force modal to close with direct style manipulation
-      modal.style.display = 'none';
-      modal.classList.remove('active');
-      currentOpenItem = null;
-      console.log('Modal forcibly closed');
+  // Close annotation when clicking the close button
+  if (closeButton) {
+    closeButton.addEventListener('click', function() {
+      closeAnnotation();
     });
-  } else {
-    console.error('Close button not found!');
   }
   
-  // Escape key to close
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeComment();
-    }
-  });
-  
-  // Close comment when scrolling far from original position
-  window.addEventListener('scroll', function() {
-    // Throttle scroll events to avoid performance issues
-    if (!this.scrollTimeout) {
-      this.scrollTimeout = setTimeout(() => {
-        this.scrollTimeout = null;
-        
-        console.log('Scroll event processed');
-        if (currentOpenItem) {
-          const rect = currentOpenItem.getBoundingClientRect();
-          
-          // Close if the element is off screen
-          if (rect.top < -100 || rect.bottom > window.innerHeight + 100) {
-            console.log('Closing due to scroll distance');
-            // Force modal to close directly
-            modal.style.display = 'none';
-            modal.classList.remove('active');
-            currentOpenItem = null;
-          }
-        }
-      }, 100); // Process scroll events at most every 100ms
-    }
-  });
-  
-  // Reposition on window resize
-  window.addEventListener('resize', function() {
-    if (currentOpenItem) {
-      positionComment(currentOpenItem);
-    }
-  });
-
-  // Update CSS for the close button
-  const style = document.createElement('style');
-  style.textContent = `
-    .close-btn {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      width: 40px;
-      height: 40px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1000;
-      color: #444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: color 0.2s ease;
-    }
-    
-    .close-btn:hover {
-      color: #000;
-    }
-    
-    @media (max-width: 768px) {
-      .close-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 20px;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-  
-  // Close when clicking outside
+  // Close annotation when clicking outside
   document.addEventListener('click', function(e) {
-    if (modal && modal.classList.contains('active')) {
-      // Check if the click is outside the modal and not on an annotated term
-      if (!modal.contains(e.target) && 
-         (!e.target.classList || !e.target.classList.contains('annotated-term'))) {
-        closeComment();
-      }
+    if (annotationPanel.style.display === 'block' && 
+        !annotationPanel.contains(e.target) && 
+        !e.target.classList.contains('annotated-term')) {
+      closeAnnotation();
     }
   });
   
-  // Update citation counts on page load
-  updateCitationCounts();
+  // Close annotation with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && annotationPanel.style.display === 'block') {
+      closeAnnotation();
+    }
+  });
+  
+  // Function to close the annotation panel
+  function closeAnnotation() {
+    annotationPanel.classList.remove('visible');
+    
+    // Hide after transition ends
+    setTimeout(() => {
+      annotationPanel.style.display = 'none';
+      currentOpenItem = null;
+    }, 200);
+  }
+  
+  // Update citation counts for CV page
+  if (document.body.classList.contains('cv-page')) {
+    updateCitationCounts();
+  }
+}
+
+// Initialize annotations on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Will be called explicitly on blog pages from the post.html layout
+  // For CV and other pages, initialize here
+  if (!document.body.classList.contains('blog-post-page')) {
+    setupAnnotations();
+  }
 }); 

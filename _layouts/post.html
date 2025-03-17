@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<script>
+document.body.classList.add('blog-post-page');
+</script>
+
+<link rel="stylesheet" href="/assets/css/blog-styles.css">
+<link rel="stylesheet" href="/assets/css/annotations.css">
+
+<!-- Load annotation scripts -->
+<script src="/assets/js/annotations.js"></script>
+<script src="/assets/js/blog-annotations.js"></script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      {% if page.category %}
+      • <span class="post-category">{{ page.category }}</span>
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div class="annotation-panel">
+    <div class="annotation-content">
+      <div class="close-button">&times;</div>
+      <h3 class="annotation-title"></h3>
+      <div class="annotation-body"></div>
+    </div>
+  </div>
+
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Post-specific annotations data will be loaded from the 
+    // blog-annotations.js file based on the post URL
+    setupAnnotations();
+  });
+</script> 

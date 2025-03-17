@@ -41,7 +41,7 @@ body.projects-page .post-content {
   width: var(--nav-width);
   background: #f8f8f8;
   border-right: 1px solid #ddd;
-  z-index: 1000;
+  z-index: 1;
   height: calc(100vh - var(--footer-height)); /* Removed 100px offset to extend fully */
   overflow-y: auto; /* Allow scrolling if nav is taller than viewport */
   padding-top: var(--header-height); /* Use the header height variable */
@@ -62,12 +62,12 @@ body.projects-page .post-content {
   margin: 0;
   padding: 0;
   color: #333;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .projects-nav .nav-link {
   text-decoration: none;
-  color: #666;
+  color: #333;
   padding: 5px 0;
   transition: color 0.2s;
   position: relative;
@@ -315,6 +315,6 @@ body.projects-page .post-content {
 
 /* Content heading styles */
 .post-content h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
 }

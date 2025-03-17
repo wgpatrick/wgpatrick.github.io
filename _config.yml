@@ -2,5 +2,7 @@ theme: minima
 header_pages:
   - cv.md
   - projects.md
+  - blog.md
   - fun.md
 title: ""
+future: true

@@ -32,7 +32,7 @@ body.cv-page .post-content {
   width: var(--nav-width);
   background: #f8f8f8;
   border-right: 1px solid #ddd;
-  z-index: 1000;
+  z-index: 1; /* Changed from 1000 to 1 as requested */
   height: calc(100vh - var(--footer-height)); /* Removed 100px offset to extend fully */
   overflow-y: auto; /* Allow scrolling if nav is taller than viewport */
   padding-top: var(--header-height); /* Use the header height variable */

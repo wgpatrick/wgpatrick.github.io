@@ -5,7 +5,7 @@ date: 2025-03-17 10:00:00 -0800
 category: Software
 ---
 
-Two months ago, I needed a new personal website and decided to give codegen a spin. Friends pointed me to Cursor and, hours later, I had a markdown [website](https://willpatrick.xyz) on a shiny new domain. Had I known hours earlier that Github hosted websites? Nope. How about a bio-inspired art thing for the entrance animation? Bang. Unnecessary but useful annotations on my CV page? Letsss gooo. Suddenly, I realized I could easily build my own software, and that this was true for everyone else.
+Two months ago, I needed a new personal website and decided to give codegen a spin. Friends pointed me to Cursor and, hours later, I had a markdown [website](https://willpatrick.xyz) on a shiny new domain. Had I known hours earlier that Github hosted websites? Nope. How about a [bio-inspired art thing](https://willpatrick.xyz/growth/) for the entrance animation? Bang. Unnecessary but <span class="annotated-term" data-id="useful-annotations"> useful annotations</span> on my CV page? Letsss gooo. Suddenly, I realized I could easily build my own software, and that this was true for everyone else.
 
 In college, I first encountered the steep learning curve of syntax, methods, and functions. My classmates, it appeared, had been coding since they were 12 and flew through our assignments. Thoroughly deflated, I focused on hardware for the rest of my career, leaving software to others.
 

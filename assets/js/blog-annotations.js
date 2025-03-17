@@ -36,6 +36,10 @@ const blogAnnotations = {
       title: 'Publication Note',
       body: `<p>This is an example annotation to demonstrate how footnotes and additional information can be added to blog posts.</p>
              <p>Annotations can provide context, citations, or additional thoughts without disrupting the flow of the main text.</p>`
+    },
+    'useful-annotations': {
+      title: 'Useful Annotations',
+      body: `<p>This is a SUPER DUPER useful annotation.</p>`
     }
   }
   // You can add more posts by adding their URL slugs as keys

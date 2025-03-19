@@ -97,10 +97,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (annotationsLoaded) {
       // Initialize annotations after a slight delay to ensure DOM is ready
       setTimeout(() => {
-        if (typeof setupAnnotations === 'function') {
+        // Check for the new Annotations module first
+        if (typeof Annotations !== 'undefined' && typeof Annotations.setupHandlers === 'function') {
+          console.log('Setting up blog annotations with new Annotations module');
+          // No need to call setupHandlers here as it will be handled by the wrapper
+        } else if (typeof setupAnnotations === 'function') {
+          // Fallback to legacy method if available
+          console.log('Using legacy setupAnnotations function');
           setupAnnotations();
         } else {
-          console.error('setupAnnotations function not found. Make sure annotations.js is loaded first.');
+          console.error('No annotation setup function found');
         }
       }, 100);
     }

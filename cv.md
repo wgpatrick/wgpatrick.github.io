@@ -18,9 +18,9 @@ document.body.classList.add('cv-page');
   }
 </style>
 
-<!-- Load external JavaScript files for annotations and interactions -->
-<script src="/assets/js/annotations-data.js"></script>
+<!-- Load script files -->
 <script src="/assets/js/annotations.js"></script>
+<script src="/assets/js/cv-annotations.js"></script>
 
 <!-- Print-only header that MUST appear when printing -->
 <div class="print-header" style="display:none !important;">
@@ -239,22 +239,22 @@ Developed charge and discharge controls for solar-powered LED home lighting syst
 - [ArchDaily: "Neri Oxman's 'Mushtari' Is a 3D Printed Wearable That Makes Products from Sunlight"](https://www.archdaily.com/769818/neri-oxmans-mushtari-is-a-3d-printed-wearable-that-makes-products-from-sunlight)  
   *ArchDaily, June 2015*
 
-<!-- Update the modal element -->
-<div id="annotation-modal" class="annotation-modal">
-  <button type="button" class="close-btn">×</button>
-  <h4 class="modal-title">Modal Title</h4>
-  <div class="modal-summary">Loading content...</div>
+<!-- Add the annotation panel -->
+<div class="annotation-panel">
+  <div class="annotation-content">
+    <div class="close-button">&times;</div>
+    <h3 class="annotation-title"></h3>
+    <div class="annotation-body"></div>
+  </div>
 </div>
 
-<!-- Add this right before the closing </body> tag -->
+<!-- Mobile navigation script -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const nav = document.querySelector('.cv-nav-wrapper');
   const navTop = nav.offsetTop;
   
-  // Mobile-only sticky behavior
   function handleMobileNav() {
-    // Only apply sticky logic on mobile screens
     if (window.innerWidth <= 768) {
       if (window.scrollY >= navTop) {
         nav.classList.add('sticky-active');
@@ -262,15 +262,97 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.classList.remove('sticky-active');
       }
     } else {
-      // On desktop, always remove sticky class
       nav.classList.remove('sticky-active');
     }
   }
   
   window.addEventListener('scroll', handleMobileNav);
   window.addEventListener('resize', handleMobileNav);
-  
-  // Initial check
   handleMobileNav();
+});
+</script>
+
+<!-- We actually do need the fix script for additional annotation data -->
+<script src="/assets/js/cv-annotations-fix.js"></script>
+
+<script>
+// Debug script to help identify the annotation issue
+document.addEventListener('DOMContentLoaded', function() {
+  // First check if we're on the CV page
+  if (!document.body.classList.contains('cv-page')) {
+    console.log('Debug: Not on CV page');
+    return;
+  }
+  
+  console.log('Debug: Starting diagnosis on CV page');
+  
+  // Function to log object details safely
+  function logObject(name, obj) {
+    try {
+      console.log(name + ':', obj);
+      console.log(name + ' keys:', obj ? Object.keys(obj) : 'null or undefined');
+      console.log(name + ' type:', obj ? typeof obj : 'null or undefined');
+    } catch (e) {
+      console.error('Error logging ' + name + ':', e);
+    }
+  }
+  
+  // Check 1: Immediately log the state of window.itemData
+  console.log('Debug: Initial window.itemData check:');
+  logObject('window.itemData', window.itemData);
+  
+  // Check 2: Check if specific keys exist
+  const testKeys = ['culture-biosciences', 'digital-fabrication', 'mit-media-lab'];
+  testKeys.forEach(key => {
+    console.log(`Debug: Does itemData have "${key}"? ${window.itemData && window.itemData[key] ? 'YES' : 'NO'}`);
+    if (window.itemData && window.itemData[key]) {
+      console.log(`Debug: Value for "${key}":`, window.itemData[key]);
+    }
+  });
+  
+  // Check 3: Log all script tags to see loading order
+  console.log('Debug: Script loading order:');
+  document.querySelectorAll('script').forEach((script, index) => {
+    console.log(`Script #${index}:`, script.src || 'inline script');
+  });
+  
+  // Check 4: Check after a delay to see if data gets populated later
+  setTimeout(() => {
+    console.log('Debug: Delayed window.itemData check (500ms):');
+    logObject('window.itemData', window.itemData);
+    
+    // Check if specific keys exist after delay
+    testKeys.forEach(key => {
+      console.log(`Debug: After delay - Does itemData have "${key}"? ${window.itemData && window.itemData[key] ? 'YES' : 'NO'}`);
+    });
+    
+    // Log all annotated terms on the page
+    const terms = document.querySelectorAll('.annotated-term');
+    console.log(`Debug: Found ${terms.length} annotated terms on the page`);
+    terms.forEach((term, i) => {
+      if (i < 5) { // Just log the first 5 to avoid console spam
+        console.log(`Term #${i}: data-id="${term.dataset.id}"`);
+      }
+    });
+    
+    // Check if setupAnnotations exists and when it's called
+    console.log('Debug: setupAnnotations exists?', typeof setupAnnotations === 'function');
+  }, 500);
+  
+  // Check 5: See if annotations gets reinitialized properly
+  const originalSetupAnnotations = window.setupAnnotations;
+  if (typeof originalSetupAnnotations === 'function') {
+    window.setupAnnotations = function() {
+      console.log('Debug: setupAnnotations was called');
+      return originalSetupAnnotations.apply(this, arguments);
+    };
+  } else {
+    console.log('Debug: setupAnnotations not found at script execution time');
+    
+    // Check later
+    setTimeout(() => {
+      console.log('Debug: Delayed check for setupAnnotations:', typeof window.setupAnnotations === 'function');
+    }, 1000);
+  }
 });
 </script>

@@ -6,8 +6,17 @@
  * - Modal positioning and behavior
  */
 
-// Initialize the itemData variable to avoid undefined errors
-window.itemData = window.itemData || {};
+// Debug log to check when this script runs
+console.log('Annotations.js: Script loading');
+
+// IMPORTANT: Initialize itemData if needed, but make sure we use the same variable name
+// Since cv-annotations.js uses itemData, make sure we also reference it directly
+if (typeof itemData === 'undefined') {
+  console.log('Annotations.js: Creating new itemData object');
+  var itemData = {};
+} else {
+  console.log('Annotations.js: itemData already exists with', Object.keys(itemData).length, 'entries');
+}
 
 // Citation fetching functions
 async function fetchCitationCount(doi) {
@@ -88,8 +97,12 @@ function setupAnnotations() {
       // Get the item ID
       const id = this.dataset.id;
       
-      // Check if we have data for this item
-      if (!window.itemData || !window.itemData[id]) {
+      // Debug: Log when a term is clicked to help troubleshoot
+      console.log(`Annotations: Term clicked with ID "${id}"`);
+      console.log(`Annotations: Current itemData has keys:`, Object.keys(itemData || {}));
+      
+      // Important: Use itemData directly (not window.itemData) to match how it was defined
+      if (!itemData || !itemData[id]) {
         console.error(`No data found for item with ID: ${id}`);
         return;
       }
@@ -98,13 +111,13 @@ function setupAnnotations() {
       currentOpenItem = this;
       
       // Update annotation content
-      annotationTitle.innerText = window.itemData[id].title || 'Details';
+      annotationTitle.innerText = itemData[id].title || 'Details';
       
       // Use body for blog posts or summary for CV items
-      if (window.itemData[id].body) {
-        annotationBody.innerHTML = window.itemData[id].body;
+      if (itemData[id].body) {
+        annotationBody.innerHTML = itemData[id].body;
       } else {
-        annotationBody.innerHTML = window.itemData[id].summary || 'No details available.';
+        annotationBody.innerHTML = itemData[id].summary || 'No details available.';
       }
       
       // Position and show annotation panel

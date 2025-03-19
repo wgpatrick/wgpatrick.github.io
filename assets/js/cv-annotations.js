@@ -3,7 +3,12 @@
  * Contains the descriptive data for all annotated terms on the CV page
  */
 
-const itemData = {
+// Add debug logging
+console.log('CV Annotations: Script loading');
+
+// IMPORTANT: Use the global itemData object directly, not window.itemData
+// This could be a key part of the problem
+itemData = {
   // Publications
   pub1: {
     title: "Grown, printed, and biologically augmented",

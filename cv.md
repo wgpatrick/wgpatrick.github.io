@@ -19,6 +19,7 @@ document.body.classList.add('cv-page');
 </style>
 
 <!-- Load script files -->
+<script src="/assets/js/annotations-core.js"></script>
 <script src="/assets/js/annotations.js"></script>
 <script src="/assets/js/cv-annotations.js"></script>
 

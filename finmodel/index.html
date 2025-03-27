@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Company - Financial Model FY 2025</title>
+    
+    <!-- ag-Grid CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.1/styles/ag-grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.1/styles/ag-theme-alpine.min.css">
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- ag-Grid JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.1/dist/ag-grid-community.min.js"></script>
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Demo Tech Co. - FY 2025 Financial Model</h1>
+            <p class="demo-notice">This is a demonstration model with synthetic data</p>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="initial-cash">Initial Cash:</label>
+                    <input type="number" id="initial-cash" value="5000">
+                </div>
+                <button id="recalculate-btn">Recalculate</button>
+            </div>
+        </header>
+        
+        <div class="chart-container">
+            <h2>Cash Flow Projection</h2>
+            <canvas id="cashChart"></canvas>
+        </div>
+        
+        <div class="sensitivity-controls">
+            <h2>Sensitivity Analysis</h2>
+            <div class="slider-container">
+                <label for="product-revenue-slider">Product Revenue:</label>
+                <input type="range" id="product-revenue-slider" min="0" max="200" value="100" class="slider">
+                <span id="product-revenue-value">100%</span>
+            </div>
+            
+            <div class="slider-container">
+                <label for="partner-revenue-slider">Partnership Revenue:</label>
+                <input type="range" id="partner-revenue-slider" min="0" max="200" value="100" class="slider">
+                <span id="partner-revenue-value">100%</span>
+            </div>
+            
+            <div class="slider-info">
+                <p>Adjust sliders to see how changes in revenue affect financial projections for all months. Range: 0-200%</p>
+            </div>
+        </div>
+        
+        <main>
+            <div class="grid-wrapper">
+                <div id="financial-grid" class="ag-theme-alpine"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Demo Financial Model - Created with HTML, CSS, and JavaScript - All data is synthetic</p>
+        </footer>
+    </div>
+    
+    <script src="model.js"></script>
+</body>
+</html> 

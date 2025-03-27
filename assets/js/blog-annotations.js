@@ -41,6 +41,54 @@ const blogAnnotations = {
       title: 'Useful Annotations',
       body: `<p>This is a SUPER DUPER useful annotation.</p>`
     }
+  },
+  
+  // Vibe Code Everything blog post annotations
+  'vibe-everything': {
+    'vibe-coding': {
+      title: 'Vibe Coding',
+      body: `<p>Made famous by Andrej Karpathy in this viral tweet: <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank">@karpathy</a></p>`
+    },
+    'cursor': {
+      title: 'Cursor',
+      body: `<p>Cursor is one of the hot, leading apps for code generation. I've mainly used Cursor and Claude code for my recent vibe everything explorations.</p>`
+    },
+    'replicate': {
+      title: 'Replicate',
+      body: `<p>A platform that lets you run machine learning models with a cloud API. It provides access to a wide variety of AI models for tasks like image generation, audio processing, and text analysis without requiring specialized hardware or deep ML expertise.</p>`
+    },
+    'ide': {
+      title: 'IDE',
+      body: `<p>Integrated Development Environment - a software application that provides comprehensive facilities for software development. Modern AI-powered IDEs like Cursor combine code editing, debugging, and AI assistance in a single interface.</p>`
+    },
+    'company-repo': {
+      title: '514 Company Repo',
+      body: `<div><img src="/assets/images/blog/company-repo.png" alt="514's company repository" style="width: 100%; max-width: 600px; border-radius: 8px; margin-bottom: 12px;"><p>514's company repo in Cursor. The entire business operates out of a single GitHub repository, with all company documents stored as markdown files. This enables version control for all company assets and makes everything programmatically accessible.</p></div>`
+    },
+    'agentic-tool-use': {
+      title: 'Agentic Tool Use',
+      body: `<p>The ability of AI systems to autonomously use external tools and APIs to accomplish tasks. This includes capabilities like searching the web, running code, accessing databases, or calling other AI services to complete complex workflows.</p>`
+    },
+    'model-context-protocol': {
+      title: 'Model Context Protocol (MCP)',
+      body: `<p>A standardized way for AI models to interact with various tools and services. MCP provides a consistent interface for models to request information or perform actions across different platforms and applications.</p>`
+    },
+    'crm': {
+      title: 'CRM',
+      body: `<p>Customer Relationship Management - a system for managing interactions with current and potential customers. CRM software helps businesses organize customer data, track sales activities, and improve customer service.</p>`
+    },
+    'sqlite': {
+      title: 'SQLite',
+      body: `<p>A lightweight, file-based relational database that requires minimal setup and administration. SQLite is often used for local/embedded applications where a full client-server database would be unnecessary.</p>`
+    },
+    'gpt4o-image-generation': {
+      title: 'GPT-4o Image Generation',
+      body: `<p>The image generation capability in GPT-4o, an OpenAI multimodal model that can process and generate both text and images. </p>`
+    },
+    'hris': {
+      title: 'HRIS',
+      body: `<p>Human Resource Information System - software that manages HR functions like employee data, payroll, benefits administration, and compliance with employment laws and regulations.</p>`
+    }
   }
   // You can add more posts by adding their URL slugs as keys
 };

@@ -21,6 +21,16 @@ hide_in_nav: true
         <p>Interactive simulation of natural branching structures</p>
       </div>
     </a>
+
+    <a href="/finmodel/index.html" class="fun-item">
+      <div class="thumbnail">
+        <img src="/assets/images/fun/finmodel-thumbnail.svg" alt="Financial Model Demo">
+      </div>
+      <div class="fun-item-info">
+        <h3>Startup Financial Model</h3>
+        <p>Interactive financial planning tool with sensitivity analysis and cash flow visualization</p>
+      </div>
+    </a>
   </div>
 </div>
 

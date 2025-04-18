@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadEval Dashboard: Run: run_20250418_101353</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .config-info {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .config-info h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .config-info h4 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .config-info pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 3px;
+            white-space: pre-wrap; /* Wrap long lines */
+            word-wrap: break-word; /* Ensure word breaks */
+        }
+        .config-info ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        .config-info li {
+            margin-bottom: 3px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1 id="run-id">CadEval Dashboard: Run: run_20250418_101353</h1>
+    </header>
+
+    <div id="config-summary" class="config-info">
+        <h3>Evaluation Configuration</h3>
+
+        <h4>Default System Prompt</h4>
+        <pre><code>Create a valid OpenSCAD script that models the following 3D object, described below: {description}
+
+IMPORTANT: Create only a SINGLE part/model in this script. Do not include multiple unconnected components.
+
+Reminders:
+- Ensure the model is manifold and watertight
+- Use appropriate operations as needed
+- Define the model at the origin (0,0,0)
+- Include helpful comments in your code
+- Do not include example usage or test code
+- Do not include explanations outside of code comments</code></pre>
+
+        <h4>Models Used</h4>
+        <ul>
+            <li><b>claude-3-7-sonnet-20250219:</b> Temp: 1.0, Extended Thinking: true, Thinking Budget: 2500</li>
+            <li><b>claude-3-5-sonnet-20241022:</b> Temp: 0.4</li>
+            <li><b>claude-3-5-haiku-20241022:</b> Temp: 0.4</li>
+            <li><b>claude-3-haiku-20240307:</b> Temp: 0.4</li>
+            <li><b>o3-2025-04-16:</b> Temp: 0.4</li>
+            <li><b>o4-mini-2025-04-16:</b> Temp: 0.4</li>
+            <li><b>o1-2024-12-17:</b> Temp: 0.4</li>
+            <li><b>gpt-4o-2024-08-06:</b> Temp: 0.4</li>
+            <li><b>o3-mini-2025-01-31:</b> Temp: 0.4</li>
+            <li><b>gpt-4.1-2025-04-14:</b> Temp: 0.4</li>
+            <li><b>gpt-4.1-mini-2025-04-14:</b> Temp: 0.4</li>
+            <li><b>gemini-2.5-pro-preview-03-25:</b> Temp: 0.4</li>
+            <li><b>gemini-2.0-flash:</b> Temp: 0.4</li>
+            <li><b>gemini-1.5-pro:</b> Temp: 0.4</li>
+            <li><b>zoo-ml-text-to-cad:</b> Provider: zoo_cli, CLI Args: {output_format: stl}</li>
+        </ul>
+
+        <h4>Execution Settings</h4>
+        <p>Number of Replicates per Task: 4</p>
+
+        <h4>Geometry Check Thresholds</h4>
+        <ul>
+            <li>Bounding Box Tolerance: 1.0 mm</li>
+            <li>ICP Fitness Threshold: 1.0</li>
+            <li>Chamfer Distance: 1.0 mm</li>
+            <li>Hausdorff Distance: 1.0 mm</li>
+            <li>Volume Difference: 2.0 %</li>
+        </ul>
+    </div>
+
+    <div id="loading-indicator">Loading data...</div>
+    <div id="error-indicator" style="display: none; color: red;"></div>
+
+    <div id="charts-container" class="charts-grid" style="display: none;">
+        <div class="chart-wrapper"><canvas id="successRateChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="renderSuccessRateChart"></canvas></div>
+        <div class="chart-wrapper" id="checksRunWrapper"><canvas id="checksRunSuccessRateChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="avgTotalTimeChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="avgCostChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="checksPassedChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="avgSimilarityChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="avgHausdorffChart"></canvas></div>
+        <div class="chart-wrapper" style="display: none;"><canvas id="avgVolumeDiffChart"></canvas></div> <!-- Keep hidden -->
+        <div class="chart-wrapper"><canvas id="volumePassRateChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="hausdorffPassRateChart"></canvas></div>
+        <div class="chart-wrapper"><canvas id="taskSuccessRateChart"></canvas></div>
+        <div class="chart-wrapper" id="complexityWrapper" style="display: none;"><canvas id="complexityChart"></canvas></div>
+        <div class="chart-wrapper" id="taskChartWrapper" style="display: none;"><canvas id="taskChart"></canvas></div>
+    </div>
+
+    <div id="grids-container">
+        <!-- Tables will be generated here by JavaScript -->
+    </div>
+
+    <!-- Container for Summary Tables (Moved Here) -->
+    <div id="summary-tables-container" style="margin-top: 30px;">
+        <!-- Summary tables will be generated here -->
+    </div>
+
+    <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Load Dashboard Logic -->
+    <script src="dashboard.js"></script>
+</body>
+</html> 

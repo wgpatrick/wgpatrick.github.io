@@ -131,6 +131,19 @@
   border-radius: 4px;
 }
 
+/* Add styles for figure and figcaption */
+.blog-post-page .post-content figure img {
+  margin-bottom: 10px; /* Adjust this value to control space below image */
+}
+
+.blog-post-page .post-content figure figcaption {
+  margin-top: 0;      /* Removes space above caption */
+  font-size: 0.9em;   /* Smaller font size for caption */
+  color: #555;       /* Slightly lighter text color */
+  text-align: center; /* Center aligns the caption text */
+  margin-bottom: 24px;/* Adds space below the caption, matching paragraphs */
+}
+
 .blog-post-page .post-content blockquote {
   border-left: 4px solid #ddd;
   padding-left: 20px;

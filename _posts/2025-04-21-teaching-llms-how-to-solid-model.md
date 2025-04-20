@@ -36,7 +36,7 @@ To test it out, I created a simple project in Cursor, made a blank OpenSCAD scri
 
 Then, I started solid modeling!
 
-Here's an example:  "Create an iPhone case". eate an iPhone caseCreate an iPhone case
+Here's an example:  "Create an iPhone case". 
 
 ![iPhone GIF](/assets/images/blog/iphone.gif)
 
@@ -138,7 +138,7 @@ Gemini 2.5 Pro is the cheapest of the 3 top performing model, while o3 was sligh
 
 All of the results as well as the configuration details from the run are available [here](https://willpatrick.xyz/cadevalresults_20250418/).
 
-Here are a couple of examples of parts from the eval. This is one of the most complicated parts o1-2024-12-17 successfully modeled in a single shot. Plotted are two aligned point clouds for the reference (green) and generated (red), which as you can see, look identical.
+Here are a couple of examples of parts from the eval. This is one of the most complicated parts. O1-2024-12-17 successfully modeled in a single shot. Plotted are two aligned point clouds for the reference (green) and generated (red), which as you can see, look identical.
 
 ![Correct Part](/assets/images/blog/correct_part.png)
 
@@ -172,7 +172,7 @@ So when does text-to-CAD become a commonly used tool for mechanical engineers? W
 
 ## Where does this go?
 
-In the medium to long term (2-10 years), I imagine that most parts will be created with a form of CadGen. Allow me to speculate.
+In the medium to long term (2-10 years), I imagine that most parts will be created with a form of GenCAD. Allow me to speculate.
 
 * Initially, GenCAD will be used to create parts that fit within existing assemblies. For example, you might say: "I need a bracket that fits here."  And, the GenCAD tool will create a bracket that perfectly joins with the existing assembly components. Want to analyze three variants with FEA? Ask for them. I expect mainstream CAD suites (Autodesk, Solidworks, Onshape) to add these capabilities directly into their product suite.
 * Longer term, I imagine GenCAD will reach every aspect of a CAD suite: sketches, mates, assemblies, exploded views, CAM tool-pathing, rendering visualizations, and CAE. Imagine a design review where you highlight a subassembly and say "replace these rivets with M6 countersunk screws and regenerate the BOM." The model, drawings, and purchasing spreadsheet all update in seconds. 

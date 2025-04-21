@@ -144,7 +144,7 @@ Here are a couple of examples of parts from the eval. This is one of the most co
 
 Here's an example of a failed part from Gemini 2.5 Pro. It messed up the placement of the counterbore, putting it on the opposite side of the part compared to what the task called for. 
 
-[Incorrect Part](/assets/images/blog/incorrect_part.png)
+![Incorrect Part](/assets/images/blog/incorrect_part.png)
 
 ## Start-ups 
 

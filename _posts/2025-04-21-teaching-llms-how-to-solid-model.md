@@ -34,7 +34,7 @@ To test it out, I created a simple project in Cursor, made a blank OpenSCAD scri
 - When you've executed a step, ask the user if its right.
 ```
 
-Then, I started solid modeling!
+Then, I started using Cursor to create solid models!
 
 Here's an example:  "Create an iPhone case". 
 
@@ -95,7 +95,16 @@ Here is how the eval pipeline works:
 5. The task "passes" if it passes a number of geometric checks. 
 6. The results are then outputted in a dashboard.
 
-[Note: The eval runs multiple replicates per task x model combo. And the eval is executed in parallel, because there there are 1000+ tasks when running the full evaluation]
+<div class="mermaid">
+graph LR
+    A[Start Eval For each Task & Model] --> B{Send System + Task Prompt to LLM};
+    B --> C[LLM Returns OpenSCAD];
+    C --> D{Render OpenSCAD to STL};
+    D --> E{Compare Generated STL to Reference STL};
+    E --> I[Output Eval Results to Dashboard];
+</div>
+
+[Note: The eval runs multiple replicates per task x model combo. And the eval is executed in parallel, because there are 1000+ tasks when running the full evaluation]
 
 Here's how the geometric check works: 
 
@@ -159,7 +168,7 @@ Instead of generating OpenSCAD, the Zoo.dev API shoots back a STL directly. Zoo 
 
 I think these initial results are promising. Cursor (or another code generation tool) + OpenSCAD offers a solution for producing solid models in an automated way. 
 
-However, I don't think this approach is about to take off and spread rapidly through the CAD design ecosystem. The current set-up is seriously clunky and I think specific product improvements are needed to make this work better: 
+However, I don't think this approach is about to take off and spread rapidly through the CAD design ecosystem. The current set-up is seriously clunky and I think substantial product improvements are needed to make this work better. Similar to how Cursor, Windsurf, and other tools have developed specific UX and LLM workflows for code generation, I imagine there will be substantial work required to develop workflows and UX that make sense for CAD generation.  Here are a few ideas that I think could be worth pursuing in this direction:
 
 * Tools that bring in console logs and viewport images to Cursor from OpenSCAD for iterative improvement and debugging.
 * A UI to highlight (and measure) certain faces, lines, or aspects of a part, which are fed to the LLM for additional context.

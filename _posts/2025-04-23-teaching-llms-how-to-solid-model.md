@@ -5,7 +5,12 @@ date: 2025-04-23 10:00:00 -0800
 category: Technology
 --- 
 
+
 It turns out that LLMs can make CAD models for simple 3D mechanical parts. And, I think they'll be extremely good at it soon. 
+
+* See discussion on [HackerNews](https://news.ycombinator.com/item?id=43774990)
+* [GitHub Repo](https://github.com/wgpatrick/cadeval) for Text-to-CAD Evaluation
+* [Results dashboard](https://willpatrick.xyz/cadevalresults_20250422_095709/) 
 
 ## An AI Mechanical Engineer
 

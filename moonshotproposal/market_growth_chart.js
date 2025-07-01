@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const marketGrowthCharts = document.querySelectorAll('#marketGrowthChart');
     
+    // Set default font family for Chart.js
+    Chart.defaults.font.family = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
+    
     marketGrowthCharts.forEach((marketGrowthCtx, index) => {
         if (!marketGrowthCtx) return;
     const years = [];
@@ -37,10 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     beginAtZero: true,
                     title: {
                         display: true,
-                        text: 'Market Size (Billion USD)'
+                        text: 'Market Size (Billion USD)',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
                     },
                     ticks: {
-                        color: '#fff'
+                        color: '#fff',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
                     },
                     grid: {
                         color: 'rgba(255, 255, 255, 0.2)'
@@ -49,10 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: {
                     title: {
                         display: true,
-                        text: 'Year'
+                        text: 'Year',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
                     },
                     ticks: {
-                        color: '#fff'
+                        color: '#fff',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
                     },
                     grid: {
                         color: 'rgba(255, 255, 255, 0.2)'
@@ -62,7 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
             plugins: {
                 legend: {
                     labels: {
-                        color: '#fff'
+                        color: '#fff',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
                     }
                 },
 								datalabels: {

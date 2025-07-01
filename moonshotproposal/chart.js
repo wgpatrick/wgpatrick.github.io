@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = document.getElementById('supplyChart');
     if (!ctx) return;
     
+    // Set default font family for Chart.js
+    Chart.defaults.font.family = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
+    
     // Register ChartDataLabels plugin if available
     if (typeof ChartDataLabels !== 'undefined') {
         Chart.register(ChartDataLabels);
@@ -32,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return context.dataIndex === 0 ? 'black' : 'white';
                 },
                 font: {
+                    family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
                     weight: 'bold',
                     size: 16
                 },
@@ -43,17 +47,31 @@ document.addEventListener('DOMContentLoaded', () => {
         scales: {
             y: {
                 beginAtZero: true,
+                title: {
+                    font: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                    }
+                },
                 ticks: {
-                    color: 'white'
+                    color: 'black',
+                    font: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                    }
                 },
                 grid: {
                     color: '#444'
                 }
             },
             x: {
-                ticks: {
-                    color: 'white',
+                title: {
                     font: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                    }
+                },
+                ticks: {
+                    color: 'black',
+                    font: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
                         size: 16
                     }
                 },

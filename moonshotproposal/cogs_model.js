@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = document.getElementById('cogsChart');
     if (!ctx) return;
 
+    // Set default font family for Chart.js
+    Chart.defaults.font.family = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
+
     const baselineCosts = {
         raw_mat: 10.8,
         labor: 9.0,
@@ -45,20 +48,49 @@ document.addEventListener('DOMContentLoaded', () => {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-                x: { stacked: true, ticks: { color: '#fff' } },
+                x: { 
+                    stacked: true, 
+                    ticks: { 
+                        color: '#fff',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
+                    }
+                },
                 y: { 
                     stacked: true, 
-                    title: { display: true, text: 'Cost per gram mAb (US$)', color: '#fff' },
-                    ticks: { color: '#fff' }
+                    title: { 
+                        display: true, 
+                        text: 'Cost per gram mAb (US$)', 
+                        color: '#fff',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
+                    },
+                    ticks: { 
+                        color: '#fff',
+                        font: {
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        }
+                    }
                 }
             },
             plugins: {
                 legend: { 
                     position: 'bottom',
-                    labels: { color: '#fff', font: { size: 10 } }
+                    labels: { 
+                        color: '#fff', 
+                        font: { 
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 10 
+                        }
+                    }
                 },
                 datalabels: {
                     color: '#fff',
+                    font: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                    },
                     formatter: (value) => value > 0 ? `$${value.toFixed(1)}` : ''
                 }
             }

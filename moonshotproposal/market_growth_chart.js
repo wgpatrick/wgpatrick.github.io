@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 label: 'Global Biologics CDMO Market Size (in Billion USD)',
                 data: marketSize,
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: 'rgb(0, 1, 1)',
                 tension: 0.1
             }]
         },
@@ -46,9 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     },
                     ticks: {
-                        color: '#fff',
+                        color: 'black',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     },
                     grid: {
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     },
                     ticks: {
-                        color: '#fff',
+                        color: 'black',
                         font: {
                             family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
                         }
@@ -77,10 +78,20 @@ document.addEventListener('DOMContentLoaded', () => {
             plugins: {
                 legend: {
                     labels: {
-                        color: '#fff',
+                        color: 'black',
                         font: {
                             family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
                         }
+                    }
+                },
+                tooltip: {
+                    titleFont: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                        size: 30
+                    },
+                    bodyFont: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                        size: 30
                     }
                 },
 								datalabels: {

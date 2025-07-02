@@ -28,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
             legend: {
                 display: false
             },
+            tooltip: {
+                titleFont: {
+                    family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                    size: 30
+                },
+                bodyFont: {
+                    family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                    size: 30
+                }
+            },
             datalabels: {
                 anchor: 'center',
                 align: 'center',
@@ -37,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 font: {
                     family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
                     weight: 'bold',
-                    size: 16
+                    size: 30
                 },
                 formatter: function(value, context) {
                     return value.toLocaleString() + ' kL';
@@ -55,7 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ticks: {
                     color: 'black',
                     font: {
-                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                        size: 30
                     }
                 },
                 grid: {
@@ -72,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     color: 'black',
                     font: {
                         family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                        size: 16
+                        size: 30
                     }
                 },
                 grid: {

@@ -51,9 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: { 
                     stacked: true, 
                     ticks: { 
-                        color: '#fff',
+                        color: 'black',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     }
                 },
@@ -62,34 +63,47 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: { 
                         display: true, 
                         text: 'Cost per gram mAb (US$)', 
-                        color: '#fff',
+                        color: 'black',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     },
                     ticks: { 
-                        color: '#fff',
+                        color: 'black',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     }
                 }
             },
             plugins: {
                 legend: { 
-                    position: 'bottom',
+                    position: 'right',
                     labels: { 
-                        color: '#fff', 
+                        color: 'black', 
                         font: { 
                             family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                            size: 10 
+                            size: 24 
                         }
                     }
                 },
+                tooltip: {
+                    titleFont: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                        size: 24
+                    },
+                    bodyFont: {
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                        size: 24
+                    }
+                },
                 datalabels: {
-                    color: '#fff',
+                    color: 'black',
                     font: {
-                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                        family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                        size: 24
                     },
                     formatter: (value) => value > 0 ? `$${value.toFixed(1)}` : ''
                 }

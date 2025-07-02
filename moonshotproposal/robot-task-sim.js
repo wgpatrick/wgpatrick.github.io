@@ -4,16 +4,17 @@
 // Configuration constants
 const SIMULATION_CONFIG = {
     N_TASKS: 1000,
-    EPOCHS: 900,                    // 900 days ≈ 9 real campaigns
+    EPOCHS: 900,                    // 900 days ≈ 30 real campaigns
     REAL_BATCH_SIZE: 25,
     SIM_BATCH_SIZE: 25,
-    REAL_CAMPAIGN_DAYS: 180,
+    REAL_CAMPAIGN_DAYS: 30,
     REAL_HOURS_PER_DAY: 24,
     SIM_HOURS_PER_TASK_PER_EPOCH: 24,
     BETA: 0.8,
     SIM_EFFICIENCY: 0.10,
     TRANSFER_COEFF: 0.01,
-    FLOOR_FAILURE: 0.0001           // 0.01%
+    AUTONOMOUS_THRESHOLD: 0.005,     // 0.5% target for autonomous operation
+    FLOOR_FAILURE: 0.000001          // 0.0001% learning floor
 };
 
 // Generate 25 logarithmically-distributed histogram buckets
@@ -63,7 +64,7 @@ const FAILURE_BUCKETS = generateLogBuckets();
 
 // Task class
 class Task {
-    static difficultySigma = 2.0; // Default value, can be changed via sliders
+    static difficultySigma = 3.0; // Default value, can be changed via sliders
     
     constructor(id) {
         this.id = id;
@@ -78,7 +79,7 @@ class Task {
         
         const normal = this.boxMullerRandom();
         const logNormal = Math.exp(mu + sigma * normal);
-        return Math.min(1.0, Math.max(SIMULATION_CONFIG.FLOOR_FAILURE, logNormal));
+                                return Math.min(1.0, Math.max(SIMULATION_CONFIG.FLOOR_FAILURE, logNormal));
     }
     
     // Box-Muller transform for normal random numbers
@@ -94,7 +95,7 @@ class Task {
 class CampaignManager {
     constructor() {
         this.currentCampaign = 0;
-        this.realTasks = [];        // Fixed for 180 days
+        this.realTasks = [];        // Fixed for 30 days
         this.campaignStartEpoch = 0;
         this.selectNewRealTasks();
     }
@@ -144,6 +145,7 @@ class RobotTaskSimulation {
         this.createDynamicLegend();
         this.updateDisplay();
         this.setupParameterSliders();
+        this.setupModal();
     }
     
     updateSimulationParameters(params) {
@@ -164,9 +166,15 @@ class RobotTaskSimulation {
         const learningRateSlider = document.getElementById('learning-rate-slider');
         const learningRateValue = document.getElementById('learning-rate-value');
         if (learningRateSlider && learningRateValue) {
+            // Set initial value from slider
+            const initialValue = parseFloat(learningRateSlider.value);
+            learningRateValue.textContent = initialValue.toFixed(1);
+            console.log('Learning rate slider initialized:', initialValue, 'Range:', learningRateSlider.min, 'to', learningRateSlider.max);
+            
             learningRateSlider.addEventListener('input', (e) => {
                 const value = parseFloat(e.target.value);
-                learningRateValue.textContent = value.toFixed(2);
+                learningRateValue.textContent = value.toFixed(1);
+                console.log('Learning rate changed to:', value);
                 this.updateSimulationParameters({ beta: value });
             });
         }
@@ -175,6 +183,9 @@ class RobotTaskSimulation {
         const simEfficiencySlider = document.getElementById('sim-efficiency-slider');
         const simEfficiencyValue = document.getElementById('sim-efficiency-value');
         if (simEfficiencySlider && simEfficiencyValue) {
+            const initialValue = parseFloat(simEfficiencySlider.value);
+            simEfficiencyValue.textContent = initialValue.toFixed(2);
+            
             simEfficiencySlider.addEventListener('input', (e) => {
                 const value = parseFloat(e.target.value);
                 simEfficiencyValue.textContent = value.toFixed(2);
@@ -186,6 +197,9 @@ class RobotTaskSimulation {
         const transferRateSlider = document.getElementById('transfer-rate-slider');
         const transferRateValue = document.getElementById('transfer-rate-value');
         if (transferRateSlider && transferRateValue) {
+            const initialValue = parseFloat(transferRateSlider.value);
+            transferRateValue.textContent = initialValue.toFixed(3);
+            
             transferRateSlider.addEventListener('input', (e) => {
                 const value = parseFloat(e.target.value);
                 transferRateValue.textContent = value.toFixed(3);
@@ -197,12 +211,205 @@ class RobotTaskSimulation {
         const difficultySigmaSlider = document.getElementById('difficulty-sigma-slider');
         const difficultySigmaValue = document.getElementById('difficulty-sigma-value');
         if (difficultySigmaSlider && difficultySigmaValue) {
+            const initialValue = parseFloat(difficultySigmaSlider.value);
+            difficultySigmaValue.textContent = initialValue.toFixed(1);
+            
             difficultySigmaSlider.addEventListener('input', (e) => {
                 const value = parseFloat(e.target.value);
                 difficultySigmaValue.textContent = value.toFixed(1);
                 this.updateSimulationParameters({ difficultySigma: value });
             });
         }
+    }
+    
+    setupModal() {
+        console.log('Setting up modal...');
+        
+        // Add a slight delay to ensure DOM is fully loaded
+        setTimeout(() => {
+            const modal = document.getElementById('assumptions-modal');
+            const openBtn = document.getElementById('assumptions-btn');
+            const closeBtn = document.getElementById('close-modal-btn');
+            const closeFooterBtn = document.getElementById('close-modal-footer-btn');
+            
+            console.log('Modal elements found:', {
+                modal: !!modal,
+                openBtn: !!openBtn,
+                closeBtn: !!closeBtn,
+                closeFooterBtn: !!closeFooterBtn
+            });
+            
+            if (openBtn) {
+                console.log('Assumptions button found, adding click listener');
+                openBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Assumptions button clicked!');
+                    
+                    // Create a simple custom modal that we can control
+                    const customModal = document.createElement('div');
+                    customModal.innerHTML = `
+                        <div style="
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100vw;
+                            height: 100vh;
+                            background: rgba(0,0,0,0.8);
+                            z-index: 99999;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-family: Arial, sans-serif;
+                        ">
+                            <div style="
+                                background: white;
+                                padding: 30px;
+                                border-radius: 10px;
+                                max-width: 800px;
+                                max-height: 80vh;
+                                overflow-y: auto;
+                                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                                position: relative;
+                            ">
+                                <button onclick="this.closest('div').parentElement.remove()" style="
+                                    position: absolute;
+                                    top: 10px;
+                                    right: 15px;
+                                    background: none;
+                                    border: none;
+                                    font-size: 24px;
+                                    cursor: pointer;
+                                    color: #666;
+                                ">&times;</button>
+                                <h2 style="color: #333; margin-top: 0; margin-bottom: 20px;">Simulation Key Assumptions</h2>
+                                
+                                <h3 style="color: #4A90E2; margin-top: 25px; margin-bottom: 10px;">Training Structure</h3>
+                                <ul style="margin: 0; padding-left: 20px; line-height: 1.6; color: #555;">
+                                    <li><strong>1,000 total tasks</strong> across 10-15 unit operations</li>
+                                                                         <li><strong>Real-world training:</strong> 25 tasks per 30-day campaign</li>
+                                    <li><strong>Simulation training:</strong> 25 different tasks per day</li>
+                                    <li><strong>Transfer learning:</strong> Improvements spread to untrained tasks</li>
+                                </ul>
+                                
+                                <h3 style="color: #4A90E2; margin-top: 25px; margin-bottom: 10px;">Learning Dynamics</h3>
+                                <ul style="margin: 0; padding-left: 20px; line-height: 1.6; color: #555;">
+                                    <li><strong>Power law learning:</strong> Improvement ∝ hours<sup>-α</sup></li>
+                                    <li><strong>Initial failure rates:</strong> Log-normal distribution (~10% median)</li>
+                                                                         <li><strong>Autonomous target:</strong> ≤0.5% failure rate (1 in 200 tasks)</li>
+                                     <li><strong>Learning floor:</strong> Cannot improve below 0.0001%</li>
+                                </ul>
+                                
+                                <h3 style="color: #4A90E2; margin-top: 25px; margin-bottom: 10px;">Training Efficiency</h3>
+                                <ul style="margin: 0; padding-left: 20px; line-height: 1.6; color: #555;">
+                                    <li><strong>Real-world:</strong> 24 training hours per task per day</li>
+                                    <li><strong>Simulation:</strong> 10% efficiency vs real-world (adjustable)</li>
+                                                                         <li><strong>Campaign cycles:</strong> New real-world tasks every 30 days</li>
+                                    <li><strong>Transfer rate:</strong> 1-10% of direct improvements spread</li>
+                                </ul>
+                                
+                                                                 <h3 style="color: #4A90E2; margin-top: 25px; margin-bottom: 10px;">Timeline & Scope</h3>
+                                 <ul style="margin: 0; padding-left: 20px; line-height: 1.6; color: #555;">
+                                     <li><strong>Total duration:</strong> 900 days (~30 real-world campaigns)</li>
+                                     <li><strong>Success metric:</strong> All 1,000 tasks autonomous (≤0.5% failure)</li>
+                                     <li><strong>Teleoperation backup:</strong> For tasks not yet autonomous</li>
+                                 </ul>
+                                 
+                                 <h3 style="color: #4A90E2; margin-top: 25px; margin-bottom: 10px;">Key Formulas</h3>
+                                 <div style="margin: 0; padding-left: 20px; line-height: 1.8; color: #555;">
+                                     <p><strong>Power Law Learning:</strong><br/>
+                                     <em>NewFailureRate = OldFailureRate × (1 + TotalHours)<sup>-β</sup></em><br/>
+                                     Where β = learning rate parameter (0.5-2.0)</p>
+                                     
+                                     <p><strong>Training Hours per Day:</strong><br/>
+                                     • Real-world tasks: 24 hours/day<br/>
+                                     • Simulation tasks: 24 hours × efficiency (10%)</p>
+                                     
+                                     <p><strong>Transfer Learning:</strong><br/>
+                                     <em>TransferImprovement = TotalDirectImprovement × TransferRate</em><br/>
+                                     Applied to all non-training tasks</p>
+                                     
+                                     <p><strong>Campaign Cycling:</strong><br/>
+                                     Every 30 days: Select new 25 tasks for real-world training<br/>
+                                     Every day: Select new 25 tasks for simulation training</p>
+                                 </div>
+                                
+                                <div style="text-align: center; margin-top: 25px;">
+                                    <button onclick="this.closest('div').parentElement.remove()" style="
+                                        background: #4A90E2;
+                                        color: white;
+                                        border: none;
+                                        padding: 10px 20px;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                                        font-size: 16px;
+                                    ">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(customModal);
+                    
+                    // Close on background click
+                    customModal.addEventListener('click', function(e) {
+                        if (e.target === customModal.firstElementChild) {
+                            customModal.remove();
+                        }
+                    });
+                });
+                
+            } else {
+                console.error('Assumptions button not found!');
+                console.log('All buttons found:', {
+                    nextBtn: !!document.getElementById('next-epoch-btn'),
+                    runBtn: !!document.getElementById('run-to-end-btn'),
+                    resetBtn: !!document.getElementById('reset-btn'),
+                    assumptionsBtn: !!document.getElementById('assumptions-btn')
+                });
+            }
+            
+                        // Setup close functionality
+            if (closeBtn && modal) {
+                closeBtn.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    modal.classList.remove('show');
+                });
+            }
+            
+            if (closeFooterBtn && modal) {
+                closeFooterBtn.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    modal.classList.remove('show');
+                });
+            }
+            
+            // Close when clicking outside
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        modal.classList.remove('show');
+                    }
+                });
+            }
+            
+            // Add a manual test to the global scope for debugging
+            window.testModal = function() {
+                console.log('Manual modal test');
+                const modal = document.getElementById('assumptions-modal');
+                if (modal) {
+                    modal.style.display = 'flex';
+                    modal.classList.add('show');
+                    console.log('Modal should be visible now');
+                    console.log('Modal classes:', modal.className);
+                    console.log('Modal computed style:', getComputedStyle(modal).display);
+                } else {
+                    console.error('Modal not found in manual test');
+                }
+            };
+            
+        }, 500); // 500ms delay to ensure everything is loaded
     }
     
     initializeTasks() {
@@ -411,20 +618,20 @@ class RobotTaskSimulation {
         return sum / this.tasks.length;
     }
     
-    calculateTasksAtSpec() {
-        return this.tasks.filter(task => task.failureRate <= SIMULATION_CONFIG.FLOOR_FAILURE).length;
+    calculateTasksAtAutonomous() {
+        return this.tasks.filter(task => task.failureRate <= SIMULATION_CONFIG.AUTONOMOUS_THRESHOLD).length;
     }
     
     updateDisplay() {
         // Update status display
         const meanFailure = this.calculateMeanFailureRate();
-        const tasksAtSpec = this.calculateTasksAtSpec();
-        const percentAtSpec = (tasksAtSpec / SIMULATION_CONFIG.N_TASKS * 100).toFixed(1);
+        const tasksAtAutonomous = this.calculateTasksAtAutonomous();
+        const percentAutonomous = (tasksAtAutonomous / SIMULATION_CONFIG.N_TASKS * 100).toFixed(1);
         const progressPercent = (this.currentEpoch / SIMULATION_CONFIG.EPOCHS * 100).toFixed(1);
         
         document.getElementById('epoch-counter').textContent = `Day ${this.currentEpoch}`;
         document.getElementById('mean-failure').textContent = `${(meanFailure * 100).toFixed(3)}%`;
-        document.getElementById('spec-compliance').textContent = `${tasksAtSpec} (${percentAtSpec}%)`;
+        document.getElementById('spec-compliance').textContent = `${tasksAtAutonomous} (${percentAutonomous}%)`;
         document.getElementById('progress-percent').textContent = `${progressPercent}%`;
         
         // Update progress bar

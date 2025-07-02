@@ -40,9 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     beginAtZero: true,
                     title: {
                         display: true,
+                        color: 'black',
                         text: 'Market Size (Billion USD)',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     },
                     ticks: {
@@ -59,15 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: {
                     title: {
                         display: true,
+                        color: 'black',
                         text: 'Year',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     },
                     ticks: {
                         color: 'black',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     },
                     grid: {
@@ -80,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     labels: {
                         color: 'black',
                         font: {
-                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif'
+                            family: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                            size: 30
                         }
                     }
                 },

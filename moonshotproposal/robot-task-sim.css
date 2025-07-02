@@ -1,0 +1,361 @@
+/* Robot Task Learning Simulation Styles */
+
+.simulation-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: left;
+    gap: 2rem;
+    margin: 0 auto;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.chart-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.controls-panel {
+    display: flex !important;
+    gap: 1rem;
+    align-items: left;
+    flex-wrap: wrap;
+    justify-content: left;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.control-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.control-button.primary {
+    background: #4A90E2;
+    color: white;
+}
+
+.control-button.primary:hover {
+    background: #357ABD;
+    transform: translateY(-1px);
+}
+
+.control-button.secondary {
+    background: #7B68EE;
+    color: white;
+}
+
+.control-button.secondary:hover {
+    background: #6A5ACD;
+    transform: translateY(-1px);
+}
+
+.control-button.danger {
+    background: #FF6B6B;
+    color: white;
+}
+
+.control-button.danger:hover {
+    background: #FF5252;
+    transform: translateY(-1px);
+}
+
+.control-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.parameters-panel {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #f8f9fa;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 1rem;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.parameters-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.parameter-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.parameter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 180px;
+    flex: 1;
+}
+
+.parameter-label {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.parameter-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.parameter-slider {
+    flex: 1;
+    min-width: 120px;
+    height: 6px;
+    background: #ddd;
+    outline: none;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.parameter-slider::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+    background: #4A90E2;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.parameter-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #4A90E2;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.parameter-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    min-width: 60px;
+    text-align: right;
+}
+
+.parameter-description {
+    font-size: 0.7rem;
+    color: #888;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.status-display {
+    display: flex !important;
+    gap: 2rem;
+    align-items: left;
+    flex-wrap: wrap;
+    justify-content: left;
+    background: #f8f9fa;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.status-item {
+    text-align: left;
+    min-width: 150px;
+}
+
+.status-label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.legend-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: left;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.legend-text {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.progress-indicator {
+    width: 100%;
+    max-width: 400px;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 0.2rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4A90E2, #7B68EE);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.simulation-description {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.simulation-description h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.simulation-description p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Animation for chart updates */
+.chart-updating {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .simulation-container {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .chart-container {
+        height: 300px;
+        padding: 0.5rem;
+    }
+    
+    .controls-panel {
+        gap: 0.5rem;
+    }
+    
+    .control-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+    
+    .status-display {
+        gap: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .status-item {
+        min-width: 120px;
+    }
+    
+    .legend-container {
+        gap: 1rem;
+    }
+    
+    .legend-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* Integration with Reveal.js */
+.reveal .simulation-container {
+    color: inherit;
+}
+
+.reveal .simulation-container .status-display {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(0,0,0,0.2);
+    color: #333;
+}
+
+.reveal .simulation-container .status-value {
+    color: #333;
+}
+
+.reveal .simulation-container .status-label {
+    color: #666;
+}
+
+.reveal .simulation-container .legend-text {
+    color: #333;
+}
+
+.reveal .simulation-container .simulation-description h3 {
+    color: inherit;
+}
+
+.reveal .simulation-container .simulation-description p {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Ensure buttons are visible in Reveal.js */
+.reveal .simulation-container .control-button {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Ensure all panels are visible */
+.reveal .simulation-container .controls-panel,
+.reveal .simulation-container .status-display,
+.reveal .simulation-container .legend-container,
+.reveal .simulation-container .progress-indicator {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+} 

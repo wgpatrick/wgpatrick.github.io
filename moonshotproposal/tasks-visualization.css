@@ -1,0 +1,246 @@
+/* Task Visualization Styles */
+
+.unit-operation-row {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+	margin-bottom: -2.5rem;
+	padding: 0.2rem;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+}
+
+.operation-info {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	min-width: 200px;
+	flex-shrink: 0;
+}
+
+.operation-thumbnail {
+	width: 75px;
+	height: 40px;
+	object-fit: contain;
+	border-radius: 4px;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 4px;
+}
+
+.operation-name {
+	font-size: 1rem;
+	font-weight: bold;
+	color: black;
+	min-width: 120px;
+}
+
+.task-squares {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3px;
+	align-items: center;
+}
+
+.task-square {
+	width: 12px;
+	height: 12px;
+	background: #4A90E2;
+	border-radius: 2px;
+	opacity: 0;
+	transform: scale(0);
+	animation: taskAppear 0.3s ease-out forwards;
+	animation-delay: var(--delay);
+}
+
+@keyframes taskAppear {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Task Type Shapes */
+.task-shape {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	opacity: 0;
+	transform: scale(0);
+	animation: taskAppear 0.3s ease-out forwards;
+	animation-delay: var(--delay);
+}
+
+.task-shape.circle {
+	border-radius: 50%;
+}
+
+.task-shape.triangle {
+	width: 0;
+	height: 0;
+	background: transparent !important;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 12px solid;
+	border-bottom-color: inherit;
+}
+
+.task-shape.diamond {
+	width: 12px;
+	height: 12px;
+	transform: rotate(45deg);
+	border-radius: 2px;
+}
+
+.task-shape.pentagon {
+	width: 12px;
+	height: 12px;
+	background: transparent !important;
+	position: relative;
+}
+
+.task-shape.pentagon::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 4px solid;
+	border-bottom-color: inherit;
+	top: -2px;
+	left: 0;
+}
+
+.task-shape.pentagon::after {
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 8px;
+	background: inherit;
+	top: 2px;
+	left: 0;
+}
+
+.task-shape.hexagon {
+	width: 12px;
+	height: 7px;
+	position: relative;
+}
+
+.task-shape.hexagon::before,
+.task-shape.hexagon::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+
+.task-shape.hexagon::before {
+	border-bottom: 3px solid;
+	border-bottom-color: inherit;
+	top: -3px;
+}
+
+.task-shape.hexagon::after {
+	border-top: 3px solid;
+	border-top-color: inherit;
+	bottom: -3px;
+}
+
+.task-shape.star {
+	width: 0;
+	height: 0;
+	background: transparent !important;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 4px solid;
+	border-bottom-color: inherit;
+	position: relative;
+	transform: rotate(35deg);
+}
+
+.task-shape.star::before {
+	content: '';
+	position: absolute;
+	left: -6px;
+	top: -3px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 4px solid;
+	border-bottom-color: inherit;
+	transform: rotate(-70deg);
+}
+
+.task-shape.star::after {
+	content: '';
+	position: absolute;
+	left: -6px;
+	top: 1px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 4px solid;
+	border-bottom-color: inherit;
+	transform: rotate(70deg);
+}
+
+.task-shape.octagon {
+	width: 12px;
+	height: 12px;
+	background: inherit;
+	position: relative;
+	border-radius: 2px;
+	transform: rotate(22.5deg);
+}
+
+.task-shape.cross {
+	width: 12px;
+	height: 3px;
+	position: relative;
+}
+
+.task-shape.cross::after {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 12px;
+	background: inherit;
+	top: -4.5px;
+	left: 4.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.unit-operation-row {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+	
+	.operation-info {
+		min-width: auto;
+	}
+	
+	.task-square {
+		width: 8px;
+		height: 8px;
+	}
+	
+	.task-shape {
+		width: 8px;
+		height: 8px;
+	}
+} 

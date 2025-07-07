@@ -204,6 +204,27 @@
 					<h1 style="text-transform: none; text-align: left;">The Moonshot</h1>
 					<h3 style="text-align: left;">A Self-Driving Biologics Factory</h3>
 				</section>
+				<section>
+					<h1 style="text-align: left; text-transform: none;">Evaluation</h1>
+					<h3 style="text-align: left;">1. If successful, it will be a huge business</h3>
+					<div style="text-align: left; font-size: 1em; line-height: 1.4; margin-top: 0.5em;  margin-bottom: 1em;">
+						<ol style="list-style-type: disc">
+							<li><a href="#/7" style="text-decoration: none;">Need</a></li>
+							<li><a href="#/8" style="text-decoration: none;">Problem</a></li>
+							<li><a href="#/9" style="text-decoration: none;">Solution</a></li>
+							<li><a href="#/12" style="text-decoration: none;">Opportunity</a></li>
+						</ol>
+					</div>
+					<h3 style="text-align: left;">2. Technically possible within 5-10 years</h3>
+					<div style="text-align: left; font-size: 1em; line-height: 1.4; margin-top: 0.5em;  margin-bottom: 0.5em;">
+						<ol style="list-style-type: disc">
+							<li><a href="#/13" style="text-decoration: none;">How it works</a></li>
+							<li><a href="#/14" style="text-decoration: none;">Breakthrough Tech</a></li>
+							<li><a href="#/15" style="text-decoration: none;">Why Now</a></li>
+							<li><a href="#/16" style="text-decoration: none;">What's Next</a></li>
+						</ol>
+					</div>
+				</section>
 				<section style="text-align: left;">
 					<h1 style="text-transform: none;">Need</h1>
 					<h3 style="text-transform: none;">Biologics production volume<sup style="font-size: 0.6em; vertical-align: super;">1</sup> must double in the next 10 years to keep up with demand</h3>
@@ -645,89 +666,109 @@
 					</div>
 				</section>
 				<section>
-					<h1 style="text-transform: none; text-align: left;">Task Difficulty</h1>
-					<p style="text-align: left; font-size: 0.8em; margin-bottom: 1rem;">Some of these tasks will be easy. Others will be hard.</p>
-					<div id="difficulty-container" style="display: flex; flex-direction: column; gap: 0rem; height: auto; max-height: none;">
-						<!-- This will be populated from the previous slide -->
+					<h1 style="text-transform: none; text-align: left;">Task Analysis</h1>
+					<p style="text-align: left; font-size: 0.8em; margin-bottom: 0.5rem;">Tasks have different difficulty levels and can be grouped into similar categories</p>
+					
+					<div id="combined-task-container" style="display: flex; flex-direction: column; gap: 0rem; height: auto; max-height: none;">
+						<!-- Combined task visualization will be populated here -->
 					</div>
-					<div style="display: flex; text-align: left; gap: 3rem; margin-top: 2rem; justify-content: flex-start;">
-						<div style="display: flex; align-items: center; gap: 1rem;">
-							<div style="width: 20px; height: 20px; background: #4A90E2; border-radius: 3px;"></div>
-							<span style="font-size: 1.5rem;">Easy: 10⁻⁴ (0.01%)</span>
+					
+					<!-- Combined Controls and Legends -->
+					<div style="margin-top: 2rem;">
+						<!-- Buttons -->
+						<div style="display: flex; gap: 1rem; margin-bottom: 1rem; justify-content: flex-start;">
+							<button id="show-difficulty-btn" style="padding: 0.8rem 1.5rem; font-size: 1rem; background: #4A90E2; color: white; border: none; border-radius: 6px; cursor: pointer;">Show Difficulty</button>
+							<button id="show-task-types-btn" style="padding: 0.8rem 1.5rem; font-size: 1rem; background: #28A745; color: white; border: none; border-radius: 6px; cursor: pointer;">Show Types</button>
 						</div>
-						<div style="display: flex; align-items: center; gap: 1rem;">
-							<div style="width: 20px; height: 20px; background: #9370DB; border-radius: 3px;"></div>
-							<span style="font-size: 1.5rem;">Medium: 10⁻¹ (10%)</span>
+						
+						<!-- Difficulty Legend -->
+						<div id="difficulty-legend" style="display: none; margin-bottom: 2rem;">
+							<p style="margin-bottom: 1rem; text-align: left; font-size: 0.5em;">Task Difficulty by Failure Rate</p>
+							<div style="display: flex; text-align: left; gap: 3rem; justify-content: flex-start; flex-wrap: wrap;">
+								<div style="display: flex; align-items: center; gap: 1rem;">
+									<div style="width: 20px; height: 20px; background: #4A90E2; border-radius: 3px;"></div>
+									<span style="font-size: 1.2rem;">Easy: 10⁻⁴ (0.01%)</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 1rem;">
+									<div style="width: 20px; height: 20px; background: #9370DB; border-radius: 3px;"></div>
+									<span style="font-size: 1.2rem;">Medium: 10⁻¹ (10%)</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 1rem;">
+									<div style="width: 20px; height: 20px; background: #FF0000; border-radius: 3px;"></div>
+									<span style="font-size: 1.2rem;">Hard: 10⁻⁰·⁵ (32%)</span>
+								</div>
+							</div>
 						</div>
-						<div style="display: flex; align-items: center; gap: 1rem;">
-							<div style="width: 20px; height: 20px; background: #FF0000; border-radius: 3px;"></div>
-							<span style="font-size: 1.5rem;">Hard: 10⁻⁰·⁵ (32%)</span>
+						
+						<!-- Task Types Legend -->
+						<div id="task-types-legend" style="display: none;">
+							<p style="margin-bottom: 0.5rem; font-size: 0.5em; text-align: left;">Task Categories</p>
+							<div style="display: flex; align-items: center; gap: 2rem; justify-content: flex-start; flex-wrap: wrap;">
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape circle" style="background: #4A90E2;"></div>
+									<span style="font-size: 1rem;">Connecting fluid lines</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape triangle" style="background: #7B68EE;"></div>
+									<span style="font-size: 1rem;">Moving single-use bags</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape diamond" style="background: #32CD32;"></div>
+									<span style="font-size: 1rem;">Pressing buttons</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape pentagon" style="background: #FF6347;"></div>
+									<span style="font-size: 1rem;">Loading bags into equipment</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape hexagon" style="background: #FFD700;"></div>
+									<span style="font-size: 1rem;">Moving skids</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape star" style="background: #FF69B4;"></div>
+									<span style="font-size: 1rem;">Loading columns</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape octagon" style="background: #9370DB;"></div>
+									<span style="font-size: 1rem;">Sterile additions</span>
+								</div>
+								<div style="display: flex; align-items: center; gap: 0.5rem;">
+									<div class="task-shape cross" style="background: #DC143C;"></div>
+									<span style="font-size: 1rem;">Unique tasks</span>
+								</div>
+							</div>
 						</div>
-						<button id="show-difficulty-btn" style="padding: 0.8rem 1.5rem; font-size: 1rem; background: #4A90E2; color: white; border: none; border-radius: 6px; cursor: pointer;">Show Failure Rates</button>
 					</div>
 				</section>
 				<section>
-					<h1 style="text-transform: none; text-align: left;">Task Types</h1>
-					<p style="text-align: left; font-size: 0.8em; margin-bottom: 1rem;">Tasks can be grouped into similar categories across unit operations</p>
-					
-					
-					
-					<div id="task-types-container" style="display: flex; flex-direction: column; gap: 0rem; height: auto; max-height: none;">
-						<!-- Task types will be generated by JavaScript -->
-					</div>
-					
-					<!-- Task Type Legend -->
-					<div style="display: flex; align-items: center; gap: 2rem; margin-top: 4rem; justify-content: flex-start; flex-wrap: wrap;">
-						<div style="display: flex; align-items: center; margin-bottom: 2rem;">
-							<button id="show-task-types-btn" style="padding: 0.8rem 1.5rem; font-size: 1rem; background: #4A90E2; color: white; border: none; border-radius: 6px; cursor: pointer;">Show Task Types</button>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape circle" style="background: #4A90E2;"></div>
-							<span style="font-size: 1.2rem;">Connecting fluid lines</span>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape triangle" style="background: #7B68EE;"></div>
-							<span style="font-size: 1.2rem;">Moving single-use bags</span>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape diamond" style="background: #32CD32;"></div>
-							<span style="font-size: 1.2rem;">Pressing buttons</span>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape pentagon" style="background: #FF6347;"></div>
-							<span style="font-size: 1.2rem;">Loading bags into equipment</span>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape hexagon" style="background: #FFD700;"></div>
-							<span style="font-size: 1.2rem;">Moving skids</span>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape star" style="background: #FF69B4;"></div>
-							<span style="font-size: 1.2rem;">Loading columns</span>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape octagon" style="background: #9370DB;"></div>
-							<span style="font-size: 1.2rem;">Sterile additions</span>
-						</div>
-						<div style="display: flex; align-items: center; gap: 0.5rem;">
-							<div class="task-shape cross" style="background: #DC143C;"></div>
-							<span style="font-size: 1.2rem;">Unique tasks</span>
-						</div>
-					</div>
+					<h1 style="text-align: left; text-transform: none;">Model</h1>
+				<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem;">
+					<img src="assets/images/moonshotpresentation/model.png" alt="Model Diagram" style="width: 80%; border-radius: 4px; border: 1px solid #ccc; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+				</div>
 				</section>
 				<section>
 					<h1 style="text-transform: none; text-align: left;">Training</h1>
-					<div style="text-align: left; text-transform: none;">
-						<h4><b>Goal</b>: Improve task performance such that autonomous operation is viable with teleoperation</h4>
-						<h4 style="padding-top: 1rem;">Training approach:</h4>
-						<p>1. Real-world data collection using tele-op on subset of tasks (~25)</p>
-						<p>2. Simulation data collection using simulated "digital twin" of operation</p>
-						<p>3. Test on real-world training set and 5-10 real-world test set</p>
-						<h4 style="padding-top: 1rem;"><b>Questions</b>:</h4>
-						<p>1. How effective is real-world training using teleoperation? What is the rate of learning?</p>
-						<p>2. How effective is sim2real learning? What is the rate of learning (hours of data / failure rate improvement)?</p>
-						<p>3. How much transfer learning between tasks?</p>
-						<h4 style="padding-top: 1rem;">Once we better understand these questions, we can understand if this problem is tractable.
+					<div style="display: flex; align-items: flex-start; gap: 40px; margin-top: 1em;">
+						<div style="flex: 1; max-width: 400px;">
+							<a href="assets/images/moonshotpresentation/training.png" data-modal-type="image">
+								<img src="assets/images/moonshotpresentation/training.png" alt="Training Process" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+							</a>
+						</div>
+						<div style="flex: 1.5; text-align: left; text-transform: none;">
+							<h4 style="padding-top: 1rem;">Example Approach:</h4>
+							<p>Each month:</p>
+							<p>1. Real world data on subset of tasks (~25)</p>
+							<p>2. Collect simulation data on all tasks</p>
+							<p>3. Fine-tune model on data</p>
+							<p>4. Test on 25 tasks & 10 other tasks</p>
+						</div>
+						<div style="flex: 1.5; text-align: left; text-transform: none;"
+							<h4 style="padding-top: 1rem;">Questions:</h4>
+							<p>1. Rate of learning from demonstrations? How different per task?</p>
+							<p>2. Rate of learning from simulation? Any way to improve?</p>
+							<p>3. How much transfer learning between tasks?</p>
+							<h4 style="padding-top: 1rem;">Once we better understand these questions, we can understand if this problem is tractable.</h4>
+						</div>
 					</div>
 				</section>
 				<section>
@@ -958,6 +999,88 @@
 				<section>
 					<h1 style="text-transform: none; text-align: left;">Thank You</12>
 					<h3 style="text-align: left;">Q&A on Moonshot proposal</h3>
+				</section>
+				<section>
+					<h1 style="text-align: left; text-transform: none;">AI Mechanical Engineer</h1>
+					<h3 style="text-transform: none; text-align: left; margin-bottom: 1.5em;">Mechanical design is 10-100x slower than software. What if it wasn't?</h3>
+					
+					<div style="display: flex; gap: 40px; align-items: flex-start;">
+						<!-- Left side: Problem visualization -->
+						<div style="flex: 1.2;">
+							<h4 style="color: #E74C3C; margin-bottom: 1em;">Current Reality</h4>
+							<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #E74C3C;">
+								<div style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9em;">
+									<div style="display: flex; align-items: center; gap: 10px;">
+										<span style="background: #E74C3C; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">Weeks</span>
+										<span>Requirements → CAD</span>
+									</div>
+									<div style="display: flex; align-items: center; gap: 10px;">
+										<span style="background: #E74C3C; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">Weeks</span>
+										<span>CAD → Simulation/Testing</span>
+									</div>
+									<div style="display: flex; align-items: center; gap: 10px;">
+										<span style="background: #E74C3C; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">Weeks</span>
+										<span>Analysis → Manufacturing</span>
+									</div>
+								</div>
+								<div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; font-weight: bold; color: #E74C3C;">
+									Total: 3-6 months per design iteration
+								</div>
+							</div>
+						</div>
+						
+						<!-- Right side: Solution -->
+						<div style="flex: 1.2;">
+							<h4 style="color: #27AE60; margin-bottom: 1em;">AI Mechanical Engineer</h4>
+							<div style="background: #f8fffe; padding: 20px; border-radius: 8px; border-left: 4px solid #27AE60;">
+								<div style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9em;">
+									<div style="display: flex; align-items: center; gap: 10px;">
+										<span style="background: #27AE60; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">Hours</span>
+										<span>Natural language → CAD</span>
+									</div>
+									<div style="display: flex; align-items: center; gap: 10px;">
+										<span style="background: #27AE60; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">Hours</span>
+										<span>Automated simulation & analysis</span>
+									</div>
+									<div style="display: flex; align-items: center; gap: 10px;">
+										<span style="background: #27AE60; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8em;">Hours</span>
+										<span>Manufacturing-ready outputs</span>
+									</div>
+								</div>
+								<div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; font-weight: bold; color: #27AE60;">
+									Total: Days per design iteration
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Bottom section: Market and Impact -->
+					<div style="display: flex; gap: 40px; margin-top: 2em; align-items: flex-start;">
+						<div style="flex: 1;">
+							<h4 style="color: #4A90E2; margin-bottom: 0.8em;">Market Opportunity</h4>
+							<ul style="font-size: 0.9em; line-height: 1.4; margin: 0;">
+								<li><strong>$30B+ CAD/CAE market</strong></li>
+								<li><strong>5M mechanical engineers</strong> globally</li>
+								<li>"Cursor for mechanical engineers"</li>
+							</ul>
+						</div>
+						<div style="flex: 1;">
+							<h4 style="color: #4A90E2; margin-bottom: 0.8em;">Breakthrough Required</h4>
+							<ul style="font-size: 0.9em; line-height: 1.4; margin: 0;">
+								<li><strong>Spatial reasoning</strong> advances</li>
+								<li><strong>Engineering datasets</strong> & benchmarks</li>
+								<li><strong>Verifiable rewards</strong> for RL training</li>
+							</ul>
+						</div>
+						<div style="flex: 1;">
+							<h4 style="color: #4A90E2; margin-bottom: 0.8em;">What Becomes Possible</h4>
+							<ul style="font-size: 0.9em; line-height: 1.4; margin: 0;">
+								<li><strong>Mass customization</strong></li>
+								<li><strong>Design democratization</strong></li>
+								<li><strong>Rapid prototyping</strong> at scale</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 				<section style="text-align: left;">
 					<h3 style="text-transform: none;">Sources</h3>
